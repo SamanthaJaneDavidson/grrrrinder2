@@ -86,7 +86,7 @@ const resolvers = {
           { _id: dogId },
           {
             $addToSet: {
-              Dogs: { dogID, dog_name, dog_breed, dog_gender, dog_size, dog_age, dog_vaccinations, dog_neuter_spayed, dog_temperment,
+              Dog: { dogID, dog_name, dog_breed, dog_gender, dog_size, dog_age, dog_vaccinations, dog_neuter_spayed, dog_temperment,
                 dog_notes, dog_picture, preferred_days, preferred_timeofday, preferred_location: context.user.username },
             },
           },

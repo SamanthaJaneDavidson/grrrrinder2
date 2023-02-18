@@ -31,7 +31,7 @@ const resolvers = {
       if (users.length) {
         const user = users[0];
 
-        for (let i = 0; i < user.savedDogs.length; i++) {
+        for (let i = 0; i < user.savedDog.length; i++) {
           if (user.savedDog[i].dogId == dogId) {
             user.savedDog.splice(i, 1);
 

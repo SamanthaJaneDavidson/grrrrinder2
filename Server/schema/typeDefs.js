@@ -9,7 +9,7 @@ type User {
   _id: ID
   username: String
   email: String
-  savedDogMatches: [Dogs]!
+  savedDogMatches: [Dog]!
 }
 
  
@@ -18,7 +18,7 @@ type Query {
 }
 
 
-type Dogs {
+type Dog {
     dogID: String!
     dog_name: String
     dog_breed: String
