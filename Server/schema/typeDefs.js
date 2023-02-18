@@ -44,6 +44,7 @@ type Auth {
 }
 
 input SaveDogInput {
+    dogID: String!
     dog_name: String
     dog_breed: String
     dog_gender: String

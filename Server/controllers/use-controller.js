@@ -1,6 +1,6 @@
 // import user model
 const { User } = require('../models');
-const { Dogs } = require('../models');
+const { Dog } = require('../models');
 // import sign token function from auth
 const { signToken } = require('../utils/auth');
 

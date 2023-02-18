@@ -16,7 +16,7 @@ db.once('open', async () => {
         { username: user_id }, //Same issue as above. I don't thing user_id is right
         {
           $addToSet: {
-            dogs: _id,
+            dog: _id,
           },
         }
       );
