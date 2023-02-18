@@ -98,7 +98,7 @@ const resolvers = {
       }
       throw new Error("You need to be logged in!");
     },
-    removeBook: async (parent, { ownerId }, context) => {
+    removeDog: async (parent, { ownerId }, context) => {
       if (context.user) {
         const dog = await Dog.findOneAndDelete({
           _id: dogId,
