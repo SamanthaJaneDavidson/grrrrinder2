@@ -63,7 +63,7 @@ module.exports = {
   async deleteDog({ user, params }, res) {
     const updatedUser = await User.findOneAndUpdate(
       { _id: user._id },
-      { $pull: { savedDog: { dogId: params.dogId } } },
+      { $pull: { savedDog: { dog_id: params.dog_id } } },
       { new: true }
     );
     if (!updatedUser) {
