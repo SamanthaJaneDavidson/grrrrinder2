@@ -1,5 +1,6 @@
 // import user model
 const { User } = require('../models');
+const { Dogs } = require('../models');
 // import sign token function from auth
 const { signToken } = require('../utils/auth');
 
@@ -42,14 +43,14 @@ module.exports = {
     const token = signToken(user);
     res.json({ token, user });
   },
-  // save a dog to a user's `savedDogMatches` field by adding it to the set (to prevent duplicates)
+  // save a dog to a user's `savedDog` field by adding it to the set (to prevent duplicates)
   // user comes from `req.user` created in the auth middleware function
-  async saveDogMatch({ user, body }, res) {
+  async saveDog({ user, body }, res) {
     console.log(user);
     try {
       const updatedUser = await User.findOneAndUpdate(
         { _id: user._id },
-        { $addToSet: { savedDogMatch: body } },
+        { $addToSet: { savedDog: body } },
         { new: true, runValidators: true }
       );
       return res.json(updatedUser);
@@ -58,11 +59,11 @@ module.exports = {
       return res.status(400).json(err);
     }
   },
-  // remove a book from `savedDogMatches`
-  async deleteDogMatch({ user, params }, res) {
+  // remove a book from `savedDog`
+  async deleteDog({ user, params }, res) {
     const updatedUser = await User.findOneAndUpdate(
       { _id: user._id },
-      { $pull: { savedDogMatch: { dogMatchId: params.dogMatchId } } },
+      { $pull: { savedDog: { dogId: params.dogId } } },
       { new: true }
     );
     if (!updatedUser) {
