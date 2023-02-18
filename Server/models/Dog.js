@@ -4,7 +4,6 @@ const dogSchema = new Schema({
     id: {
         type: Number,
         required: true,
-        primaryKey: true,
         autoIncrement: true,
     },
     dog_name: {
