@@ -9,7 +9,7 @@ type User {
   _id: ID
   username: String
   email: String
-  savedDogMatches: [Dog]!
+  saved_dogs: [Dog]!
 }
 
  
@@ -19,7 +19,7 @@ type Query {
 
 
 type Dog {
-    dogID: String!
+    _id: ID
     dog_name: String
     dog_breed: String
     dog_gender: String
@@ -30,7 +30,6 @@ type Dog {
     dog_temperment: String
     dog_notes: String
     dog_picture: String
-    owner_id: ID,
     preferred_days: [String]
     preferred_timeofday: [String]
     preferred_location: [String]
@@ -44,7 +43,7 @@ type Auth {
 }
 
 input SaveDogInput {
-    dogID: String!
+    dog_id: ID
     dog_name: String
     dog_breed: String
     dog_gender: String
@@ -64,9 +63,9 @@ input SaveDogInput {
 
 type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
-  login(email: String!, password: String!): Auth
-  saveDog(input: SavedDog, token: String!): User
-  removeDog (dogId: String!, token: String!): User
+  login(username: String!, password: String!): Auth
+  saveDog(input: SavedDogInput): User
+  removeDog (dog_id: String!): User
 }`;
 
 module.exports = typeDefs;
