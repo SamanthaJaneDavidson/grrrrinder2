@@ -1,4 +1,4 @@
-const { Dogs, User } = require("../models");
+const { Dog, User } = require("../models");
 const { signToken } = require("../utils/auth");
 const mongoose = require('mongoose');
 const { AuthenticationError } = require('apollo-server-express');
@@ -6,23 +6,23 @@ const { AuthenticationError } = require('apollo-server-express');
 const resolvers = {
   Query: {
     user: async () => {
-      return User.find().populate("dogs");
+      return User.find().populate("dog");
     },
 
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate("dogs");
+      return User.findOne({ username }).populate("dog");
     },
 
-    dogs: async (parent, { username }) => {
+    dog: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Dogs.find(params).sort({ createdAt: -1 });
+      return Dog.find(params).sort({ createdAt: -1 });
     },
-    dogs: async (parent, { dogId }) => {
-      return Dogs.findOne({ _id: dogId });
+    dog: async (parent, { dogId }) => {
+      return Dog.findOne({ _id: dogId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("dogs");
+        return User.findOne({ _id: context.user._id }).populate("dog");
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -51,10 +51,11 @@ const resolvers = {
 
       return { token, user };
     },
-    addDog: async (parent, { owner_id }, dog_name, dog_breed, dog_gender, dog_size, dog_age, dog_vaccinations, dog_neuter_spayed, dog_temperment,
+    addDog: async (parent, { owner_id }, dogID, dog_name, dog_breed, dog_gender, dog_size, dog_age, dog_vaccinations, dog_neuter_spayed, dog_temperment,
       dog_notes, dog_picture, preferred_days, preferred_timeofday, preferred_location, context) => {
       if (context.user) {
-        const thought = await Dogs.create({
+        const thought = await Dog.create({
+          dogID,
           dog_name, 
           dog_breed, 
           dog_gender, 
@@ -72,20 +73,20 @@ const resolvers = {
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { dogs: dogs._id } }
+          { $addToSet: { dog: dog._id } }
         );
 
-        return dogs;
+        return dog;
       }
       throw new Error("You need to be logged in!");
     },
     addDog: async (parent, { owner_Id }, context) => {
       if (context.user) {
-        return Dogs.findOneAndUpdate(
+        return Dog.findOneAndUpdate(
           { _id: dogId },
           {
             $addToSet: {
-              Dogs: { dog_name, dog_breed, dog_gender, dog_size, dog_age, dog_vaccinations, dog_neuter_spayed, dog_temperment,
+              Dog: { dogID, dog_name, dog_breed, dog_gender, dog_size, dog_age, dog_vaccinations, dog_neuter_spayed, dog_temperment,
                 dog_notes, dog_picture, preferred_days, preferred_timeofday, preferred_location: context.user.username },
             },
           },
@@ -99,13 +100,13 @@ const resolvers = {
     },
     removeBook: async (parent, { ownerId }, context) => {
       if (context.user) {
-        const dog = await Dogs.findOneAndDelete({
+        const dog = await Dog.findOneAndDelete({
           _id: dogId,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { dogs: dogs._id } }
+          { $pull: { dog: dog._id } }
         );
 
         return dog;
@@ -114,11 +115,11 @@ const resolvers = {
     },
     removeDog: async (parent, { owner_Id }, context) => {
       if (context.user) {
-        return Dogs.findOneAndUpdate(
+        return Dog.findOneAndUpdate(
           { _id: dogId },
           {
             $pull: {
-              dogs: {
+              dog: {
                 _id: dogId,
               },
             },
