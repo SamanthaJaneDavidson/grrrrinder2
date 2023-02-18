@@ -26,14 +26,14 @@ const resolvers = {
   },
 
   Mutation: {
-    removeBook: async (_, { bookId, token }) => {
+    removeDog: async (_, { dogId, token }) => {
       const users = await User.find({token});
       if (users.length) {
         const user = users[0];
 
-        for (let i = 0; i < user.savedBooks.length; i++) {
-          if (user.savedBooks[i].bookId == bookId) {
-            user.savedBooks.splice(i, 1);
+        for (let i = 0; i < user.savedDogs.length; i++) {
+          if (user.savedDog[i].dogId == dogId) {
+            user.savedDog.splice(i, 1);
 
             await user.save();
           }
@@ -45,15 +45,30 @@ const resolvers = {
       return;
     },
 
-    saveBook: async (_, { input, token }) => {
-      const { bookId, authors, title, image, link, description } = input;
+    saveDog: async (_, { input, token }) => {
+      const { dogID, 
+        dog_name,
+        dog_breed,
+        dog_gender,
+        dog_size,
+        dog_age,
+        dog_vaccinations,
+        dog_neuter_spayed,
+        dog_temperment,
+        dog_notes,
+        dog_picture, 
+        owner_id,
+        preferred_days,
+        preferred_timeofday,
+        preferred_location
+       } = input;
 
       const users = await User.find({token});
       if (users.length) {
         const user = users[0];
 
         user.savedDogs.push({
-
+            dogID,
             dog_name,
             dog_breed,
             dog_gender,
