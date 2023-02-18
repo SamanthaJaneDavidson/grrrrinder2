@@ -27,7 +27,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 8,
   },
-  dogs: [
+  dog: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Dog',
