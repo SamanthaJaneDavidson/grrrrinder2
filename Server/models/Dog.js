@@ -61,11 +61,9 @@ const dogSchema = new Schema({
 
     // unsure if this is correct
     user_id: {
-        type: Number,
-        ref: {
-            model: "User",
-            key: "id",
-        },
+        references: [
+            {type: Schema.Types.ObjectId, ref: 'User'}
+        ]
     },
 
 });
