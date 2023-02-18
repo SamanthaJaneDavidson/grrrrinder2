@@ -19,6 +19,7 @@ type Query {
 
 
 type Dogs {
+    dogID: String!
     dog_name: String
     dog_breed: String
     dog_gender: String
