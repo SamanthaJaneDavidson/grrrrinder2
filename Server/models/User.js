@@ -25,7 +25,8 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minlength: 8,
+    //don't need hased will have it's own length 
+    // minlength: 8,
   },
   dog: [
     {
