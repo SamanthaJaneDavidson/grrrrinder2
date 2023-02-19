@@ -1,5 +1,4 @@
 import React from "react";
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -17,6 +16,7 @@ import SearchDogs from './pages/Search-Dogs';
 import {
   Outlet
 } from "react-router-dom";
+import Chat from "./compoments/Chat";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -48,6 +48,7 @@ function App() {
       <>
         <Navigation />
         <Outlet />
+        <Chat />
       </>
     </ApolloProvider>
   );

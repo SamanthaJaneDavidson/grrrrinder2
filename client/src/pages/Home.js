@@ -2,7 +2,10 @@
 
 function SearchDogs() {
     return (
-        <p>hi</p>
+        <>
+            
+            <p>hi</p>
+        </>
     )
 }
 
