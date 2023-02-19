@@ -1,7 +1,8 @@
 const express = require("express");
 const path = require("path");
 const db = require("./config/connection");
-const routes = require("./routes");
+// const routes = require("./routes");
+  //commented line 4 out because we're not using the ROUTES folder.
 //Needed to implemented the Apollo Server and apply it to the Express server as middleware
 const { ApolloServer } = require("apollo-server-express");
 const { authMiddleware } = require("./utils/auth");
@@ -16,6 +17,7 @@ const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware }
 
   const app = express();
   const PORT = process.env.PORT || 3001;
+ 
 
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
@@ -27,7 +29,8 @@ const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware }
   app.use(express.static(path.join(__dirname, "../client/build")));
   // }
 
-  app.use(routes);
+  // app.use(routes);
+  //commented line 30 out because we're not using the ROUTES folder.
 
   db.once("open", async () => {
     app.listen(PORT, () =>
