@@ -4,10 +4,38 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet
+} from "react-router-dom";
+import SearchDogs from './pages/Search-Dogs';
+import Home from './pages/Home';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+    errorElement: <h1>Unknown page!</h1>,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/search',
+        element: <SearchDogs />
+      }
+    ]
+    
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

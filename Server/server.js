@@ -1,12 +1,14 @@
 const express = require("express");
 const path = require("path");
 const db = require("./config/connection");
-const routes = require("./routes");
+// const routes = require("./routes");
 //Needed to implemented the Apollo Server and apply it to the Express server as middleware
 const { ApolloServer } = require("apollo-server-express");
 const { authMiddleware } = require("./utils/auth");
 const { typeDefs } = require("./schema");
 const resolvers = require("./Schema/resolvers");
+const { Server } = require("socket.io");
+const { User } = require("./models");
 
 //Implemented the Apollo Server and apply it to the Express server as middleware
 const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware });
@@ -28,26 +30,27 @@ const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware }
   app.use(express.static(path.join(__dirname, "../client/build")));
   // }
 
-  app.use(routes);
-  
+  // app.use(routes);
 
   db.once("open", async () => {
-    app.listen(PORT, () =>
+    const httpServer = app.listen(PORT, () =>
       console.log(`🌍 Now listening on http://localhost:${PORT}`)
     );
-  });
 
-  // Socket.io
-  const http = require('http').Server(app);
-  const io = require('socket.io')(http);
-  io.on('connection', function(socket){
-    console.log('a user connected');
-    socket.on('disconnect', function(){
-      console.log('User Disconnected');
-    });
-    socket.on('example_message', function(msg){
-      console.log('message: ' + msg);
+    // Socket.io
+    const io = new Server(httpServer);
+
+    io.on('connection', function(socket){
+      console.log('a user connected');
+      socket.on('disconnect', function(){
+        console.log('User Disconnected');
+      });
+      socket.on('message', async (msg, token) => {
+        const user = await User.find({token});
+        if (user && user[0]) {
+          io.emit('message', user[0].username + "> " + msg);
+        }
+      });
     });
   });
-  io.listen(8000);
 })();
