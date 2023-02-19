@@ -14,6 +14,7 @@ import {
 export default function Profile() {
   return (
     <section style={{ backgroundColor: '#d4af7a' }}>
+        {/* <Header>This is my title</Header> */}
       <MDBContainer className="py-5">
         <MDBRow>
           <MDBCol>
