@@ -10,7 +10,8 @@ import { setContext } from "@apollo/client/link/context";
 // import Donation from './pages/Donation';
 // import Home from './components/Home';
 import Navigation from './compoments/Navigation';
-import SearchDogs from './pages/Search-Dogs';
+import Footer from './compoments/Footer';
+// import SearchDogs from './pages/Search-Dogs';
 // import UserProfile from './components/User-Profile';
 
 import {
@@ -49,6 +50,7 @@ function App() {
         <Navigation />
         <Outlet />
         <Chat />
+        <Footer />
       </>
     </ApolloProvider>
   );
