@@ -23,8 +23,6 @@ secret=NSWWw53uLpnT9WdynyjTXF56kS4zGYcXuqXceUbYzPRfLJRrNY8DNAvwGH77
 Initial when complete:  mt
 
 
-2. Added coding to the client side for mutations.js and queries.js. Tried to test them but recieved several errors when starting the server. 
+2. AL - Added coding to the client side for mutations.js and queries.js. Tried to test them but recieved several errors when starting the server. 
 
-    a. One error was that in the Schema (typeDef) the line in mutations for "SavedDogInput" had to be changed to "SaveDogInput". I changed it. Wanted to mention so that Michele knows. I'll send a screengrab of the actual error when I get my tutoring session recording back. 
 
-3. Commented out lines 4 & 32 in the server.js file because it was throwing an error when trying to run the server. We don't need it since we don't need the routes folder.
