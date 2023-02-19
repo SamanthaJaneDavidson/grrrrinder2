@@ -64,7 +64,7 @@ input SaveDogInput {
 type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(username: String!, password: String!): Auth
-  saveDog(input: SaveDogInput): User
+  saveDog(input: SavedDogInput): User
   removeDog (dog_id: String!): User
 }`;
 
