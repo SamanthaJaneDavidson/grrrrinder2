@@ -2,71 +2,68 @@ const { Schema, model } = require('mongoose');
 
 const dogSchema = new Schema({
     id: {
-        type: DataTypes.INTEGER,
+        type: Number,
         required: true,
-        primaryKey: true,
         autoIncrement: true,
     },
     dog_name: {
-        type: DataTypes.STRING,
+        type: String,
         required: true,
     },
     dog_breed: {
-        type: DataTypes.STRING,
+        type: String,
         required: true,
     },
     dog_gender: {
-        type: DataTypes.STRING,
+        type: String,
         required: true,
     },
     dog_size: {
-        type: DataTypes.STRING,
+        type: String,
         required: true,
     },
     dog_age: {
-        type: DataTypes.STRING,
+        type: String,
         required: true,
     },
     dog_vaccinations: {
-        type: DataTypes.BOOLEAN,
+        type: Boolean, 
         required: true,
     },
     dog_neuter_spayed: {
-        type: DataTypes.BOOLEAN,
+        type: Boolean, 
         required: true,
     },
     dog_temperment: {
-        type: DataTypes.STRING,
+        type: String,
         required: true,
     },
     dog_notes: {
-        type: DataTypes.STRING,
+        type: String,
         required: false,
     },
     dog_picture: {
-        type: DataTypes.STRING,
+        type: String,
         required: true,
     },
     preferred_days: {
-        type: DataTypes.STRING,
+        type: String,
         allowNull: false,
     },
     preferred_timeofday: {
-        type: DataTypes.STRING,
+        type: String,
         allowNull: false,
     },
     preferred_location: {
-        type: DataTypes.STRING,
+        type: String,
         allowNull: false,
     },
 
     // unsure if this is correct
     user_id: {
-        type: DataTypes.INTEGER,
-        ref: {
-            model: "User",
-            key: "id",
-        },
+        references: [
+            {type: Schema.Types.ObjectId, ref: 'User'}
+        ]
     },
 
 });
