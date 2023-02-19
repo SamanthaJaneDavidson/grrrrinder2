@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import backgoundImg from '../../../assets/img/home_bg.jpg';
 
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Navigation from '../components/Navigation';
 
 
 const home = () => {
