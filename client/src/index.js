@@ -11,6 +11,7 @@ import {
   Outlet
 } from "react-router-dom";
 import SearchDogs from './pages/Search-Dogs';
+import Home from './pages/Home';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <SearchDogs />
+        element: <Home />
       },
       {
         path: '/search',
