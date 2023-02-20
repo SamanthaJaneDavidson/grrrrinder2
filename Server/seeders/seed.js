@@ -11,9 +11,9 @@ db.once('open', async () => {
     await User.create(userSeeds);
 
     for (let i = 0; i < dogSeeds.length; i++) {
-      const { _id, user_id } = await Dog.create(dogSeeds[i]); //I'm doing something wrong here with how I'm referencing dog to owner and hooking it up here. 
+      const { _id, references } = await Dog.create(dogSeeds[i]); 
       const user = await User.findOneAndUpdate(
-        { username: user_id }, //Same issue as above. I don't thing user_id is right
+        { username: references }, 
         {
           $addToSet: {
             dog: _id,

@@ -67,5 +67,6 @@ type Mutation {
   saveDog(input: SaveDogInput): User
   removeDog (dog_id: String!): User
 }`;
+// Robert suggests not using the exclimation marks here 
 
 module.exports = typeDefs;
