@@ -102,6 +102,7 @@ console.log(data);
               />
   <h3>Avaibility</h3>
   Preferred Days
+      {/* Probably need to add checkbox or list or something here for days, times, locations. This needs to match single object in models and typedefs or an array  */}
               <input
                 defaultValue={preferredDays}
                 onChange={(event) => setPreferredDays(event.target.value)}
