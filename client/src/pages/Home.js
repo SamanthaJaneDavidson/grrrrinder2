@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import backgoundImg from '../../../assets/img/home_bg.jpg';
-
-import Header from '../components/Header';
+import backgoundImg from '../Images/bg-img.jpg';
+import { Container} from 'react-bootstrap';
+// import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 
 
 const home = () => {
     return (
-<Section id = 'home'>
+<Container id = 'home'>
     <div>
         <div className='home p-5' style={{backgroundImage:`url(${backgoundImg})`}}>
             <div className='intro container text-center text-light'>
@@ -23,7 +23,7 @@ const home = () => {
             </div>
         </div>
     </div>
-</Section>
+</Container>
     );
 };
 

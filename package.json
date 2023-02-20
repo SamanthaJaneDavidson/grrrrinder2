@@ -17,6 +17,7 @@
         "concurrently": "^5.1.0"
     },
     "dependencies": {
+        "react-redux": "^8.0.5",
         "socket.io": "^4.6.0"
     }
 }
