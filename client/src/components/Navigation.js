@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
+import Auth from '../utils/auth';
 
 
 function Navbar() {
@@ -7,6 +8,7 @@ function Navbar() {
     const highlightLink = {
         color: " #eb945b",
       };
+      const [showModal, setShowModal] = useState(false);
 
     return (
         <div>
@@ -23,11 +25,18 @@ function Navbar() {
                     style={({ isActive }) =>
                     isActive ? highlightLink : undefined}>Login</NavLink>
                 </li>
-                <li>
-                    <NavLink to = "/logout"
-                    style={({ isActive }) =>
-                    isActive ? highlightLink : undefined}>Logout</NavLink>
-                </li>
+                
+                {/* if user is logged in show profile and logout */}
+                {Auth.loggedIn() ? (
+                <>
+                  <Nav.Link as={Link} to='/profile'>
+                    Profile
+                  </Nav.Link>
+                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                </>
+              ) : (
+                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+              )}
 
                {/* need to work out functionality for login/logout */}
 

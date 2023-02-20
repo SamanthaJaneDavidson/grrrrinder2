@@ -1,15 +1,15 @@
-// import React from 'react';
-// import Navbar from './compoments/Navigation'
-// import Footer from './compoments/Footer'
-// import Login from './compoments/Login'
-// import Signup from './compoments/Signup'
-// import UserProfile from './pages/User-Profile'
-// import Matches from './pages/Search-Dogs'
-// import Donation from './pages/Donation'
-// import Chat from './compoments/Chat'
-// import AddDog from './compoments/Add-dog'
-// import Home from './pages/Home'
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import Navbar from './components/Navigation'
+import Footer from './components/Footer'
+import Login from './components/Login'
+import Signup from './components/Signup'
+import UserProfile from './pages/User-Profile'
+import Matches from './pages/Search-Dogs'
+import Donation from './pages/Donation'
+import Chat from './components/Chat'
+import AddDog from './components/Add-dog'
+import Home from './pages/Home'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 
@@ -34,7 +34,7 @@
 //   )};
 
 
-import React from "react";
+// import React from "react";
 import {
   ApolloClient,
   InMemoryCache,
@@ -45,15 +45,14 @@ import { setContext } from "@apollo/client/link/context";
 // import Cloudinary from './pages/Cloudinary';
 // import Donation from './pages/Donation';
 // import Home from './components/Home';
-import Navigation from './compoments/Navigation';
-import Footer from './compoments/Footer';
-// import SearchDogs from './pages/Search-Dogs';
+import Navigation from './components/Navigation';
+import SearchDogs from './pages/Search-Dogs';
 // import UserProfile from './components/User-Profile';
 
 import {
   Outlet
 } from "react-router-dom";
-import Chat from "./compoments/Chat";
+// import Chat from "./compoments/Chat";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
