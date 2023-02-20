@@ -27,11 +27,11 @@ const dogSchema = new Schema({
         required: true,
     },
     dog_vaccinations: {
-        type: Boolean, 
+        type: Boolean,
         required: true,
     },
     dog_neuter_spayed: {
-        type: Boolean, 
+        type: Boolean,
         required: true,
     },
     dog_temperment: {
@@ -46,6 +46,8 @@ const dogSchema = new Schema({
         type: String,
         required: true,
     },
+
+    //Might need to convert these to arrays to match the typedef 
     preferred_days: {
         type: String,
         allowNull: false,
@@ -59,12 +61,8 @@ const dogSchema = new Schema({
         allowNull: false,
     },
 
-    // unsure if this is correct
-    user_id: {
-        references: [
-            {type: Schema.Types.ObjectId, ref: 'User'}
-        ]
-    },
+    references: 
+        { type: Schema.Types.ObjectId, ref: 'User' }
 
 });
 

@@ -2,7 +2,7 @@
 import { gql } from '@apollo/client';
 
 
-//not sure about this - ask tutor
+//not sure about this - ask tutor - don't need a query for users, but will need a query for dogs. Similar to saveddogs object starting at line 35
 // export const QUERY_USER = gql`query user($username: String!){
 //     _id
 //     username

@@ -24,7 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 
-//not sure about this- ask tutor
+//not sure about this- ask tutor - looks fine per Robert
 export const SAVE_DOG = gql`
   mutation saveDog($input: SavedDogInput) {
     saveDog(input: $input) {
@@ -51,7 +51,7 @@ export const SAVE_DOG = gql`
   }
 `;
 
-    //not sure about this- ask tutor
+    //not sure about this- ask tutor - per Robert probably needs to be an ID data type instead of a string. ID data type in typedef as well that is teh value parameter of the dog ID. Line 57 needs to be $dog_id instead of dogText
     export const REMOVE_DOG = gql`
    mutation removeDog($dog_id: String!) {
      removeDog(dog_id: $dogText) {
