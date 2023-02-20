@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AuthService from '../utils/auth'
+import Auth from '../utils/auth'
 import { LOGIN_USER } from '../utils/mutations';
 const { useMutation } = require('@apollo/client');
 import { Form, Button, Alert, Col, Row } from 'react-bootstrap';
@@ -10,7 +10,7 @@ import { Form, Button, Alert, Col, Row } from 'react-bootstrap';
 function Login() {
 
     const [loginData, setLoginData] = useState({ username: '', password: '' });
-    //   do i need below if i have above ^ commented out corresponding code bellow just in case
+    //   do i need below if i have above ^ commented out corresponding code bellow 
     //   const [username, setUsername] = useState('');
     //   const [password, setPassword] = useState('');
 
@@ -25,7 +25,7 @@ function Login() {
             password: loginData.password
         },
         onCompleted: (data) => {
-            AuthService.login(data.login.token);
+            Auth.login(data.login.token);
         }
     });
 
@@ -152,7 +152,7 @@ function Login() {
         )
     }
             <p>Don't have an account?</p>
-            <button id="singup-button" type="button" className="btn btn-outline-success">Signup</button>
+            <button id="signup-button" type="button" className="btn btn-outline-success">Signup</button>
     {/* add code to take you to signup page */ }
 
      </div >

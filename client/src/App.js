@@ -29,7 +29,7 @@ function App() {
                 <Route path = "/add-dog" element = {<AddDog/>}/>
               </Routes>
               <Footer/>
-            </BrowserRouter>
+        </BrowserRouter>
     </div>
   );
 }

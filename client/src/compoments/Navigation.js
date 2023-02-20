@@ -29,7 +29,7 @@ function Navbar() {
                     isActive ? highlightLink : undefined}>Logout</NavLink>
                 </li>
 
-    {/* need to work out functionality for login/logout */}
+               {/* need to work out functionality for login/logout */}
 
                 <li>
                     <NavLink to = "/profile"
