@@ -86,7 +86,7 @@ console.log(data);
                 type="text"
               />
               <h3>Health Status</h3>             
-             Vaccination Status
+             Vaccination Status 
               <input
                 defaultValue={dogVaccinations}
                 onChange={(event) => setDogVaccinations(event.target.value)}
