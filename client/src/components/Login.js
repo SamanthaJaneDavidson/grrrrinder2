@@ -4,51 +4,26 @@ import { LOGIN_USER } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 //need to remove Alert
 import { Form, Button, Alert, Col, Row } from 'react-bootstrap';
-
+import {Link} from 'react-router-dom';
 // import styling 
 
 
 function Login() {
 
     const [loginData, setLoginData] = useState({ username: '', password: '' });
-    //   do i need below if i have above ^ commented out corresponding code bellow 
-    //   const [username, setUsername] = useState('');
-    //   const [password, setPassword] = useState('');
 
     const [errorMessage, setErrorMessage] = useState(false);
     const [validated] = useState(false);
 
 
 
-    const [login] = useMutation(LOGIN_USER, {
-        variables: {
-            username: loginData.email,
-            password: loginData.password
-        },
-        onCompleted: (data) => {
-            Auth.login(data.login.token);
-        }
-    });
+    const [login] = useMutation(LOGIN_USER);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setLoginData({ ...loginData, [name]: value });
     };
-    //   switch (name) {
-    //       case 'username':
-    //           setUsername(value);
-    //           break;
-    //       case 'password':
-    //           setPassword(value);
-    //           break;
-
-    //   } };
-
-
-    //   const checkUsernamePassword = (username) => {
-    //     const validate = {AuthService}
-    //     return validate.test(username);
-    // }
+ 
 
     const handleFormSubmit = async (e) => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
@@ -59,7 +34,12 @@ function Login() {
             e.stopPropagation();
         }
         try {
-            await login();
+            const {data} = await login({  
+                variables: {
+                username: loginData.username,
+                password: loginData.password
+            },});
+            Auth.login(data.login.token);
         }
         catch (ex) {
             console.log(ex);
@@ -69,18 +49,7 @@ function Login() {
             username: '',
             password: '',
         });
-
-        //sending an error message if one or both of the fields are empty
-        // if (!username || !password ) {
-        //     setErrorMessage("All fields are required.")
-        //     return;
-        // }
-        // sends an error if the username and password don't match
-        // if (!checkUsernamePassword(username)) {
-        //     setErrorMessage("Invalid username or password.")
-        //     return;
-        // }
-
+        window.location.replace("/profile")
     };
 
     return (
@@ -122,39 +91,13 @@ function Login() {
                 </Button>
             </Form>
 
-            {/* using bootstraps form */ }
-    {/* <form class="mb-3">
-        <label for="inputUsername" className="form-label">Username</label>
-        <input
-            value={loginData.username}
-            onChange={handleInputChange}
-            className="form-control"
-            type="text"
-            placeholder="Username"
-            required
-        />
-
-        <label for="inputPassword" className="form-label">Password</label>
-        <input
-            value={loginData.password}
-            onChange={handleInputChange}
-            className="form-control"
-            type="text"
-            placeholder="Password"
-            required
-        />
-        <button id="login-button" type="button" className="btn btn-outline-secondary" onClick={handleFormSubmit}>
-            Login</button>
-    </form> */}
-
     {
         errorMessage && (
             <p>{errorMessage}</p>
         )
     }
             <p>Don't have an account?</p>
-            <button id="signup-button" type="button" className="btn btn-outline-success">Signup</button>
-    {/* add code to take you to signup page */ }
+            <Link to = "/signup"> <button id="signup-button" type="button" className="btn btn-outline-success">Signup</button></Link>
 
      </div >
 

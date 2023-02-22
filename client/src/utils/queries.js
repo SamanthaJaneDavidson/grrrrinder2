@@ -48,8 +48,7 @@ query dog{
 }`;
 
 export const QUERY_ME = gql`
-query me{
-    me{
+    query me{
         _id
         username
         email
@@ -73,5 +72,4 @@ query me{
              preferred_timeofday
              preferred_location
         }
-    }
-}`
+    }}`

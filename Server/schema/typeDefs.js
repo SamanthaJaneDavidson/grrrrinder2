@@ -60,13 +60,12 @@ input SaveDogInput {
     preferred_location: [String]
 }
 
-
+# suggestion - don't use exclamations here 
 type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(username: String!, password: String!): Auth
   saveDog(input: SaveDogInput): User
   removeDog (dog_id: String!): User
 }`;
-// Robert suggests not using the exclimation marks here 
 
 module.exports = typeDefs;
