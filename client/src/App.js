@@ -1,15 +1,15 @@
 import React from 'react';
-import Navbar from './components/Navigation'
+// import Navbar from './components/Navigation'
 import Footer from './components/Footer'
-import Login from './components/Login'
-import Signup from './components/Signup'
-import UserProfile from './pages/User-Profile'
-import Matches from './pages/Search-Dogs'
-import Donation from './pages/Donation'
+// import Login from './components/Login'
+// import Signup from './components/Signup'
+// import UserProfile from './pages/User-Profile'
+// import SearchDogs from './pages/Search-Dogs'
+// import Donation from './pages/Donation'
 import Chat from './components/Chat'
-import AddDog from './components/Add-dog'
-import Home from './pages/Home'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import AddDog from './components/Add-dog'
+// import Home from './pages/Home'
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 
