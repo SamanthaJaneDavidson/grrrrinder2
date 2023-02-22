@@ -52,9 +52,10 @@ export const SAVE_DOG = gql`
 `;
 
     //not sure about this- ask tutor - per Robert probably needs to be an ID data type instead of a string. ID data type in typedef as well that is teh value parameter of the dog ID. Line 57 needs to be $dog_id instead of dogText
+        //AL-Updated.
     export const REMOVE_DOG = gql`
-   mutation removeDog($dog_id: String!) {
-     removeDog(dog_id: $dogText) {
+   mutation removeDog($dog_id: ID!) {
+     removeDog(dog_id: $dog_id) {
         _id
         dog_name
         dog_breed
