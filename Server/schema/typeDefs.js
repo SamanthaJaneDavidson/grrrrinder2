@@ -60,7 +60,7 @@ input SaveDogInput {
     preferred_location: [String]
 }
 
-
+# suggestion - don't use exclamations here 
 type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(username: String!, password: String!): Auth

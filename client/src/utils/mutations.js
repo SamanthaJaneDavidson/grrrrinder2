@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const LOGIN_USER = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
+  mutation login($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
       token
       user {
         _id
@@ -24,7 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 
-//not sure about this- ask tutor
+//not sure about this- ask tutor - looks fine per Robert
 export const SAVE_DOG = gql`
   mutation saveDog($input: SavedDogInput) {
     saveDog(input: $input) {
@@ -42,19 +42,20 @@ export const SAVE_DOG = gql`
       preferred_days
       preferred_timeofday
       preferred_location
-    //   createdAt
-    //  comments {
-    //     _id
-    //     commentText
-    //  }
+       createdAt
+      comments {
+         _id
+         commentText
+     }
     }
   }
 `;
 
-    //not sure about this- ask tutor
+    //not sure about this- ask tutor - per Robert probably needs to be an ID data type instead of a string. ID data type in typedef as well that is teh value parameter of the dog ID. Line 57 needs to be $dog_id instead of dogText
+        //AL-Updated.
     export const REMOVE_DOG = gql`
-   mutation removeDog($dog_id: String!) {
-     removeDog(dog_id: $dogText) {
+   mutation removeDog($dog_id: ID!) {
+     removeDog(dog_id: $dog_id) {
         _id
         dog_name
         dog_breed
@@ -71,5 +72,4 @@ export const SAVE_DOG = gql`
         preferred_location
        }
      }
-   }
  `;
