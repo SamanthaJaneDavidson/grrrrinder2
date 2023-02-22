@@ -1,7 +1,4 @@
-//will need this instead if using useState
-//import React, { useState } from 'react';
-
-import React from 'react';
+import React, {useState} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Nav, Container, Modal, Tab } from 'react-bootstrap';
 import Auth from '../utils/auth';
@@ -14,7 +11,7 @@ function Navbar() {
     const highlightLink = {
         color: " #eb945b",
     };
-    const [showModal, setShowModal] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
 
     return (
         <div>
@@ -26,36 +23,42 @@ function Navbar() {
                             style={({ isActive }) =>
                                 isActive ? highlightLink : undefined}>Home</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/login"
-                            style={({ isActive }) =>
-                                isActive ? highlightLink : undefined}>Login</NavLink>
-                    </li>
 
-                    {/* if user is logged in show profile and logout */}
+                    {/* if user is logged in show profile, matches, and logout */}
                     {Auth.loggedIn() ? (
                         <>
-                            <NavLink as={Link} to='/profile'>
+                            <NavLink as={Link} to='/profile'
+                                style={({ isActive }) =>
+                                isActive ? highlightLink : undefined}>
                                 Profile
+                            </NavLink>
+    
+                            <NavLink to="/matches"
+                                style={({ isActive }) =>
+                                isActive ? highlightLink : undefined}>
+                                Matches
                             </NavLink>
                             <NavLink onClick={Auth.logout}>Logout</NavLink>
                         </>
                     ) : (
-                        <NavLink onClick={() => setShowModal(true)}>Login/Sign Up</NavLink>
+                        // if not logged in, show login and signup page
+                        <>
+                            <li>
+                                <NavLink to="/login"
+                                style={({ isActive }) =>
+                                isActive ? highlightLink : undefined}>Login</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/signup"
+                                style={({ isActive }) =>
+                                isActive ? highlightLink : undefined}>Signup</NavLink>
+                            </li>
+        
+                            </>
                     )}
 
-                    {/* need to work out functionality for login/logout */}
-
-                    <li>
-                        <NavLink to="/profile"
-                            style={({ isActive }) =>
-                                isActive ? highlightLink : undefined}>Profile</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/matches"
-                            style={({ isActive }) =>
-                                isActive ? highlightLink : undefined}>Matches</NavLink>
-                    </li>
+                    {/* would I need to throw contact and donate in there as well? i want them on both nav bars wether logged in or not*/}
+            
                     <li>
                         <NavLink to="/contact"
                             style={({ isActive }) =>
@@ -71,37 +74,6 @@ function Navbar() {
 
                 </ul>
 
-                <Modal
-                    size='lg'
-                    show={showModal}
-                    onHide={() => setShowModal(false)}
-                    aria-labelledby='signup-modal'>
-                    {/* tab container to do either signup or login component */}
-                    <Tab.Container defaultActiveKey='login'>
-                        <Modal.Header closeButton>
-                            <Modal.Title id='signup-modal'>
-                                <Nav variant='pills'>
-                                    <Nav.Item>
-                                        <Nav.Link eventKey='login'>Login</Nav.Link>
-                                    </Nav.Item>
-                                    <Nav.Item>
-                                        <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
-                                    </Nav.Item>
-                                </Nav>
-                            </Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <Tab.Content>
-                                <Tab.Pane eventKey='login'>
-                                    <Login handleModalClose={() => setShowModal(false)} />
-                                </Tab.Pane>
-                                <Tab.Pane eventKey='signup'>
-                                    <Signup handleModalClose={() => setShowModal(false)} />
-                                </Tab.Pane>
-                            </Tab.Content>
-                        </Modal.Body>
-                    </Tab.Container>
-                </Modal>
             </nav>
 
         </div>

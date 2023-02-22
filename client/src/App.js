@@ -81,13 +81,20 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <>
-        <Navigation />
-        <Outlet />
-        {/* need to add home page here as well - discuss the other pages too,  */}
-        <Chat />
-        <Footer />
-      </>
+       <BrowserRouter> 
+               <Navbar/>
+               <Routes>
+                 <Route path = "/" element = {<Home/>}/>
+                 <Route path = "/login" element = {<Login/>}/>
+                 <Route path = "/signup" element = {<Signup/>}/> 
+                 <Route path = "/profile" element = {<UserProfile/>}></Route>
+                 <Route path = "/matches" element = {<Matches/>}/>
+                 <Route path = "/donation" element = {<Donation/>}/>
+                 <Route path = "/chat" element = {<Chat/>}/>
+                 <Route path = "/add-dog" element = {<AddDog/>}/>
+               </Routes>
+               <Footer/>
+         </BrowserRouter>
     </ApolloProvider>
   );
 }
