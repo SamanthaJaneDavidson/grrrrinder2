@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 // import Login from './components/Login'
 // import Signup from './components/Signup'
 // import UserProfile from './pages/User-Profile'
-// import Matches from './pages/Search-Dogs'
+// import SearchDogs from './pages/Search-Dogs'
 // import Donation from './pages/Donation'
 import Chat from './components/Chat'
 // import AddDog from './components/Add-dog'
@@ -84,6 +84,7 @@ function App() {
       <>
         <Navigation />
         <Outlet />
+        {/* need to add home page here as well - discuss the other pages too,  */}
         <Chat />
         <Footer />
       </>

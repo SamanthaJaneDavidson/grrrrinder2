@@ -1,6 +1,6 @@
 import {useEffect, useRef} from 'react';
 
-
+//should this be in the component folder to be added to the 
 const UploadWidget = () => {
     const cloudinaryRef = useRef();
     const widgetRef = useRef();

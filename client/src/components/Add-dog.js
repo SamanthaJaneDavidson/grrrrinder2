@@ -1,6 +1,6 @@
 //Test
 import React, { useState } from 'react';
-// import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 import {useMutation} from '@apollo/client';
 import {SAVE_DOG} from '../utils/mutations';
 
