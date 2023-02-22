@@ -25,6 +25,28 @@ import { gql } from '@apollo/client';
 //     }
 // }`;
 
+
+//Added based on Robert's notes from above.
+export const QUERY_DOG = gql`
+query dog{
+    dog{
+     _id
+     dog_name
+     dog_breed
+     dog_gender
+     dog_size 
+     dog_age
+     dog_vaccinations
+     dog_neuter_spayed
+     dog_temperment
+     dog_notes
+     dog_picture
+     preferred_days
+     preferred_timeofday
+     preferred_location
+    }
+}`;
+
 export const QUERY_ME = gql`
 query me{
     me{
