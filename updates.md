@@ -26,6 +26,6 @@ may want to rethink using react 18
 once I push - after I fix...everyone  will need run npm i in the client folder... will let you know
 
 
-2. AL - Added coding to the client side for mutations.js and queries.js. Tried to test them but recieved several errors when starting the server. 
+2. AL - Updated the mutations.js and queries.js files per notes from Robert (tutor). Have also started working on the api.js in client folder- have some questions so for now the code is commented out. Will ask questions in office hours. 
 
 
