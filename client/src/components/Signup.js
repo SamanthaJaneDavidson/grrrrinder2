@@ -4,7 +4,8 @@ import Auth from '../utils/auth';
 
 // import { createUser } from '../utils/API';
 //do we need something like this ^
-
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 
 const Signup = () => {
   // set initial form state
@@ -13,7 +14,7 @@ const Signup = () => {
   const [validated] = useState(false);
   // set state for alert
   const [errorMessage, setErrorMessage] = useState(false);
-
+  const [addUser] = useMutation(ADD_USER);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setSignupData({ ...signupData, [name]: value });
@@ -30,15 +31,8 @@ const Signup = () => {
     }
 
     try {
-      const response = await createUser(signupData);
-
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
-
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
+      const {data} = await addUser({variables:{...signupData}})
+      Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
       setErrorMessage(true);

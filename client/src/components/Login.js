@@ -10,44 +10,19 @@ import { Form, Button, Alert, Col, Row } from 'react-bootstrap';
 function Login() {
 
     const [loginData, setLoginData] = useState({ username: '', password: '' });
-    //   do i need below if i have above ^ commented out corresponding code bellow 
-    //   const [username, setUsername] = useState('');
-    //   const [password, setPassword] = useState('');
 
     const [errorMessage, setErrorMessage] = useState(false);
     const [validated] = useState(false);
 
 
 
-    const [login] = useMutation(LOGIN_USER, {
-        variables: {
-            username: loginData.email,
-            password: loginData.password
-        },
-        onCompleted: (data) => {
-            Auth.login(data.login.token);
-        }
-    });
+    const [login] = useMutation(LOGIN_USER);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setLoginData({ ...loginData, [name]: value });
     };
-    //   switch (name) {
-    //       case 'username':
-    //           setUsername(value);
-    //           break;
-    //       case 'password':
-    //           setPassword(value);
-    //           break;
-
-    //   } };
-
-
-    //   const checkUsernamePassword = (username) => {
-    //     const validate = {AuthService}
-    //     return validate.test(username);
-    // }
+ 
 
     const handleFormSubmit = async (e) => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
@@ -58,7 +33,12 @@ function Login() {
             e.stopPropagation();
         }
         try {
-            await login();
+            const {data} = await login({  
+                variables: {
+                username: loginData.username,
+                password: loginData.password
+            },});
+            Auth.login(data.login.token);
         }
         catch (ex) {
             console.log(ex);
@@ -68,17 +48,6 @@ function Login() {
             username: '',
             password: '',
         });
-
-        //sending an error message if one or both of the fields are empty
-        // if (!username || !password ) {
-        //     setErrorMessage("All fields are required.")
-        //     return;
-        // }
-        // sends an error if the username and password don't match
-        // if (!checkUsernamePassword(username)) {
-        //     setErrorMessage("Invalid username or password.")
-        //     return;
-        // }
 
     };
 
