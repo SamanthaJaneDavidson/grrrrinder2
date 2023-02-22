@@ -43,6 +43,9 @@ const Signup = () => {
       email: '',
       password: '',
     });
+  
+//on submit of this form it will take you to the profile page
+    window.location.replace("/profile")
   };
 
   return (
@@ -104,7 +107,5 @@ const Signup = () => {
     </div>
   );
 };
-
-//on submit of this form it should take you to the add-dog page
 
 export default Signup;

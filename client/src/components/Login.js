@@ -3,7 +3,7 @@ import Auth from '../utils/auth'
 import { LOGIN_USER } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { Form, Button, Alert, Col, Row } from 'react-bootstrap';
-
+import {Link} from 'react-router-dom';
 // import styling 
 
 
@@ -48,7 +48,7 @@ function Login() {
             username: '',
             password: '',
         });
-
+        window.location.replace("/profile")
     };
 
     return (
@@ -90,39 +90,13 @@ function Login() {
                 </Button>
             </Form>
 
-            {/* using bootstraps form */ }
-    {/* <form class="mb-3">
-        <label for="inputUsername" className="form-label">Username</label>
-        <input
-            value={loginData.username}
-            onChange={handleInputChange}
-            className="form-control"
-            type="text"
-            placeholder="Username"
-            required
-        />
-
-        <label for="inputPassword" className="form-label">Password</label>
-        <input
-            value={loginData.password}
-            onChange={handleInputChange}
-            className="form-control"
-            type="text"
-            placeholder="Password"
-            required
-        />
-        <button id="login-button" type="button" className="btn btn-outline-secondary" onClick={handleFormSubmit}>
-            Login</button>
-    </form> */}
-
     {
         errorMessage && (
             <p>{errorMessage}</p>
         )
     }
             <p>Don't have an account?</p>
-            <button id="signup-button" type="button" className="btn btn-outline-success">Signup</button>
-    {/* add code to take you to signup page */ }
+            <Link to = "/signup"> <button id="signup-button" type="button" className="btn btn-outline-success">Signup</button></Link>
 
      </div >
 

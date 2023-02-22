@@ -26,7 +26,7 @@ import { gql } from '@apollo/client';
 // }`;
 
 export const QUERY_ME = gql`
-    me{
+    query me{
         _id
         username
         email
