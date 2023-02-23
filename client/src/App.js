@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import UserProfile from './pages/User-Profile'
-// import SearchDogs from './pages/Search-Dogs'
+import SearchDogs from './pages/Search-Dogs'
 import Donation from './pages/Donation'
 import Chat from './components/Chat'
 import AddDog from './components/Add-dog'
@@ -46,7 +46,6 @@ import { setContext } from "@apollo/client/link/context";
 // import Donation from './pages/Donation';
 // import Home from './components/Home';
 import Navigation from './components/Navigation';
-import SearchDogs from './pages/Search-Dogs';
 // import UserProfile from './components/User-Profile';
 
 import {
@@ -88,7 +87,7 @@ function App() {
                  <Route path = "/login" element = {<Login/>}/>
                  <Route path = "/signup" element = {<Signup/>}/> 
                  <Route path = "/profile" element = {<UserProfile/>}></Route>
-                 {/* <Route path = "/matches" element = {<Matches/>}/> */}
+                 <Route path = "/search-dogs" element = {<SearchDogs/>}/>
                  <Route path = "/donation" element = {<Donation/>}/>
                  <Route path = "/chat" element = {<Chat/>}/>
                  <Route path = "/add-dog" element = {<AddDog/>}/>
