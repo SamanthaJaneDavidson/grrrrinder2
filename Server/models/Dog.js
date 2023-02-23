@@ -1,6 +1,8 @@
 const { Schema, model } = require('mongoose');
 
 const dogSchema = new Schema({
+
+    //Per session with tutor- We may not need the id, because Mongoose provides an id already. When running the seed data the forloop (for the username reference) is throwing an error. 
     id: {
         type: Number,
         required: true,
