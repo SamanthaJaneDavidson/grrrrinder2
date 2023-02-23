@@ -1,5 +1,7 @@
 import React from 'react';
+//use context...use 1 provider for username can also do for token - 
 // import Navbar from './components/Navigation'
+
 import Footer from './components/Footer'
 // import Login from './components/Login'
 // import Signup from './components/Signup'
