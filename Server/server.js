@@ -35,7 +35,9 @@ const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware }
 
   db.once("open", async () => {
     const httpServer = app.listen(PORT, () =>
-      console.log(`🌍 Now listening on http://localhost:${PORT}`)
+      console.log(`🌍 Now listening on http://localhost:${PORT}`),
+      // Added to connect to GraphQL's Apollo Sandbox
+      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`)
     );
 
     // Socket.io
