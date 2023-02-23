@@ -1,7 +1,7 @@
 const db = require('../config/connection');
 const { User, Dog } = require('../models');
 const userSeeds = require('./userSeeds.json');
-const dogSeeds = require('./dogSeeds.json');
+const dogSeeds = require('./dogSeed.json');
 
 db.once('open', async () => {
   try {
@@ -11,9 +11,9 @@ db.once('open', async () => {
     await User.create(userSeeds);
 
     for (let i = 0; i < dogSeeds.length; i++) {
-      const { _id, references } = await Dog.create(dogSeeds[i]); 
+      const { _id, dog_owner } = await Dog.create(dogSeeds[i]); 
       const user = await User.findOneAndUpdate(
-        { username: references }, 
+        { username: dog_owner }, 
         {
           $addToSet: {
             dog: _id,
