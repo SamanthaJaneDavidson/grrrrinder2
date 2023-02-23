@@ -42,11 +42,6 @@ export const SAVE_DOG = gql`
       preferred_days
       preferred_timeofday
       preferred_location
-       createdAt
-      comments {
-         _id
-         commentText
-     }
     }
   }
 `;
