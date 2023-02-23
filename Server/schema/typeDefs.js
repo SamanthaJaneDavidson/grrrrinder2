@@ -12,11 +12,6 @@ type User {
   saved_dogs: [Dog]!
 }
 
- 
-type Query {
-  me: User
-}
-
 
 type Dog {
     _id: ID
@@ -59,6 +54,14 @@ input SaveDogInput {
     preferred_timeofday: [String]
     preferred_location: [String]
 }
+
+# Moved the Queries at the bottom for oganizational purposes
+
+type Query {
+  me: User
+  dog: Dog
+}
+
 
 # suggestion - don't use exclamations here 
 type Mutation {

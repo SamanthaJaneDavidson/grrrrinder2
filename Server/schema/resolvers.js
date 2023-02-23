@@ -140,6 +140,13 @@ const resolvers = {
       
       return users[0];
     },
+    //Added this to find all dogs
+    dog: async (parent, args, context) => {
+      
+      const dogs = await Dog.find();
+      
+      return dogs;
+    },
   },
 
   Mutation: {
