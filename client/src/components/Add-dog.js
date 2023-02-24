@@ -30,6 +30,21 @@ async function handleFormSubmit(event){
     event.preventDefault()
     const {data} = await saveDog({
         variables:{
+          input:{
+            dog_name: dogName,
+            dog_breed: String
+            dog_gender: String
+            dog_size: String
+            dog_age: String
+            dog_vaccinations: String
+            dog_neuter_spayed: String
+            dog_temperment: String
+            dog_notes: String
+            dog_picture: String
+            preferred_days: [String]
+            preferred_timeofday: [String]
+            preferred_location: [String]
+          }
             // fill up with dog data
         }
     })
@@ -39,14 +54,106 @@ console.log(data);
 
 
     return (
-        <>
-        <h1>Create Your Dog's Profile !</h1>
-        <Form.Select onSubmit={handleFormSubmit}>
+    
+        <Form onSubmit={handleFormSubmit}>
+        <h1> Create Your Dog's Profile !</h1>
 
-        <section className="dog-card">
-          <div>
+          <div className="dog-card">
+
             <div className="dog-cardbody">
+
               <h3> Please fill out this form</h3>
+
+              <Form.Group className="mb-3" controlId="formBasicText">
+        <Form.Label>Dog Name</Form.Label>
+        <Form.Control type="text" placeholder="Enter your dog name" />
+      </Form.Group>
+
+      {/* <Form.Group className="mb-3" controlId="formBasicText" className ="font-weight-bold text-small col-lg-6">
+        <Form.Label>Dog Breed</Form.Label>
+        <Form.Control type="text" placeholder="Enter your dog breed" />
+      </Form.Group>
+
+      <Form.Select aria-label="Dog gender" className="font-weight-bold text-small col-lg-6">
+      <Form.Label>Dog Gender</Form.Label>
+      <option>Select Gender</option>
+      <option value="1">Male</option>
+      <option value="2">Female</option>
+    </Form.Select>
+
+    <Form.Select aria-label="Dog size" className="font-weight-bold text-small col-lg-6">
+    <Form.Label>Dog Size</Form.Label>
+    <option>Select Dog's Age</option>
+      <option value="1">Puppy</option>
+      <option value="2">Youth</option>
+      <option value="3">Adult</option>
+      <option value="4">Senior</option>
+    </Form.Select>
+
+
+    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
+    <Form.Label>Is your dog vaccinated?</Form.Label>
+      <option>Vaccination Status</option>
+      <option value="1">Yes</option>
+      <option value="2">No</option>
+    </Form.Select>
+
+    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
+    <Form.Label>Is your dog neutered/spayed?</Form.Label>
+      <option>Surgical Sterilization</option>
+      <option value="1">Yes</option>
+      <option value="2">No</option>
+    </Form.Select>
+
+    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
+    <Form.Label>What is your dog's temperment?</Form.Label>
+      <option>Temperment</option>
+      <option value="1">Shy</option>
+      <option value="2">Calm</option>
+      <option value="3">Energetic</option>
+      <option value="4">Leader</option>
+    </Form.Select>
+
+
+    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
+    <Form.Label>What is your preferred day to meet?</Form.Label>
+      <option>Select Days</option>
+      <option value="1">Monday</option>
+      <option value="2">Tuesday</option>
+      <option value="3">Wednesday</option>
+      <option value="4">Thursday</option>
+      <option value="5">Friday</option>
+      <option value="6">Saturday</option>
+      <option value="7">Sunday</option>
+      <option value="8">No preference</option>
+    </Form.Select>
+
+    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
+    <Form.Label>What is your preferred time of day to meet?</Form.Label>
+      <option>Select Preferred Times</option>
+      <option value="1">Morning</option>
+      <option value="2">Afternoon</option>
+      <option value="3">Evening</option>
+      <option value="4">No preference</option>
+    </Form.Select>
+
+
+    <Form.Group className="mb-3" controlId="formBasicText">
+        <Form.Label>Zip Code</Form.Label>
+        <Form.Control type="text" placeholder="Enter your zip code" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Share some notes about your dog!</Form.Label>
+        <Form.Control as="textarea" rows={3} />
+      </Form.Group>
+
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+
+
+
               Dog Name
               <input
                 defaultValue={dogName}
@@ -106,7 +213,7 @@ console.log(data);
               />
   <h3>Avaibility</h3>
   Preferred Days
-      {/* Probably need to add checkbox or list or something here for days, times, locations. This needs to match single object in models and typedefs or an array  */}
+     
               <input
                 defaultValue={preferredDays}
                 onChange={(event) => setPreferredDays(event.target.value)}
@@ -129,16 +236,20 @@ console.log(data);
               />
               <button type="submit">
                 Add Dog
-              </button>
+              </button> */}
             </div>
           </div>
-        </section>
-        </Form.Select>
-      </>
+       
+        </Form>
+    
     )
 }
 
 export default AddDog;
+
+
+
+
 
 // onClick={() =>
 // display({
