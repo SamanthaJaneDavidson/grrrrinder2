@@ -19,6 +19,7 @@ const {loading, data} = useQuery(QUERY_ME);
 const userData = data?.me||{}
 
   return (
+
   <div className='flex-row justify-center mb-3'>
     <h2 className='col-12 col-md-10'>{userData.dog_name} Profile</h2> 
     <div className='card'>
@@ -42,10 +43,7 @@ const userData = data?.me||{}
      </div>
      </AddDog>
     
-
+</div>
   </div>
-  </div>
-  );
-}
 
-
+  )};
