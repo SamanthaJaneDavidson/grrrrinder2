@@ -28,7 +28,6 @@ export const ADD_USER = gql`
 export const SAVE_DOG = gql`
   mutation saveDog($input: SavedDogInput) {
     saveDog(input: $input) {
-      _id
       dog_name
       dog_breed
       dog_gender
@@ -39,6 +38,7 @@ export const SAVE_DOG = gql`
       dog_temperment
       dog_notes
       dog_picture
+      dog_owner
       preferred_days
       preferred_timeofday
       preferred_location
@@ -56,7 +56,6 @@ export const SAVE_DOG = gql`
     export const REMOVE_DOG = gql`
    mutation removeDog($dog_id: ID!) {
      removeDog(dog_id: $dog_id) {
-        _id
         dog_name
         dog_breed
         dog_gender
@@ -67,6 +66,7 @@ export const SAVE_DOG = gql`
         dog_temperment
         dog_notes
         dog_picture
+        dog_owner
         preferred_days
         preferred_timeofday
         preferred_location
