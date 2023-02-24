@@ -16,4 +16,6 @@ const UploadWidget = () => {
     return (
         <button onClick={() => widgetRef.current.open()}>Upload Photo</button>
     )
-}
+};
+
+export default UploadWidget;
