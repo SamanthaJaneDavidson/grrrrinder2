@@ -33,13 +33,14 @@ type Dog {
 
 
 
+
 type Auth {
   token: String
   user: User
 }
 
 input SaveDogInput {
-    dog_id: ID
+   
     dog_name: String
     dog_breed: String
     dog_gender: String
@@ -50,7 +51,6 @@ input SaveDogInput {
     dog_temperment: String
     dog_notes: String
     dog_picture: String
-    dog_owner: ID,
     preferred_days: [String]
     preferred_timeofday: [String]
     preferred_location: [String]
