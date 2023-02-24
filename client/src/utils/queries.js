@@ -30,7 +30,6 @@ import { gql } from '@apollo/client';
 export const QUERY_DOG = gql`
 query dog{
     dog{
-     _id
      dog_name
      dog_breed
      dog_gender
@@ -41,6 +40,7 @@ query dog{
      dog_temperment
      dog_notes
      dog_picture
+     dog_owner
      preferred_days
      preferred_timeofday
      preferred_location
@@ -53,11 +53,9 @@ export const QUERY_ME = gql`
         username
         email
         saved_dogs{
-            _id
             username
             email
             saved_dogs{
-             _id
              dog_name
              dog_breed
              dog_gender
@@ -68,6 +66,7 @@ export const QUERY_ME = gql`
              dog_temperment
              dog_notes
              dog_picture
+             dog_owner
              preferred_days
              preferred_timeofday
              preferred_location
