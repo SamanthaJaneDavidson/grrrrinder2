@@ -12,7 +12,7 @@ import Form from 'react-bootstrap/Form';
 function AddDog() {
 
   const [dogName, setDogName] = useState('');
-//   const [dogPicture, setDogPicture] = useState('');
+  const [dogPicture, setDogPicture] = useState('');
   const [dogGender, setDogGender] = useState('');
   const [dogBreed, setDogBreed] = useState('');
   const [dogAge, setDogAge] = useState('');
@@ -23,6 +23,7 @@ function AddDog() {
   const [preferredDays, setPreferredDays] = useState('');
   const [preferredTimes, setPreferredTimes] = useState('');
   const [preferredLocation, setPreferredLocation] = useState('');
+  const [dogNotes, setDogNotes] = useState('');
 
 const [saveDog] = useMutation(SAVE_DOG);
 
@@ -32,18 +33,18 @@ async function handleFormSubmit(event){
         variables:{
           input:{
             dog_name: dogName,
-            dog_breed: String
-            dog_gender: String
-            dog_size: String
-            dog_age: String
-            dog_vaccinations: String
-            dog_neuter_spayed: String
-            dog_temperment: String
-            dog_notes: String
-            dog_picture: String
-            preferred_days: [String]
-            preferred_timeofday: [String]
-            preferred_location: [String]
+            dog_breed: setDogBreed,
+            dog_gender: setDogGender,
+            dog_size: setDogSize,
+            dog_age: setDogAge,
+            dog_vaccinations: setDogVaccinations,
+            dog_neuter_spayed: setDogNeuter,
+            dog_temperment: setDogTemperment,
+            dog_notes: setDogNotes,
+            dog_picture: setDogPicture,
+            preferred_days: [preferredDays],
+            preferred_timeofday: [setPreferredTimes],
+            preferred_location: [setPreferredLocation],
           }
             // fill up with dog data
         }
