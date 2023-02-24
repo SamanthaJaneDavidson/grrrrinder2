@@ -7,6 +7,7 @@ require('dotenv').config();
 const secret = process.env.secret;
 const expiration = '2h';
 
+
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
