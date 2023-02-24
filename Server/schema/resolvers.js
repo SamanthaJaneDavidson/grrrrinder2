@@ -1,8 +1,5 @@
 const { Dog, User } = require("../models");
-const { signToken } = require("../utils/auth");
-const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const { AuthenticationError } = require('apollo-server-express');
 const jwt = require('jsonwebtoken');
 
 require('dotenv').config();
@@ -21,7 +18,10 @@ const resolvers = {
     },
     //Added this to find all dogs
     dog: async (parent, args, context) => {
-      
+      if (!context.username) {
+        return null;
+      }
+
       const dogs = await Dog.find();
       
       return dogs;
@@ -45,7 +45,7 @@ const resolvers = {
         return user;
       }
 
-      return;
+      return null;
     },
 
     saveDog: async (_, { input }, context) => {
