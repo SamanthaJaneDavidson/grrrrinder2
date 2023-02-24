@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navigation';
 import Searchbar from '../components/Searchbar';
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 
 function SearchDogs() {
 
@@ -15,6 +15,7 @@ function SearchDogs() {
         checkbox[checkBoxesOpt[i].nextSibling.innerHTML.toLowerCase()] = checkBoxesOpt
        }
     }
+    // TO DO: create another query to filter through the database
     const myFilter = data.filter(function(dogs){
         for (let key in checkbox){
             if(dogs[key] != checkBoxesOpt[key] && checkBoxesOpt[key] != false){

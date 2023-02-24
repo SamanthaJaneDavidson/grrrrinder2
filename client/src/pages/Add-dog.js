@@ -5,8 +5,9 @@ import {useMutation} from '@apollo/client';
 import {SAVE_DOG} from '../utils/mutations';
 
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-import UploadWidget from './components/UploadWidget'; 
+import UploadWidget from '../components/UploadWidget'; 
 
 
 function AddDog() {
@@ -51,11 +52,14 @@ async function handleFormSubmit(event){
     })
 console.log(data);
     // ADD SAVE_DOG data USING FORM INPUT VALUES
-}
+
+    Auth.login(data.addUser.token);
+ 
+};
 
 
     return (
-      {Auth.loggedIn() ? (
+     
         <Form onSubmit={handleFormSubmit}>
         <h1> Create Your Dog's Profile !</h1>
        
@@ -67,23 +71,35 @@ console.log(data);
 
               <Form.Group className="mb-3" controlId="formBasicText">
         <Form.Label>Dog Name</Form.Label>
-        <Form.Control type="text" placeholder="Enter your dog name"  value={dogName} onChange={handleChange}/>
+        <Form.Control type="text" placeholder="Enter your dog name"  value={dogName} onChange={(event) => setDogName(event.target.value)}/>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicText" className ="font-weight-bold text-small col-lg-6">
+      <Form.Group className="mb-3" controlId="formBasicText">
         <Form.Label>Dog Breed</Form.Label>
-        <Form.Control type="text" placeholder="Enter your dog breed" />
+        <Form.Control type="text" placeholder="Enter your dog breed" value={dogBreed} onChange={(event) => setDogBreed(event.target.value)}/>
       </Form.Group>
 
-      <Form.Select aria-label="Dog gender" className="font-weight-bold text-small col-lg-6">
+      <Form.Select aria-label="Dog gender" className="font-weight-bold text-small col-lg-6" value={dogGender}
+                onChange={(event) => setDogGender(event.target.value)}>
       <Form.Label>Dog Gender</Form.Label>
       <option>Select Gender</option>
       <option value="1">Male</option>
       <option value="2">Female</option>
     </Form.Select>
 
-    <Form.Select aria-label="Dog size" className="font-weight-bold text-small col-lg-6">
+    <Form.Select aria-label="Dog size" className="font-weight-bold text-small col-lg-6" value={dogSize}
+                onChange={(event) => setDogSize(event.target.value)}>
     <Form.Label>Dog Size</Form.Label>
+    <option>Select Dog's Size</option>
+      <option value="1">Puppy</option>
+      <option value="2">Youth</option>
+      <option value="3">Adult</option>
+      <option value="4">Senior</option>
+    </Form.Select>
+
+    <Form.Select aria-label="Dog age" className="font-weight-bold text-small col-lg-6" value={dogAge}
+                onChange={(event) => setDogAge(event.target.value)}>
+    <Form.Label>Dog Age</Form.Label>
     <option>Select Dog's Age</option>
       <option value="1">Puppy</option>
       <option value="2">Youth</option>
@@ -91,22 +107,24 @@ console.log(data);
       <option value="4">Senior</option>
     </Form.Select>
 
-
-    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
+    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6" value={dogVaccinations}
+                onChange={(event) => setDogVaccinations(event.target.value)}>
     <Form.Label>Is your dog vaccinated?</Form.Label>
       <option>Vaccination Status</option>
       <option value="1">Yes</option>
       <option value="2">No</option>
     </Form.Select>
 
-    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
+    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6" value={dogNeuter}
+                onChange={(event) => setDogNeuter(event.target.value)}>
     <Form.Label>Is your dog neutered/spayed?</Form.Label>
       <option>Surgical Sterilization</option>
       <option value="1">Yes</option>
       <option value="2">No</option>
     </Form.Select>
 
-    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
+    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6" value={dogTemperment}
+                onChange={(event) => setDogTemperment(event.target.value)}>
     <Form.Label>What is your dog's temperment?</Form.Label>
       <option>Temperment</option>
       <option value="1">Shy</option>
@@ -117,20 +135,23 @@ console.log(data);
 
 
 
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" value={dogNotes}
+                onChange={(event) => setDogNotes(event.target.value)}>
         <Form.Label>Share some notes about your dog!</Form.Label>
         <Form.Control as="textarea" rows={3} />
       </Form.Group>
 
 {/* connect cloudinary! */}
-      <Form.Group controlId="formFile" className="mb-3">
+      <Form.Group controlId="formFile" className="mb-3" value={dogPicture}
+                onChange={(event) => setDogPicture(event.target.value)}>
         <Form.Label>Upload a photo of your dog here</Form.Label>
         <Form.Control type="file" />
-        </UploadWidget>
+        <UploadWidget/>
       </Form.Group>
 
 
-      <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
+      <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6" value={preferredDays}
+                onChange={(event) => setPreferredDays(event.target.value)}>
     <Form.Label>What is your preferred day to meet?</Form.Label>
       <option>Select Days</option>
       <option value="1">Monday</option>
@@ -143,7 +164,8 @@ console.log(data);
       <option value="8">No preference</option>
     </Form.Select>
 
-    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
+    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6" value={preferredTimes}
+                onChange={(event) => setPreferredTimes(event.target.value)}>
     <Form.Label>What is your preferred time of day to meet?</Form.Label>
       <option>Select Preferred Times</option>
       <option value="1">Morning</option>
@@ -153,7 +175,8 @@ console.log(data);
     </Form.Select>
 
 
-    <Form.Group className="mb-3" controlId="formBasicText">
+    <Form.Group className="mb-3" controlId="formBasicText" value={preferredLocation}
+                onChange={(event) => setPreferredLocation(event.target.value)}>
         <Form.Label>Zip Code</Form.Label>
         <Form.Control type="text" placeholder="Enter your zip code" />
       </Form.Group>
@@ -167,7 +190,7 @@ console.log(data);
        
         </Form>
 
-        )};
+       
     )
 }
 
@@ -175,102 +198,3 @@ export default AddDog;
 
 
 
- {/* Dog Name
-              <input
-                defaultValue={dogName}
-                onChange={(event) => setDogName(event.target.value)}
-                placeholder="Name"
-                type="text"
-              />
-              Dog Gender
-              <input
-                defaultValue={dogGender}
-                onChange={(event) => setDogGender(event.target.value)}
-                placeholder="Gender"
-                type="text"
-              />
-              Dog Breed
-              <input
-                defaultValue={dogBreed}
-                onChange={(event) => setDogBreed(event.target.value)}
-                placeholder="Breed"
-                type="text"
-              />
-               Dog Age
-              <input
-                defaultValue={dogAge}
-                onChange={(event) => setDogAge(event.target.value)}
-                placeholder="Age"
-                type="text"
-              />
-               Dog Size
-              <input
-                defaultValue={dogSize}
-                onChange={(event) => setDogSize(event.target.value)}
-                placeholder="Size"
-                type="text"
-              />
-              Describe your dog
-              <input
-                defaultValue={dogTemperment}
-                onChange={(event) => setDogTemperment(event.target.value)}
-                placeholder="Temperment"
-                type="text"
-              />
-              <h3>Health Status</h3>             
-             Vaccination Status 
-              <input
-                defaultValue={dogVaccinations}
-                onChange={(event) => setDogVaccinations(event.target.value)}
-                placeholder="Vaccination"
-                type="text"
-              />
-             Neutered/Spayed
-              <input
-                defaultValue={dogNeuter}
-                onChange={(event) => setDogNeuter(event.target.value)}
-                placeholder="Neutered/Spayed"
-                type="text"
-              />
-  <h3>Avaibility</h3>
-  Preferred Days
-     
-              <input
-                defaultValue={preferredDays}
-                onChange={(event) => setPreferredDays(event.target.value)}
-                placeholder="Preferred Days"
-                type="text"
-              />
-  Time during the day
-              <input
-                defaultValue={preferredTimes}
-                onChange={(event) => setPreferredTimes(event.target.value)}
-                placeholder="Preferred Times"
-                type="text"
-              />
-              Zip Code
-              <input
-                defaultValue={preferredLocation}
-                onChange={(event) => setPreferredLocation(event.target.value)}
-                placeholder="Preferred Location"
-                type="text"
-              /> */}
-
-
-// onClick={() =>
-// display({
-//     type: "ADD_D0G",
-//     payload: {
-//       name: dogName,
-//       gender: dogGender,
-//       age: dogAge,
-//       zize: dogSize,
-//       temperment: dogTemperment,
-//       vaccination: dogVaccinations,
-//       neuter: dogNeuter,
-//       days: preferredDays,
-//       times: preferredTimes,
-//       location: preferredLocation,
-//     },
-//   })
-// }
