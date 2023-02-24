@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import Auth from '../utils/auth';
 import {useMutation} from '@apollo/client';
 import {SAVE_DOG} from '../utils/mutations';
+
+import Form from 'react-bootstrap/Form';
+
 import UploadWidget from './components/UploadWidget'; 
 
 
@@ -37,13 +40,13 @@ console.log(data);
 
     return (
         <>
-        <h1>Your Profile</h1>
-        <form onSubmit={handleFormSubmit}>
+        <h1>Create Your Dog's Profile !</h1>
+        <Form.Select onSubmit={handleFormSubmit}>
 
         <section className="dog-card">
           <div>
             <div className="dog-cardbody">
-              <h3> A bit about...</h3>
+              <h3> Please fill out this form</h3>
               Dog Name
               <input
                 defaultValue={dogName}
@@ -87,7 +90,7 @@ console.log(data);
                 type="text"
               />
               <h3>Health Status</h3>             
-             Vaccination Status
+             Vaccination Status 
               <input
                 defaultValue={dogVaccinations}
                 onChange={(event) => setDogVaccinations(event.target.value)}
@@ -130,7 +133,7 @@ console.log(data);
             </div>
           </div>
         </section>
-        </form>
+        </Form.Select>
       </>
     )
 }
