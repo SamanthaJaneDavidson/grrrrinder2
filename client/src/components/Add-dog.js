@@ -12,7 +12,6 @@ import UploadWidget from './components/UploadWidget';
 function AddDog() {
 
   const [dogName, setDogName] = useState('');
-//   const [dogPicture, setDogPicture] = useState('');
   const [dogGender, setDogGender] = useState('');
   const [dogBreed, setDogBreed] = useState('');
   const [dogAge, setDogAge] = useState('');
@@ -56,10 +55,10 @@ console.log(data);
 
 
     return (
-    
+      {Auth.loggedIn() ? (
         <Form onSubmit={handleFormSubmit}>
         <h1> Create Your Dog's Profile !</h1>
-        {Auth.loggedIn() ? (
+       
           <div className="dog-card">
 
             <div className="dog-cardbody">
@@ -68,7 +67,7 @@ console.log(data);
 
               <Form.Group className="mb-3" controlId="formBasicText">
         <Form.Label>Dog Name</Form.Label>
-        <Form.Control type="text" placeholder="Enter your dog name" />
+        <Form.Control type="text" placeholder="Enter your dog name"  value={dogName} onChange={handleChange}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicText" className ="font-weight-bold text-small col-lg-6">
@@ -127,6 +126,7 @@ console.log(data);
       <Form.Group controlId="formFile" className="mb-3">
         <Form.Label>Upload a photo of your dog here</Form.Label>
         <Form.Control type="file" />
+        </UploadWidget>
       </Form.Group>
 
 
@@ -160,10 +160,22 @@ console.log(data);
       <Button variant="primary" type="submit">
         Submit
       </Button>
+ 
+
+            </div>
+          </div>
+       
+        </Form>
+
+        )};
+    )
+}
+
+export default AddDog;
 
 
 
-              {/* Dog Name
+ {/* Dog Name
               <input
                 defaultValue={dogName}
                 onChange={(event) => setDogName(event.target.value)}
@@ -243,20 +255,6 @@ console.log(data);
                 placeholder="Preferred Location"
                 type="text"
               /> */}
-
-
-            </div>
-          </div>
-       
-        </Form>
-        )}
-    );
-}
-
-export default AddDog;
-
-
-
 
 
 // onClick={() =>
