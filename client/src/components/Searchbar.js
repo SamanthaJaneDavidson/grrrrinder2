@@ -18,15 +18,22 @@ function SearchBar(props) {
                     <input className="form-check-input" type="checkbox" id="inlineCheckbox2" onChange={props.handleCheckboxChange} />
                     <label className="form-check-label" htmlFor="inlineCheckbox2">Female</label>
                 </div>
-
+            <p>Health Status</p>
                 <div className="form-check form-check-inline">
                     <input className="form-check-input" type="checkbox" id="inlineCheckbox3" onChange={props.handleCheckboxChange} />
                     <label className="form-check-label" htmlFor="inlineCheckbox3">Vaccinated</label>
                 </div>
-
+                <div className="form-check form-check-inline">
+                    <input className="form-check-input" type="checkbox" id="inlineCheckbox24" onChange={props.handleCheckboxChange} />
+                    <label className="form-check-label" htmlFor="inlineCheckbox24">Not Vaccinated</label>
+                </div>
                 <div className="form-check form-check-inline">
                     <input className="form-check-input" type="checkbox" id="inlineCheckbox4" onChange={props.handleCheckboxChange} />
                     <label className="form-check-label" htmlFor="inlineCheckbox4">Neutered</label>
+                </div>
+                <div className="form-check form-check-inline">
+                    <input className="form-check-input" type="checkbox" id="inlineCheckbox4" onChange={props.handleCheckboxChange} />
+                    <label className="form-check-label" htmlFor="inlineCheckbox4">Spayed</label>
                 </div>
             <p>Dog Size</p>
                 <div className="form-check form-check-inline">
