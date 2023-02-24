@@ -24,7 +24,26 @@ export const ADD_USER = gql`
   }
 `;
 
-//not sure about this- ask tutor - looks fine per Robert
+//Added for Stripe
+export const ADD_ORDER = gql`
+  mutation addOrder($products: [ID]!) {
+    addOrder(products: $products) {
+      purchaseDate
+      products {
+        _id
+        name
+        description
+        price
+        quantity
+        category {
+          name
+        }
+      }
+    }
+  }
+`;
+
+//Looks fine per Robert
 export const SAVE_DOG = gql`
   mutation saveDog($input: SavedDogInput) {
     saveDog(input: $input) {

@@ -47,19 +47,25 @@ const dogSchema = new Schema({
         required: true,
     },
 
-    //Might need to convert these to arrays to match the typedef 
-    preferred_days: {
-        type: String,
-        allowNull: false,
-    },
-    preferred_timeofday: {
-        type: String,
-        allowNull: false,
-    },
-    preferred_location: {
-        type: String,
-        allowNull: false,
-    },
+    //Is this right for the arrays?
+    preferred_days: [
+        {
+            type: String,
+            allowNull: false,
+        }
+    ],
+    preferred_timeofday: [
+        {
+            type: String,
+            allowNull: false,
+        }
+    ],
+    preferred_location: [
+        {
+            type: String,
+            allowNull: false,
+        }
+    ],
 });
 
 const Dog = model('Dog', dogSchema);
