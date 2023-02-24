@@ -1,6 +1,7 @@
 const { Dog, User } = require("../models");
 const { signToken } = require("../utils/auth");
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 const { AuthenticationError } = require('apollo-server-express');
 const jwt = require('jsonwebtoken');
 
