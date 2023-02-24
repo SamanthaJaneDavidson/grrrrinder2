@@ -4,9 +4,9 @@ import Footer from './components/Footer'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import UserProfile from './pages/User-Profile'
-import SearchDogs from './pages/Search-Dogs'
+// import SearchDogs from './pages/Search-Dogs'
 import Donation from './pages/Donation'
-import AddDog from './components/Add-dog'
+import AddDog from './pages/Add-dog'
 import Home from './pages/Home'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from "@apollo/client";
@@ -53,7 +53,7 @@ function App() {
                  <Route path = "/login" element = {<Login/>}/>
                  <Route path = "/signup" element = {<Signup/>}/> 
                  <Route path = "/profile" element = {<UserProfile/>}></Route>
-                 <Route path = "/search-dogs" element = {<SearchDogs/>}/>
+                 {/* <Route path = "/search-dogs" element = {<SearchDogs/>}/> */}
                  <Route path = "/donation" element = {<Donation/>}/>
                  {/* <Route path = "/chat" element = {<Chat/>}/> */}
                  <Route path = "/add-dog" element = {<AddDog/>}/>
