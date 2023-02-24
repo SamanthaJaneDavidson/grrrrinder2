@@ -6,7 +6,7 @@ import {SAVE_DOG} from '../utils/mutations';
 
 import Form from 'react-bootstrap/Form';
 
-import UploadWidget from './components/UploadWidget'; 
+// import UploadWidget from './components/UploadWidget'; 
 
 
 function AddDog() {

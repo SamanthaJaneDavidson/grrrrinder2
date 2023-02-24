@@ -23,10 +23,10 @@ function Navbar() {
                                 isActive ? highlightLink : undefined}>
                             Profile
                         </NavLink>
-                        <NavLink to="/matches"
+                        <NavLink to="/search-dogs"
                             style={({ isActive }) =>
                                 isActive ? highlightLink : undefined}>
-                            Matches
+                            Search Dogs
                         </NavLink>
                         <NavLink onClick={Auth.logout}>Logout</NavLink>
                     </>
@@ -43,10 +43,6 @@ function Navbar() {
                         </>
                 )}
                 {/* would I need to throw contact and donate in there as well? i want them on both nav bars wether logged in or not*/}
-                <NavLink to="/contact"
-                    style={({ isActive }) =>
-                        isActive ? highlightLink : undefined}>Contact</NavLink>
-                {/* do we want this page if we have a footer with the contact? */}
                 <NavLink to="/donate"
                     style={({ isActive }) =>
                         isActive ? highlightLink : undefined}>Donate</NavLink>
