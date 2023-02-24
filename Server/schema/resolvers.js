@@ -231,7 +231,10 @@ const resolvers = {
       };
     },
 
-    login: async (_, { username, email, password }) => {
+    login: async (_, { username, password }) => {
+
+      console.log(username, password);
+      
       const users = await User.find({ username });
       
       if (users.length) {

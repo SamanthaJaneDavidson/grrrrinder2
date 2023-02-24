@@ -45,7 +45,7 @@ const Signup = () => {
     });
   
 //on submit of this form it will take you to the profile page
-    window.location.replace("/profile")
+    // window.location.replace("/profile")
   };
 
   return (
