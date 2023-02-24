@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Footer from '../components/Footer';
-import Navigation from '../components/Navigation';
+import Navbar from '../components/Navigation';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 

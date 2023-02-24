@@ -6,7 +6,7 @@ import {SAVE_DOG} from '../utils/mutations';
 
 import Form from 'react-bootstrap/Form';
 
-// import UploadWidget from './components/UploadWidget'; 
+import UploadWidget from './components/UploadWidget'; 
 
 
 function AddDog() {
@@ -20,6 +20,8 @@ function AddDog() {
   const [dogTemperment, setDogTemperment] = useState('');
   const [dogVaccinations, setDogVaccinations] = useState('');
   const [dogNeuter, setDogNeuter] = useState('');
+  const [dogNotes, setDogNotes] = useState('');
+  const [dogPicture, setDogPicture] = useState('');
   const [preferredDays, setPreferredDays] = useState('');
   const [preferredTimes, setPreferredTimes] = useState('');
   const [preferredLocation, setPreferredLocation] = useState('');
@@ -32,20 +34,20 @@ async function handleFormSubmit(event){
         variables:{
           input:{
             dog_name: dogName,
-            dog_breed: String
-            dog_gender: String
-            dog_size: String
-            dog_age: String
-            dog_vaccinations: String
-            dog_neuter_spayed: String
-            dog_temperment: String
-            dog_notes: String
-            dog_picture: String
-            preferred_days: [String]
-            preferred_timeofday: [String]
-            preferred_location: [String]
+            dog_breed: dogBreed,
+            dog_gender: dogGender,
+            dog_size: dogSize,
+            dog_age: dogAge,
+            dog_vaccinations: dogVaccinations,
+            dog_neuter_spayed: dogNeuter,
+            dog_temperment: dogTemperment,
+            dog_notes: dogNotes,
+            dog_picture: dogPicture,
+            preferred_days: preferredDays,
+            preferred_timeofday: preferredTimes,
+            preferred_location: preferredLocation,
           }
-            // fill up with dog data
+            
         }
     })
 console.log(data);
@@ -57,7 +59,7 @@ console.log(data);
     
         <Form onSubmit={handleFormSubmit}>
         <h1> Create Your Dog's Profile !</h1>
-
+        {Auth.loggedIn() ? (
           <div className="dog-card">
 
             <div className="dog-cardbody">
@@ -69,7 +71,7 @@ console.log(data);
         <Form.Control type="text" placeholder="Enter your dog name" />
       </Form.Group>
 
-      {/* <Form.Group className="mb-3" controlId="formBasicText" className ="font-weight-bold text-small col-lg-6">
+      <Form.Group className="mb-3" controlId="formBasicText" className ="font-weight-bold text-small col-lg-6">
         <Form.Label>Dog Breed</Form.Label>
         <Form.Control type="text" placeholder="Enter your dog breed" />
       </Form.Group>
@@ -115,7 +117,20 @@ console.log(data);
     </Form.Select>
 
 
-    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
+
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Share some notes about your dog!</Form.Label>
+        <Form.Control as="textarea" rows={3} />
+      </Form.Group>
+
+{/* connect cloudinary! */}
+      <Form.Group controlId="formFile" className="mb-3">
+        <Form.Label>Upload a photo of your dog here</Form.Label>
+        <Form.Control type="file" />
+      </Form.Group>
+
+
+      <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6">
     <Form.Label>What is your preferred day to meet?</Form.Label>
       <option>Select Days</option>
       <option value="1">Monday</option>
@@ -142,19 +157,13 @@ console.log(data);
         <Form.Label>Zip Code</Form.Label>
         <Form.Control type="text" placeholder="Enter your zip code" />
       </Form.Group>
-
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Share some notes about your dog!</Form.Label>
-        <Form.Control as="textarea" rows={3} />
-      </Form.Group>
-
       <Button variant="primary" type="submit">
         Submit
       </Button>
 
 
 
-              Dog Name
+              {/* Dog Name
               <input
                 defaultValue={dogName}
                 onChange={(event) => setDogName(event.target.value)}
@@ -233,16 +242,15 @@ console.log(data);
                 onChange={(event) => setPreferredLocation(event.target.value)}
                 placeholder="Preferred Location"
                 type="text"
-              />
-              <button type="submit">
-                Add Dog
-              </button> */}
+              /> */}
+
+
             </div>
           </div>
        
         </Form>
-    
-    )
+        )}
+    );
 }
 
 export default AddDog;
