@@ -11,8 +11,8 @@ import Home from './pages/Home'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import UploadWidget from './components/UploadWidget'; 
-//import Chat from './components/Chat'
+// import UploadWidget from './components/UploadWidget'; 
+// import Chat from './components/Chat'
 // import Cloudinary from './pages/Cloudinary';
 // import Donation from './pages/Donation';
 // import Home from './components/Home';

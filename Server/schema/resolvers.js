@@ -2,7 +2,12 @@ const { Dog, User } = require("../models");
 const { signToken } = require("../utils/auth");
 const mongoose = require('mongoose');
 const { AuthenticationError } = require('apollo-server-express');
+const jwt = require('jsonwebtoken');
 
+require('dotenv').config();
+
+const secret = process.env.secret;
+const expiration = '2h';
 
 const resolvers = {
   Query: {
