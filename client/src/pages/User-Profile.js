@@ -11,7 +11,7 @@ import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
 // import CardColumns from 'react-bootstrap/CardColumns'
-import { Accordion, Button, Card } from 'react-bootstrap'
+import { Accordion, Card } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 
 export default function Profile () {
@@ -21,6 +21,7 @@ const userData = data?.me||{}
 if (loading) {
   return <h2>loading</h2>
 }
+// Auth.login(data.addUser.token);
   return (
     <>
    
@@ -28,7 +29,7 @@ if (loading) {
  
     <container>
       <div>
-    {/* <AddDog>
+    <AddDog>
 
       <Accordion>
        
@@ -69,7 +70,7 @@ if (loading) {
   </Accordion>
  
   </AddDog>
-  <Footer/> */}
+ 
   </div>
   </container>
   </>
