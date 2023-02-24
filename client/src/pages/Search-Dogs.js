@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navigation';
+import React from 'react';
 import Searchbar from '../components/Searchbar';
+import Map from '../components/Map'
 import Footer from "../components/Footer";
 
 function SearchDogs() {
