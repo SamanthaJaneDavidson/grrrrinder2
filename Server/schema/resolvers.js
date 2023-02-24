@@ -61,14 +61,13 @@ const resolvers = {
         dog_temperment,
         dog_notes,
         dog_picture, 
-        dog_owner,
         preferred_days,
         preferred_timeofday,
         preferred_location } = input;
 
-      const users = await User.find({username: context.username});
-      if (users.length) {
-        const user = users[0];
+
+      if (context.user) {
+        const user = await User.findOne({_id:context.user._id});
 
         user.savedDog.push({
             dog_name,
@@ -81,7 +80,7 @@ const resolvers = {
             dog_temperment,
             dog_notes,
             dog_picture, 
-            dog_owner,
+            dog_owner:context.user._id,
             preferred_days,
             preferred_timeofday,
             preferred_location
