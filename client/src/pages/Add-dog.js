@@ -208,16 +208,8 @@ console.log(data);
           </div>
        
         </Form>
-<<<<<<< HEAD:client/src/components/Add-dog.js
         
-        )}
-    );
-=======
-
-       
-    )
->>>>>>> e1faadbbe54dff9be3ade768a417cef347d0d8f4:client/src/pages/Add-dog.js
-}
+        )};
 
 export default AddDog;
 
