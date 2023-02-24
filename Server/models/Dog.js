@@ -2,12 +2,6 @@ const { Schema, model } = require('mongoose');
 
 const dogSchema = new Schema({
 
-    //Per session with tutor- We may not need the id, because Mongoose provides an id already. When running the seed data the forloop (for the username reference) is throwing an error. 
-    id: {
-        type: Number,
-        required: true,
-        autoIncrement: true,
-    },
     dog_name: {
         type: String,
         required: true,
@@ -48,6 +42,10 @@ const dogSchema = new Schema({
         type: String,
         required: true,
     },
+    dog_owner: {
+        type: String,
+        required: true,
+    },
 
     //Might need to convert these to arrays to match the typedef 
     preferred_days: {
@@ -62,10 +60,6 @@ const dogSchema = new Schema({
         type: String,
         allowNull: false,
     },
-
-    references: 
-        { type: Schema.Types.ObjectId, ref: 'User' }
-
 });
 
 const Dog = model('Dog', dogSchema);

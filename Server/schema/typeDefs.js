@@ -25,6 +25,7 @@ type Dog {
     dog_temperment: String
     dog_notes: String
     dog_picture: String
+    dog_owner: ID!
     preferred_days: [String]
     preferred_timeofday: [String]
     preferred_location: [String]
@@ -49,7 +50,7 @@ input SaveDogInput {
     dog_temperment: String
     dog_notes: String
     dog_picture: String
-    owner_id: ID,
+    dog_owner: ID,
     preferred_days: [String]
     preferred_timeofday: [String]
     preferred_location: [String]
@@ -68,7 +69,7 @@ type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(username: String!, password: String!): Auth
   saveDog(input: SaveDogInput): User
-  removeDog (dog_id: String!): User
+  removeDog (_id: String!): User
 }`;
 
 module.exports = typeDefs;
