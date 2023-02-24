@@ -56,6 +56,8 @@ input SaveDogInput {
     preferred_location: [String]
 }
 
+# Types for Stripe
+
 # Moved the Queries at the bottom for oganizational purposes
 
 type Query {
