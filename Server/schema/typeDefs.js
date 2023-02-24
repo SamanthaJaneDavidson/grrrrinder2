@@ -56,15 +56,11 @@ input SaveDogInput {
     preferred_location: [String]
 }
 
-# Moved the Queries at the bottom for oganizational purposes
-
 type Query {
   me: User
   dog: Dog
 }
 
-
-# suggestion - don't use exclamations here 
 type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(username: String!, password: String!): Auth
