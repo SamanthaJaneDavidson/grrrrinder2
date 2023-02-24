@@ -1,4 +1,4 @@
-const { Dog, User } = require("../models");
+const { Dog, User, Order, Product, Category } = require("../models");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -19,7 +19,7 @@ const resolvers = {
     },
     //Added this to find all dogs
     dog: async (parent, args, context) => {
-      if (!context.username) {
+      if (!context.username) { //the if statement was removed
         return null;
       }
 
