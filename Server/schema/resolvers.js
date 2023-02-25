@@ -3,7 +3,6 @@ const { signToken } = require("../utils/auth");
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-//need to import Stripe and the apikey (take from class example)
 
 require('dotenv').config();
 
@@ -37,6 +36,8 @@ const resolvers = {
       
       return dogs;
     },
+
+    
 
     //Added for Stripe
     categories: async () => {
