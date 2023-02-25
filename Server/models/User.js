@@ -21,6 +21,9 @@ const userSchema = new Schema({
     //don't need hased will have it's own length 
     // minlength: 8,
   },
+  token: {
+    type: String,
+  },
   orders: [Order.schema], //added this for Stripe
 
   dog: [

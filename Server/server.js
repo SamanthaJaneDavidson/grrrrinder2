@@ -50,6 +50,7 @@ const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware }
       });
       socket.on('message', async (msg, token) => {
         const user = await User.find({token});
+        console.log(user);
         if (user && user[0]) {
           io.emit('message', user[0].username + "> " + msg);
         }

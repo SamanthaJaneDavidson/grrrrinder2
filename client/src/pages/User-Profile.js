@@ -6,7 +6,7 @@ import { useQuery } from '@apollo/client';
 import AddDog from './Add-dog';
 
 
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
 
 // import Auth from '../utils/auth';
 

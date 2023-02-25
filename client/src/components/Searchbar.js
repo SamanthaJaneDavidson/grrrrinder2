@@ -1,4 +1,5 @@
 import React from 'react';
+import Chat from './Chat';
 
 function SearchBar(props) {
     return (
@@ -119,4 +120,5 @@ function SearchBar(props) {
         </div>
     )
 }
+
 export default SearchBar;

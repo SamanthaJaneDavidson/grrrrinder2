@@ -13,19 +13,6 @@ git push (if ready to push)
 
 **Please initial when you have made necessary changes on your side & add any changes "you" need the rest of us to make
 
-1.  In the server folder - create an .env file
-You will find what to put in the folder in slack:
-   
-Initial when complete:  mt
-
-!!!important
-
-If you have downgraded node to version 16, please reinstall node - 16 breaks everything
-may want to rethink using react 18
-
-once I push - after I fix...everyone  will need run npm i in the client folder... will let you know
-
-
 2. AL - Updated the mutations.js and queries.js files per notes from Robert (tutor). Have also started working on the api.js in client folder- have some questions so for now the code is commented out. Will ask questions in office hours. 
 
 
