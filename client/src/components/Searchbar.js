@@ -1,4 +1,5 @@
 import React from 'react';
+import Chat from './Chat';
 
 function SearchBar(props) {
     return (
@@ -6,7 +7,7 @@ function SearchBar(props) {
             <div className="input-group mb-3">
               
                 <input id="zip-code-search" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
-                    onChange={props.handleSearchboxChange} type="name" />
+                    onChange={props.handleSearchboxChange} type="name" placeholder='search by zip code' />
             </div>
             <div>
             <p>Dog Gender</p>
@@ -119,4 +120,5 @@ function SearchBar(props) {
         </div>
     )
 }
+
 export default SearchBar;

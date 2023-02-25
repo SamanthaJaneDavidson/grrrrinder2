@@ -3,8 +3,6 @@ const { gql } = require("apollo-server-express");
 //typeDefs set up
 const typeDefs = gql`
 
-
-
 type User {
   _id: ID
   username: String
@@ -12,7 +10,6 @@ type User {
   saved_dogs: [Dog]!
   orders: [Order]
 }
-
 
 type Dog {
     _id: ID
@@ -87,7 +84,6 @@ type Query {
   product(_id: ID!): Product
   order(_id: ID!): Order
   checkout(products: [ID]!): Checkout
-
 }
 
 type Mutation {

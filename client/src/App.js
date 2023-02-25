@@ -1,23 +1,29 @@
-import React from 'react';
-import Navbar from './components/Navigation'
-import Footer from './components/Footer'
-import Login from './components/Login'
-import Signup from './components/Signup'
-import UserProfile from './pages/User-Profile'
+import React from "react";
+import Navbar from "./components/Navigation";
+import Footer from "./components/Footer";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import UserProfile from "./pages/User-Profile";
 // import SearchDogs from './pages/Search-Dogs'
-import Donation from './pages/Donation'
-import AddDog from './pages/Add-dog'
-import Home from './pages/Home'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from "@apollo/client";
+import Donation from "./pages/Donation";
+import AddDog from "./pages/Add-dog";
+import Home from "./pages/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-// import UploadWidget from './components/UploadWidget'; 
+import Chat from "./components/Chat";
+// import UploadWidget from './components/UploadWidget';
 // import Chat from './components/Chat'
 // import Cloudinary from './pages/Cloudinary';
 // import Donation from './pages/Donation';
 // import Home from './components/Home';
 // import UserProfile from './components/User-Profile';
-
+import './index.css';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,20 +52,21 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-       <BrowserRouter> 
-               <Navbar/>
-               <Routes>
-                 <Route path = "/" element = {<Home/>}/>
-                 <Route path = "/login" element = {<Login/>}/>
-                 <Route path = "/signup" element = {<Signup/>}/> 
-                 <Route path = "/profile" element = {<UserProfile/>}></Route>
-                 {/* <Route path = "/search-dogs" element = {<SearchDogs/>}/> */}
-                 <Route path = "/donation" element = {<Donation/>}/>
-                 {/* <Route path = "/chat" element = {<Chat/>}/> */}
-                 <Route path = "/add-dog" element = {<AddDog/>}/>
-               </Routes>
-               <Footer/>
-         </BrowserRouter>
+      <BrowserRouter>
+        <Chat />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<UserProfile />}></Route>
+          {/* <Route path = "/search-dogs" element = {<SearchDogs/>}/> */}
+          <Route path="/donation" element={<Donation />} />
+          {/* <Route path = "/chat" element = {<Chat/>}/> */}
+          <Route path="/add-dog" element={<AddDog />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </ApolloProvider>
   );
 }

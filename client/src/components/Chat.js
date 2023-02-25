@@ -1,71 +1,84 @@
 // //Test
-// import React, { useState, useEffect } from "react";
-// import io from "socket.io-client";
-// import auth from "../utils/auth";
+import React, { useState, useEffect } from "react";
+import io from "socket.io-client";
+import auth from "../utils/auth";
+import { Button } from 'react-bootstrap';
 
-// const socket = io();
+const socket = io();
 
-// function Chat() {
-//   const [messages, setMessages] = useState({
-//     msgs: []
-//   });
+function Chat() {
+  const [messages, setMessages] = useState({
+    msgs: []
+  });
 
-//   const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(false);
 
-//   useEffect(() => {
-//     socket.on("message", (msg) => {
-//         console.log(messages);
-//         console.log('Got ' + msg);
-//         setMessages({
-//             msgs: [
-//                 msg,
-//                 ...messages.msgs,
-//             ]
-//         });
-//     });
+  useEffect(() => {
+    socket.on("message", (msg) => {
+        console.log(messages);
+        console.log('Got ' + msg);
+        setMessages({
+            msgs: [
+                msg,
+                ...messages.msgs,
+            ]
+        });
+    });
 
-//     return () => {
-//       socket.off("message");
-//     };
-//   }, [messages]);
+    return () => {
+      socket.off("message");
+    };
+  }, [messages]);
 
-//   const sendMessage = () => {
-//     let inputBox = document.getElementById('chat-message');
+  const sendMessage = () => {
+    let inputBox = document.getElementById('chat-message');
 
-//     if (inputBox.value) {
-//         const token = auth.getToken();
+    if (inputBox.value) {
+        const token = auth.getToken();
 
-//         if (token) {
-//             socket.emit("message", inputBox.value, token);
-//         }
-//         else {
-//             alert('You must be logged in to use the chat!');
-//         }
-//     }
-//     inputBox.value = '';
-//   };
+        const to = document.getElementById('to').value;
 
-//   const changeShown = () => {
-//     setShown(!shown);
-//   }
+        if (token) {
+          if(!to) {
+            alert("You must specify who to send this message to!");
+          }
+          else {
+            socket.emit("message", inputBox.value, to, token);
+          }
+        }
+        else {
+            alert('You must be logged in to use the chat!');
+        }
+    }
+    inputBox.value = '';
+  };
 
-//   if (shown) {
-//     return <div style={{position: 'fixed', right: 0, bottom: 50}}>
-//         <button onClick={changeShown}>close chat</button>
-//         <ul style={{maxHeight: 300, overflow: 'scroll'}}>
-//             { messages.msgs.map((v, i) => <li key={i}>{v}</li>) }
-//         </ul>
+  socket.emit("init", auth.getToken());
 
-//         <input id="chat-message" placeholder="Chat Message" />
+  const changeShown = () => {
+    setShown(!shown);
+  }
 
-//         <button onClick={ sendMessage }>Send Message</button>
-//     </div>;
-//   }
-//   else {
-//     return <div style={{position: 'fixed', right: 0, bottom: 50}}>
-//         <button onClick={changeShown}>show chat</button>
-//     </div>
-//   }
-// }
+  if (shown) {
+    return <div className="chatbox" style={{position: 'fixed', zIndex: 999, backgroundColor: '#d1d1d4', right: 0, bottom: 50}}>
+       
+        <Button className="btn" onClick={changeShown} variant="secondary">Close Chat</Button>
+        <ul style={{maxHeight: 300, overflow: 'scroll'}}>
+            { messages.msgs.map((v, i) => <li key={i}>{v}</li>) }
+        </ul>
 
-// export default Chat;
+        <div><input id="to" placeholder="Recipient Username" /></div>
+        <div><input id="chat-message" placeholder="Chat Message" /></div>
+        
+        <Button className="btn" onClick={ sendMessage } variant="secondary">Send Message</Button>
+    </div>;
+  }
+  else {
+    return <div style={{position: 'fixed', zIndex: 999, right: 0, bottom: 50}}>
+        <Button className="btn" onClick={changeShown} variant="primary">Show Chat</Button>
+       
+    </div>
+  }
+}
+
+export default Chat;

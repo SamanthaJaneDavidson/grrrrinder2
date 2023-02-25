@@ -12,8 +12,109 @@ code {
     monospace;
 }
 
+#home{
+  padding: 80px;
+}
+
 #map {
   height: 180px;
+}
+
+#navbar{
+  background-color: #f8d17c;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  }
+
+#navcontent{
+  justify-content: space-evenly;
+  font-family: monospace;
+  font-weight: bold;
+}
+.navtext{
+  color: rgb(133, 83, 26);
+  font-size: large;
+}
+
+.navtext:hover{
+  color: rgb(108, 173, 185);
+  text-decoration: none;
+}
+
+#add-dog-link{
+  color: rgb(133, 83, 26);
+  text-decoration: none;
+  padding-left: 25px;
+}
+
+#add-dog-link:hover{
+  color: rgb(108, 173, 185);
+}
+
+h1{
+  text-align: center;
+  font-family: monospace;
+}
+
+h4{
+  font-family: monospace;
+}
+
+.dog-card{
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.mb-3{
+  font-family: monospace;
+}
+
+
+#footer{
+  background-color: #f8d17c ;
+}
+
+#footer p a {
+  /* justify-content: center; */
+  /* text-align: center; */
+  padding-left: 650px;
+  text-decoration: none;
+  color: rgb(133, 83, 26);
+  font-family: monospace;
+}
+
+#footer p a:hover{
+  color: rgb(108, 173, 185);
+}
+
+.chatbox {
+  background: #d1d1d4;
+  border-color: 2px solid #8ca6db;
+  color: #333333;
+  padding: 10px;
+  margin-right: 10px;
+  width: 270px;
+  text-align: center;
+}
+
+.btn-primary {
+  /* display: flex; */
+  background-color: #8ca6db !important;
+  /* justify-content: flex-end; */
+  align-items: center;
+  text-align: center;
+  margin-top: 5px;
+  width: 200px;
+}
+
+.btn-secondary {
+  /* display: flex; */
+  background-color: #8ca6db !important;
+  /* justify-content: flex-end; */
+  align-items: center;
+  text-align: center;
+  margin-top: 5px;
+  width: 200px;
 }
 
 /* #home {
