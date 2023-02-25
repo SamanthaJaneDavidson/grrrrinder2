@@ -68,7 +68,7 @@ console.log(data);
 
             <div className="dog-cardbody">
 
-              <h3> Please fill out this form</h3>
+              <h4> Please fill out this form</h4>
 
               <Form.Group className="mb-3" controlId="formBasicText">
         <Form.Label>Dog Name</Form.Label>
@@ -160,7 +160,7 @@ console.log(data);
 {/* connect cloudinary! */}
       <Form.Group controlId="formFile" className="mb-3" value={dogPicture}
                 onChange={(event) => setDogPicture(event.target.value)}>
-        <Form.Label>Upload a photo of your dog here</Form.Label>
+        <Form.Label>Upload a photo of your dog here: </Form.Label>
       
         <UploadWidget/>
       </Form.Group>
