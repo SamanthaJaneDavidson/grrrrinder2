@@ -66,10 +66,12 @@ function Chat() {
         <ul style={{maxHeight: 300, overflow: 'scroll'}}>
             { messages.msgs.map((v, i) => <li key={i}>{v}</li>) }
         </ul>
-
+      <div>
         <input id="to" placeholder="Recipient Username" />
+        </div>
+        <div>
         <input id="chat-message" placeholder="Chat Message" />
-        
+        </div>
         <Button className="btn" onClick={ sendMessage } variant="secondary">Send Message</Button>
     </div>;
   }
