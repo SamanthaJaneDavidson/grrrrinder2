@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
 
 import { useQuery } from '@apollo/client';
@@ -8,7 +8,7 @@ import AddDog from './Add-dog';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 
 // import CardColumns from 'react-bootstrap/CardColumns'
 import { Accordion, Card } from 'react-bootstrap'

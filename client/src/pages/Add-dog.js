@@ -25,6 +25,7 @@ function AddDog() {
   const [preferredDays, setPreferredDays] = useState('');
   const [preferredTimes, setPreferredTimes] = useState('');
   const [preferredLocation, setPreferredLocation] = useState('');
+  //const [dogNotes, setDogNotes] = useState('');
 
 const [saveDog] = useMutation(SAVE_DOG);
 
