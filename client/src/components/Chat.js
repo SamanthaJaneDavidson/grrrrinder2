@@ -35,8 +35,15 @@ function Chat() {
     if (inputBox.value) {
         const token = auth.getToken();
 
+        const to = document.getElementById('to').value;
+
         if (token) {
-            socket.emit("message", inputBox.value, token);
+          if(!to) {
+            alert("You must specify who to send this message to!");
+          }
+          else {
+            socket.emit("message", inputBox.value, to, token);
+          }
         }
         else {
             alert('You must be logged in to use the chat!');
@@ -45,24 +52,27 @@ function Chat() {
     inputBox.value = '';
   };
 
+  socket.emit("init", auth.getToken());
+
   const changeShown = () => {
     setShown(!shown);
   }
 
   if (shown) {
-    return <div style={{position: 'fixed', right: 0, bottom: 50}}>
+    return <div style={{position: 'fixed', zIndex: 999, backgroundColor: 'white', right: 0, bottom: 50}}>
         <button onClick={changeShown}>close chat</button>
         <ul style={{maxHeight: 300, overflow: 'scroll'}}>
             { messages.msgs.map((v, i) => <li key={i}>{v}</li>) }
         </ul>
 
         <input id="chat-message" placeholder="Chat Message" />
+        <input id="to" placeholder="Recipient Username" />
 
         <button onClick={ sendMessage }>Send Message</button>
     </div>;
   }
   else {
-    return <div style={{position: 'fixed', right: 0, bottom: 50}}>
+    return <div style={{position: 'fixed', zIndex: 999, right: 0, bottom: 50}}>
         <button onClick={changeShown}>show chat</button>
     </div>
   }
