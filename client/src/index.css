@@ -87,6 +87,36 @@ h4{
   color: rgb(108, 173, 185);
 }
 
+.chatbox {
+  background: #d1d1d4;
+  border-color: 2px solid #8ca6db;
+  color: #333333;
+  padding: 10px;
+  margin-right: 10px;
+  width: 270px;
+  text-align: center;
+}
+
+.btn-primary {
+  /* display: flex; */
+  background-color: #8ca6db !important;
+  /* justify-content: flex-end; */
+  align-items: center;
+  text-align: center;
+  margin-top: 5px;
+  width: 200px;
+}
+
+.btn-secondary {
+  /* display: flex; */
+  background-color: #8ca6db !important;
+  /* justify-content: flex-end; */
+  align-items: center;
+  text-align: center;
+  margin-top: 5px;
+  width: 200px;
+}
+
 /* #home {
   height: calc(100vh - 300px);
   position: relative;
