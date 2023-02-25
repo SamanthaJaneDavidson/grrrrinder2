@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 import auth from "../utils/auth";
-import "../styles/chatStyle.css";
 import { Button } from 'react-bootstrap';
 
 const socket = io();
