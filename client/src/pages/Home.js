@@ -19,7 +19,6 @@ const home = () => {
       Grrrr'inder provides a catered experience by allowing owners the ability
       to be more selective about the dogs their pet meets. Create an account and profile to
       get started today!</h2>
-      <Link target='about' classes='btn btn-primary rounded-0 mr-2'>SIGN UP</Link>
             </div>
         </div>
     </div>
