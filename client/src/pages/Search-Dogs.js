@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+// import React from 'react';
 import Searchbar from '../components/Searchbar';
 import Map from '../components/Map'
 import Footer from "../components/Footer";
+import { Accordion } from 'react-bootstrap';
+import { Navbar, Card } from '../components/Navigation';
+import Chat from '../components/Chat';
 
 function SearchDogs() {
 
@@ -71,4 +75,6 @@ function SearchDogs() {
         </div>
     );
 }
+
+
 export default SearchDogs;
