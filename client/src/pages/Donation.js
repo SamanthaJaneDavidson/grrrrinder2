@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Navbar from "../components/Navigation";
+// import Navbar from "../components/Navigation";
 
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Donate = () => {
     return (
