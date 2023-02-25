@@ -62,7 +62,9 @@ console.log(data);
     return (
      
         <Form onSubmit={handleFormSubmit}>
-        <h1> Create Your Dog's Profile !</h1>
+          
+        <h1 className="text-box"> Create Your Dog's Profile !</h1>
+       <hr></hr>
        
           <div className="dog-card">
 
@@ -70,19 +72,19 @@ console.log(data);
 
               <h4> Please fill out this form</h4>
 
-              <Form.Group className="mb-3" controlId="formBasicText">
+              <Form.Group className="font-weight-bold text-small col-md-12" controlId="formBasicText">
         <Form.Label>Dog Name</Form.Label>
         <Form.Control type="text" placeholder="Enter your dog name"  value={dogName} onChange={(event) => setDogName(event.target.value)}/>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicText">
+      <Form.Group className="font-weight-bold text-small col-md-12" controlId="formBasicText">
         <Form.Label>Dog Breed</Form.Label>
         <Form.Control type="text" placeholder="Enter your dog breed" value={dogBreed} onChange={(event) => setDogBreed(event.target.value)}/>
       </Form.Group>
 
-      <Form.Group className="font-weight-bold text-small col-lg-6" >
+      <Form.Group className="font-weight-bold text-small col-md-12" >
       <Form.Label>Dog Gender</Form.Label>
-      <Form.Select aria-label="Dog gender" value={dogGender}
+      <Form.Select className="form-control" aria-label="Dog gender" value={dogGender}
                 onChange={(event) => setDogGender(event.target.value)}>
       <option>Select Gender</option>
       <option value="1">Male</option>
@@ -90,9 +92,9 @@ console.log(data);
     </Form.Select>
     </Form.Group>
 
-<Form.Group className="font-weight-bold text-small col-lg-6">
+<Form.Group className="font-weight-bold text-small col-md-12">
     <Form.Label>Dog Size</Form.Label>
-    <Form.Select aria-label="Dog size" className="font-weight-bold text-small col-lg-6" value={dogSize}
+    <Form.Select className="form-control" aria-label="Dog size" value={dogSize}
                 onChange={(event) => setDogSize(event.target.value)}>
    
     <option>Select Dog's Size</option>
@@ -102,9 +104,9 @@ console.log(data);
     </Form.Select>
     </Form.Group>
 
-    <Form.Group className="font-weight-bold text-small col-lg-6">
+    <Form.Group className="font-weight-bold text-small col-md-12">
     <Form.Label>Dog Age</Form.Label>
-    <Form.Select aria-label="Dog age" className="font-weight-bold text-small col-lg-6" value={dogAge}
+    <Form.Select aria-label="Dog age" className="form-control" value={dogAge}
                 onChange={(event) => setDogAge(event.target.value)}>
    
     <option>Select Dog's Age</option>
@@ -115,9 +117,9 @@ console.log(data);
     </Form.Select>
     </Form.Group>
 
-    <Form.Group className="font-weight-bold text-small col-lg-6">
+    <Form.Group className="font-weight-bold text-small col-md-12">
     <Form.Label>Is your dog vaccinated?</Form.Label>
-    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6" value={dogVaccinations}
+    <Form.Select aria-label="label" className="form-control" value={dogVaccinations}
                 onChange={(event) => setDogVaccinations(event.target.value)}>
   
       <option>Vaccination Status</option>
@@ -126,9 +128,9 @@ console.log(data);
     </Form.Select>
     </Form.Group>
 
-    <Form.Group className="font-weight-bold text-small col-lg-6">
+    <Form.Group className="font-weight-bold text-small col-md-12">
     <Form.Label>Is your dog neutered/spayed?</Form.Label>
-    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6" value={dogNeuter}
+    <Form.Select aria-label="label" className="form-control" value={dogNeuter}
                 onChange={(event) => setDogNeuter(event.target.value)}>
     
       <option>Neutered/Spayed</option>
@@ -137,9 +139,9 @@ console.log(data);
     </Form.Select>
     </Form.Group>
 
-    <Form.Group className="font-weight-bold text-small col-lg-6">
+    <Form.Group className="font-weight-bold text-small col-md-12">
     <Form.Label>What is your dog's temperment?</Form.Label>
-    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6" value={dogTemperment}
+    <Form.Select aria-label="label" className="form-control" value={dogTemperment}
                 onChange={(event) => setDogTemperment(event.target.value)}>
    
       <option>Temperment</option>
@@ -151,23 +153,22 @@ console.log(data);
     </Form.Group>
 
 
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" value={dogNotes}
+      <Form.Group className="font-weight-bold text-small col-md-12" controlId="exampleForm.ControlTextarea1" value={dogNotes}
                 onChange={(event) => setDogNotes(event.target.value)}>
         <Form.Label>Share some notes about your dog!</Form.Label>
         <Form.Control as="textarea" rows={3} />
       </Form.Group>
 
 {/* connect cloudinary! */}
-      <Form.Group controlId="formFile" className="mb-3" value={dogPicture}
+      <Form.Group className="font-weight-bold text-small col-md-12" controlId="formFile"  value={dogPicture}
                 onChange={(event) => setDogPicture(event.target.value)}>
         <Form.Label>Upload a photo of your dog here: </Form.Label>
-      
         <UploadWidget/>
       </Form.Group>
 
-<Form.Group>
+<Form.Group className="font-weight-bold text-small col-md-12">
 <Form.Label>What is your preferred day to meet?</Form.Label>
-      <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6" value={preferredDays}
+      <Form.Select aria-label="label" className="form-control" value={preferredDays}
                 onChange={(event) => setPreferredDays(event.target.value)}>
     
       <option>Select Days</option>
@@ -182,9 +183,9 @@ console.log(data);
     </Form.Select>
     </Form.Group>
 
-    <Form.Group>
+    <Form.Group className="font-weight-bold text-small col-md-12">
     <Form.Label>What is your preferred time of day to meet?</Form.Label>
-    <Form.Select aria-label="label" className="font-weight-bold text-small col-lg-6" value={preferredTimes}
+    <Form.Select aria-label="label" className="form-control" value={preferredTimes}
                 onChange={(event) => setPreferredTimes(event.target.value)}>
  
       <option>Select Preferred Times</option>
@@ -195,7 +196,7 @@ console.log(data);
     </Form.Select>
     </Form.Group>
 
-    <Form.Group className="mb-3" controlId="formBasicText" value={preferredLocation}
+    <Form.Group className="font-weight-bold text-small col-md-12" controlId="formBasicText" value={preferredLocation}
                 onChange={(event) => setPreferredLocation(event.target.value)}>
         <Form.Label>Zip Code</Form.Label>
         <Form.Control type="text" placeholder="Enter your zip code" />

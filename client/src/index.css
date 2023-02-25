@@ -118,10 +118,7 @@ h4{
 }
 
 #home {
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  height: calc(100vh - 300px);
+ height: calc(100vh - 300px);
   position: relative;
   margin-top: 56px;
 
@@ -129,7 +126,12 @@ h4{
     margin-top: 115px;
   }
 }
-  #home::before {
+.home {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+  .home::before {
     content: '';
     display: inline-block;
     position: absolute;
@@ -137,8 +139,8 @@ h4{
     right: 0;
     bottom: 0;
     left: 0;
-    /* background-color:#f8d17c; */
-    opacity: 0.9;
+    background-color:white;
+    opacity: 0.4;
   }
 
   #home div {
@@ -154,6 +156,7 @@ h4{
   }
     .title {
       font-weight: bold;
+      color: #805324;
 
       @media (min-width: 768px) {
         font-size: 4rem;
@@ -162,6 +165,7 @@ h4{
 
     .sub-title {
       font-weight: normal;
+      color: rgb(63, 54, 54);
       max-width: 700px;
       margin: 0 auto;
       letter-spacing: 1px;
@@ -171,6 +175,58 @@ h4{
         font-size: 1.2rem;
       }
     }
+
+    .home backgroundImage {
+
+    }
+
+    /* create a profile styling */
+
+    .text-box {
+      background-color:#8ca6db;
+      border-radius: 20px;
+      margin: 2em auto;
+      padding: 20px;
+      width: 90%;
+    }
+
+   form h1 {
+    margin: 0;
+    padding: 0;
+font-size: 2.8em;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+form h4 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+
+.dog-card {
+  background-color: #f7e3c8;
+  border-radius: 20px;
+  margin: auto;
+  width: 90%;
+  padding: 1em;
+}
+
+.dog-cardbody {
+  margin: 0 auto;
+  width: 80%;
+  padding: 10px;
+}
+
+
+
 /* #home {
   height: calc(100vh - 300px);
   position: relative;
