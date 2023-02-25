@@ -13,10 +13,6 @@ import UploadWidget from '../components/UploadWidget';
 function AddDog() {
 
   const [dogName, setDogName] = useState('');
-<<<<<<< HEAD:client/src/components/Add-dog.js
-  const [dogPicture, setDogPicture] = useState('');
-=======
->>>>>>> main:client/src/pages/Add-dog.js
   const [dogGender, setDogGender] = useState('');
   const [dogBreed, setDogBreed] = useState('');
   const [dogAge, setDogAge] = useState('');
@@ -29,7 +25,7 @@ function AddDog() {
   const [preferredDays, setPreferredDays] = useState('');
   const [preferredTimes, setPreferredTimes] = useState('');
   const [preferredLocation, setPreferredLocation] = useState('');
-  const [dogNotes, setDogNotes] = useState('');
+  //const [dogNotes, setDogNotes] = useState('');
 
 const [saveDog] = useMutation(SAVE_DOG);
 
@@ -39,20 +35,6 @@ async function handleFormSubmit(event){
         variables:{
           input:{
             dog_name: dogName,
-<<<<<<< HEAD:client/src/components/Add-dog.js
-            dog_breed: setDogBreed,
-            dog_gender: setDogGender,
-            dog_size: setDogSize,
-            dog_age: setDogAge,
-            dog_vaccinations: setDogVaccinations,
-            dog_neuter_spayed: setDogNeuter,
-            dog_temperment: setDogTemperment,
-            dog_notes: setDogNotes,
-            dog_picture: setDogPicture,
-            preferred_days: [preferredDays],
-            preferred_timeofday: [setPreferredTimes],
-            preferred_location: [setPreferredLocation],
-=======
             dog_breed: dogBreed,
             dog_gender: dogGender,
             dog_size: dogSize,
@@ -65,7 +47,6 @@ async function handleFormSubmit(event){
             preferred_days: preferredDays,
             preferred_timeofday: preferredTimes,
             preferred_location: preferredLocation,
->>>>>>> main:client/src/pages/Add-dog.js
           }
             
         }

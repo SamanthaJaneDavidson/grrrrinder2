@@ -14,11 +14,18 @@ const expiration = '2h';
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
-      const username = context.username;
-      
-      const users = await User.find({username});
-      
-      return users[0];
+      if (context.username) {
+        const user = await User.find({username: context.username})[0].populate({
+          path: 'orders.products',
+          populate: 'category'
+        });
+
+        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+
+        return user;
+      }
+
+      throw new AuthenticationError('Not logged in');
     },
     //Added this to find all dogs
     dog: async (parent, args, context) => {
@@ -53,23 +60,9 @@ const resolvers = {
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate('category');
     },
-    user: async (parent, args, context) => {
-      if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: 'orders.products',
-          populate: 'category'
-        });
-
-        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
-
-        return user;
-      }
-
-      throw new AuthenticationError('Not logged in');
-    },
     order: async (parent, { _id }, context) => {
-      if (context.user) {
-        const user = await User.findById(context.user._id).populate({
+      if (context.username) {
+        const user = await User.find({username: context.username})[0].populate({
           path: 'orders.products',
           populate: 'category'
         });
@@ -154,8 +147,8 @@ const resolvers = {
         preferred_location } = input;
 
 
-      if (context.user) {
-        const user = await User.findOne({_id:context.user._id});
+      if (context.username) {
+        const user = await User.find({username: context.username})[0];
 
         user.savedDog.push({
             dog_name,
@@ -202,10 +195,11 @@ const resolvers = {
     //Added for Stripe
     addOrder: async (parent, { products }, context) => {
       console.log(context);
-      if (context.user) {
+      if (context.username) {
         const order = new Order({ products });
 
-        await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
+        await User.findOneAndUpdate({username: context.username}, 
+          { $push: { orders: order } });
 
         return order;
       }
