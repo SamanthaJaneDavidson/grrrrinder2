@@ -48,10 +48,33 @@ const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware }
       socket.on('disconnect', function(){
         console.log('User Disconnected');
       });
-      socket.on('message', async (msg, token) => {
+      socket.on('message', async (msg, to, token) => {
+        const socketUsers = [];
+        for (let [id, socket] of io.of("/").sockets) {
+          socketUsers.push({
+            userID: id,
+            username: socket.auth.username,
+          });
+        }
+
+        const toUser = socketUsers.find(x => x.username == to);
+
+        const user = (await User.find({token}))[0];
+        
+        if (user && toUser) {
+          const usUser = socketUsers.find(x => x.username == user.username);
+
+          io.to([usUser.userID, toUser.userID])
+            .emit('message', user.username + "> " + msg, {
+              from: user.username
+            });
+        }
+      });
+
+      socket.on('init', async (token) => {
         const user = await User.find({token});
-        if (user && user[0]) {
-          io.emit('message', user[0].username + "> " + msg);
+        if (user[0]) {
+          socket.auth = { username: user[0].username };
         }
       });
     });
