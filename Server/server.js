@@ -9,7 +9,7 @@ const { typeDefs } = require("./schema");
 const resolvers = require("./Schema/resolvers");
 const { Server } = require("socket.io");
 const { User } = require("./models");
-// const stripeSecretKey = process.env.SECRET_ - ASK TUTOR About this
+// const stripeSecretKey = process.env.SECRET_ - ASK TUTOR About this 
 
 //Implemented the Apollo Server and apply it to the Express server as middleware
 const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware });
