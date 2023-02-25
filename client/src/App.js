@@ -23,6 +23,7 @@ import Chat from "./components/Chat";
 // import Donation from './pages/Donation';
 // import Home from './components/Home';
 // import UserProfile from './components/User-Profile';
+import './index.css';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({

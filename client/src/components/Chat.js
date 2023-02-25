@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 import auth from "../utils/auth";
+import { Button } from 'react-bootstrap';
 
 const socket = io();
 
@@ -59,21 +60,23 @@ function Chat() {
   }
 
   if (shown) {
-    return <div style={{position: 'fixed', zIndex: 999, backgroundColor: 'white', right: 0, bottom: 50}}>
-        <button onClick={changeShown}>close chat</button>
+    return <div className="chatbox" style={{position: 'fixed', zIndex: 999, backgroundColor: '#d1d1d4', right: 0, bottom: 50}}>
+       
+        <Button className="btn" onClick={changeShown} variant="secondary">Close Chat</Button>
         <ul style={{maxHeight: 300, overflow: 'scroll'}}>
             { messages.msgs.map((v, i) => <li key={i}>{v}</li>) }
         </ul>
 
-        <input id="chat-message" placeholder="Chat Message" />
         <input id="to" placeholder="Recipient Username" />
-
-        <button onClick={ sendMessage }>Send Message</button>
+        <input id="chat-message" placeholder="Chat Message" />
+        
+        <Button className="btn" onClick={ sendMessage } variant="secondary">Send Message</Button>
     </div>;
   }
   else {
     return <div style={{position: 'fixed', zIndex: 999, right: 0, bottom: 50}}>
-        <button onClick={changeShown}>show chat</button>
+        <Button className="btn" onClick={changeShown} variant="primary">Show Chat</Button>
+       
     </div>
   }
 }
