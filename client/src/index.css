@@ -129,7 +129,6 @@ h4{
 .home {
   height: 100%;
   background-position: center;
-  background-size: cover;
 }
   .home::before {
     content: '';
@@ -164,11 +163,12 @@ h4{
     }
 
     .sub-title {
-      font-weight: normal;
+      font-weight: bold;
       color: rgb(63, 54, 54);
       max-width: 700px;
       margin: 0 auto;
       letter-spacing: 1px;
+      line-height: 32px;
       font-size: 1rem;
 
       @media (min-width: 768px) {
@@ -176,11 +176,9 @@ h4{
       }
     }
 
-    .home backgroundImage {
+  
 
-    }
-
-    /* create a profile styling */
+    /*  profile styling */
 
     .text-box {
       background-color:#8ca6db;
