@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // may need to delete the /client if error returns  
+import ReactDOM from 'react-dom'; // may need to delete the /client if error returns  
 import './index.css';
-import './App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
