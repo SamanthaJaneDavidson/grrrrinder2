@@ -5,9 +5,13 @@
     padding: 25px;
   }
 
-  #showchatbtn {
-    background: #8ca6db;
-    padding: 5px 10px 5px 10px;
-    color: #333333;
-    margin: 0 20 0 0;
+  .btn-primary {
+    display: flex;
+    background-color: #8ca6db !important;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    width: 200px;
   }
+
