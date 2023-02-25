@@ -22,6 +22,27 @@ query dog{
     }
 }`;
 
+//Added query for multiple dogs
+export const QUERY_DOGS= gql`
+query dogs{
+    dogs{
+     dog_name
+     dog_breed
+     dog_gender
+     dog_size 
+     dog_age
+     dog_vaccinations
+     dog_neuter_spayed
+     dog_temperment
+     dog_notes
+     dog_picture
+     dog_owner
+     preferred_days
+     preferred_timeofday
+     preferred_location
+    }
+}`;
+
 export const QUERY_PRODUCTS = gql`
   query getProducts($category: ID) {
     products(category: $category) {
