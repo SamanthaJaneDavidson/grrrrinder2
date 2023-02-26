@@ -1,4 +1,5 @@
 // import React from 'react';
+// import searchDogs from '../pages/Search-Dogs';
 
 // //Base map
 // const map = L.map('map').setView([39.9509, 75.1575], 13);
@@ -14,19 +15,11 @@
 //     iconSize: [, 30]
 // });
 
-// //need to pull dog location from search results 
-// function dogResults {
-
-
-//     //call getLonLat
-// }
-
 
 // //Zip to long/lat geocoding converstion 
 // function getLonLat(dogLocation){
-//     const geoCodingUrl = "http://api.openweathermap.org/geo/1.0/zip?zip=" + dogLocation + "US&appid=d97fe2285b7bc123de0716fce9e4ac7a"; //alpha country code? 
+//     const geoCodingUrl = "http://api.openweathermap.org/geo/1.0/zip?zip=" + dogLocation + "US&appid=d97fe2285b7bc123de0716fce9e4ac7a"; 
 
-//     //I don't think this is the "right" way for me to do it for this assignment
 //     fetch(geoCodingUrl)
 //         .then(function (response) {
 //             return response.json();
@@ -39,17 +32,16 @@
 //         })
 // }
 
-// function dogMap() {
+// function dogMap(lat, lon) {
 
 //     const popup = L.popup()
 
 //     return
 //     <div className='map'>
-//         {(dogLocation.map(potato => { //need to pull dog location from search results
-//             console.log(dogLocation)
+//         {(props.perferred_location.map(potato => { 
+//             console.log(props.perferred_location)
 //             return (
-//                 <Map preferred_location={potato.preferred_location}/>
-//                 L.popup ([dogLocation], {icon: dogIcon}).setLatLng(long, lat).setContent(dogIcon).openOn(map);
+
 //             )
 //         }))}
 //     </div>
@@ -57,3 +49,7 @@
 
 
 // export default Map;
+
+// {/* <Map preferred_location={potato.preferred_location}/> //needs to also go in search dogs
+// L.popup (["add dog name or something"], {icon: dogIcon}).setLatLng(long, lat).setContent */}
+// // (dogIcon).openOn(map);
