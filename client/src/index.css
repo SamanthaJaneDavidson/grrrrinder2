@@ -21,9 +21,9 @@ code {
 }
 
 #navbar{
-  background-color: #f8d17c;
+  background-color:white;
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   }
 
 #navcontent{
@@ -72,6 +72,15 @@ h4{
   padding-right: 60px;
 }
 
+.dog-cardbody {
+  margin-top: 24px;
+  
+}
+
+.dog-cardbody > div {
+  margin-bottom: 24px;
+}
+
 .mb-3{
   font-family: monospace;
 }
@@ -97,7 +106,7 @@ button:hover{
 }
 
 #footer{
-  background-color: #f8d17c ;
+  background-color: white ;
 }
 
 #footer p a {
@@ -143,60 +152,26 @@ button:hover{
   width: 200px;
 }
 
-/* #home {
-  height: calc(100vh - 300px);
-  position: relative;
-  margin-top: 56px;
-
-  @media (min-width: 768px) {
-    margin-top: 115px;
+.carousel-caption {
+  color: rgb(94 71 41) !important;
+  top: 60%;
+  /* add font family, make it bold */
   }
+
+.carousel-caption h1 {
+  font-weight: bold;
+  font-family: URW Chancery L, cursive;
+  font-size: 65px;
 }
-  
-div {
-    height: 100%;
-  }
+.carousel1 {
+  color: rgb(52, 35, 13);
+}
+.carousel2 {
+  color: white;
+}
 
-
-  .home {
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    &:before {
-      content: '';
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: #003267;
-      opacity: 0.7;
-    }
-    .intro {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      position: relative;
-      z-index: 2;
-      .title {
-        font-weight: bold;
-
-        @media (min-width: 768px) {
-          font-size: 4rem;
-        }
-      }
-      .sub-title {
-        font-weight: normal;
-        max-width: 700px;
-        margin: 0 auto;
-        letter-spacing: 1px;
-        font-size: 1rem;
-
-        @media (min-width: 768px) {
-          font-size: 1.2rem;
-        }
-      }
-    }
-  }
- */
+.carousel-caption p {
+  font-size: 22px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
