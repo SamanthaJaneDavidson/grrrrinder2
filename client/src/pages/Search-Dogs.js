@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 // import React from 'react';
 import Searchbar from "../components/Searchbar";
-import Footer from "../components/Footer";
-import { Accordion, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Card } from 'react-bootstrap';
-import { QUERY_ME, QUERY_DOG, ADD_DOG } from '../utils/queries';
+import { QUERY_ME, QUERY_DOG, } from '../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { SAVE_DOG } from "../utils/mutations";
 

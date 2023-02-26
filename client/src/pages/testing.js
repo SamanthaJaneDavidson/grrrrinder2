@@ -24,7 +24,7 @@ export default function Profile() {
       "input": {
         "preferred_timeofday": ["Morning"],
         "preferred_location": ["12345"],
-        "preferred_days": ["mondayn"],
+        "preferred_days": ["monday"],
         "dog_vaccinations": true,
         "dog_temperment": "shy",
         "dog_size": "large",
