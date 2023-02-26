@@ -211,14 +211,8 @@ console.log(data);
           </div>
        
         </Form>
-
-
-    )
-
-    }
-
-       
-
+        
+        )};
 
 export default AddDog;
 
