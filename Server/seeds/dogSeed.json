@@ -90,7 +90,7 @@
         "dog_temperment": "Leader",
         "dog_notes": "Gender doesn't really matter, but it should be a slow introduction",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1671139503/y123v1mg2juna7r8cqkj", 
-        "dog_owner": 5,
+        "dog_owner": 1,
         "preferred_days": "Friday",
         "preferred_timeofday": "Afternoon",
         "preferred_location": 19147
@@ -106,7 +106,7 @@
         "dog_temperment": "Calm",
         "dog_notes": "Sweetest little bug ever",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1676694610/pumpkin_zfp98l.jpg", 
-        "dog_owner": 1,
+        "dog_owner": 2,
         "preferred_days": "Sunday",
         "preferred_timeofday": "Afternoon",
         "preferred_location": 19147
@@ -138,7 +138,7 @@
         "dog_temperment": "Leader",
         "dog_notes": "Run run run run run",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1676694409/collie_tx7qu7.jpg", 
-        "dog_owner": 2,
+        "dog_owner": 4,
         "preferred_days": "Friday",
         "preferred_timeofday": "Morning",
         "preferred_location": 19130
@@ -154,7 +154,7 @@
         "dog_temperment": "Shy",
         "dog_notes": "Hi!",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1676694409/beagle_e7rg7l.jpg", 
-        "dog_owner": 1,
+        "dog_owner": 5,
         "preferred_days": "Wednesday",
         "preferred_timeofday": "Morning",
         "preferred_location": 19125

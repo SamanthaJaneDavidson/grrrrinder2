@@ -1,4 +1,3 @@
-//Test
 import React, { useState } from 'react';
 import Auth from '../utils/auth';
 import {useMutation} from '@apollo/client';
@@ -55,7 +54,8 @@ console.log(data);
     // ADD SAVE_DOG data USING FORM INPUT VALUES
 
     Auth.login(data.addUser.token);
- 
+
+
 };
 
 
@@ -163,7 +163,7 @@ console.log(data);
       <Form.Group className="font-weight-bold text-small col-md-12" controlId="formFile"  value={dogPicture}
                 onChange={(event) => setDogPicture(event.target.value)}>
         <Form.Label>Upload a photo of your dog here: </Form.Label>
-        <UploadWidget/>
+        <UploadWidget id="upload-widget"/>
       </Form.Group>
 
 <Form.Group className="font-weight-bold text-small col-md-12">
@@ -201,7 +201,7 @@ console.log(data);
         <Form.Label>Zip Code</Form.Label>
         <Form.Control type="text" placeholder="Enter your zip code" />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" onClick={handleFormSubmit}>
         Submit
       </Button>
  
@@ -210,16 +210,7 @@ console.log(data);
           </div>
        
         </Form>
-
-
-    )
-
-    }
-
-       
-
+        
+        )};
 
 export default AddDog;
-
-
-

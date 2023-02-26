@@ -61,7 +61,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<UserProfile />}></Route>
           <Route path = "/search-dogs" element = {<SearchDogs/>}/>
-          <Route path="/donation" element={<Donation />} />
+          <Route path="/donate" element={<Donation />} />
           <Route path="/add-dog" element={<AddDog />} />
         </Routes>
         <Footer />
