@@ -74,6 +74,7 @@ const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware }
 
       socket.on('init', async (token) => {
         const user = await User.find({token});
+
         if (user[0]) {
           socket.auth = { username: user[0].username };
         }
