@@ -164,7 +164,7 @@ console.log(data);
       <Form.Group className="font-weight-bold text-small col-md-12" controlId="formFile"  value={dogPicture}
                 onChange={(event) => setDogPicture(event.target.value)}>
         <Form.Label>Upload a photo of your dog here: </Form.Label>
-        <UploadWidget/>
+        <UploadWidget id="upload-widget"/>
       </Form.Group>
 
 <Form.Group className="font-weight-bold text-small col-md-12">

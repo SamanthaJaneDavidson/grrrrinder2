@@ -84,6 +84,18 @@ p{
   font-family: monospace;
 }
 
+button{
+  background-color: #f8d17c;
+  border: none;
+  color: rgb(133, 83, 26);
+  padding: 5px;
+}
+
+button:hover{
+  background-color:rgb(139, 204, 216);
+  color: white;
+}
+
 #footer{
   background-color: #f8d17c ;
 }
