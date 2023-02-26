@@ -51,15 +51,19 @@ function AddDog() {
     // ADD SAVE_DOG data USING FORM INPUT VALUES
 
     Auth.login(data.addUser.token);
-  }
+};
 
   return (
+
     <Form onSubmit={handleFormSubmit}>
+
       <h1 className="text-box"> Create Your Dog's Profile !</h1>
       <hr></hr>
 
       <div className="dog-card">
+
         <div className="dog-cardbody">
+          
           <h4> Please fill out this form</h4>
 
           <Form.Group
@@ -234,16 +238,49 @@ function AddDog() {
             </Form.Select>
           </Form.Group>
 
-          <Form.Group
-            className="font-weight-bold text-small col-md-12"
-            controlId="formBasicText"
-            value={preferredLocation}
-            onChange={(event) => setPreferredLocation(event.target.value)}
-          >
-            <Form.Label>Zip Code</Form.Label>
-            <Form.Control type="text" placeholder="Enter your zip code" />
-          </Form.Group>
-          <Button variant="primary" type="submit" onClick={handleFormSubmit}>
+{/* connect cloudinary! */}
+      <Form.Group className="font-weight-bold text-small col-md-12" controlId="formFile"  value={dogPicture}
+                onChange={(event) => setDogPicture(event.target.value)}>
+        <Form.Label>Upload a photo of your dog here: </Form.Label>
+        <UploadWidget id="upload-widget"/>
+      </Form.Group>
+
+<Form.Group className="font-weight-bold text-small col-md-12">
+<Form.Label>What is your preferred day to meet?</Form.Label>
+      <Form.Select aria-label="label" className="form-control" value={preferredDays}
+                onChange={(event) => setPreferredDays(event.target.value)}>
+    
+      <option>Select Days</option>
+      <option value="1">Monday</option>
+      <option value="2">Tuesday</option>
+      <option value="3">Wednesday</option>
+      <option value="4">Thursday</option>
+      <option value="5">Friday</option>
+      <option value="6">Saturday</option>
+      <option value="7">Sunday</option>
+      <option value="8">No preference</option>
+    </Form.Select>
+    </Form.Group>
+
+    <Form.Group className="font-weight-bold text-small col-md-12">
+    <Form.Label>What is your preferred time of day to meet?</Form.Label>
+    <Form.Select aria-label="label" className="form-control" value={preferredTimes}
+                onChange={(event) => setPreferredTimes(event.target.value)}>
+ 
+      <option>Select Preferred Times</option>
+      <option value="1">Morning</option>
+      <option value="2">Afternoon</option>
+      <option value="3">Evening</option>
+      <option value="4">No preference</option>
+    </Form.Select>
+    </Form.Group>
+
+    <Form.Group className="font-weight-bold text-small col-md-12" controlId="formBasicText" value={preferredLocation}
+                onChange={(event) => setPreferredLocation(event.target.value)}>
+        <Form.Label>Zip Code</Form.Label>
+        <Form.Control type="text" placeholder="Enter your zip code" />
+      </Form.Group>
+      <Button variant="primary" type="submit" onClick={handleFormSubmit}>
         Submit
       </Button>
         </div>
