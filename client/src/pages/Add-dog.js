@@ -1,4 +1,3 @@
-//Test
 import React, { useState } from 'react';
 import Auth from '../utils/auth';
 import {useMutation} from '@apollo/client';
@@ -215,6 +214,3 @@ console.log(data);
         )};
 
 export default AddDog;
-
-
-
