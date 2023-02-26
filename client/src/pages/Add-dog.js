@@ -55,7 +55,8 @@ console.log(data);
     // ADD SAVE_DOG data USING FORM INPUT VALUES
 
     Auth.login(data.addUser.token);
- 
+
+
 };
 
 
@@ -201,7 +202,7 @@ console.log(data);
         <Form.Label>Zip Code</Form.Label>
         <Form.Control type="text" placeholder="Enter your zip code" />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" onClick={handleFormSubmit}>
         Submit
       </Button>
  
