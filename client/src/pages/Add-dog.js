@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Auth from '../utils/auth';
 import {useMutation} from '@apollo/client';
-import {SAVE_DOG} from '../utils/mutations';
+import {ADD_DOG} from '../utils/mutations';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -27,11 +27,11 @@ function AddDog() {
   const [preferredLocation, setPreferredLocation] = useState('');
   //const [dogNotes, setDogNotes] = useState('');
 
-const [saveDog] = useMutation(SAVE_DOG);
+const [addDog] = useMutation(ADD_DOG);
 
 async function handleFormSubmit(event){
     event.preventDefault()
-    const {data} = await saveDog({
+    const {data} = await addDog({
         variables:{
           input:{
             dog_name: dogName,

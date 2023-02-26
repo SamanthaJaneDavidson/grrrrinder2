@@ -1,80 +1,107 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import React from 'react';
-import Searchbar from '../components/Searchbar';
-import Map from '../components/Map'
+import Searchbar from "../components/Searchbar";
 import Footer from "../components/Footer";
-import { Accordion } from 'react-bootstrap';
-import { Navbar, Card } from '../components/Navigation';
-import Chat from '../components/Chat';
+import { Accordion, Button } from "react-bootstrap";
+import { Card } from 'react-bootstrap';
+import { QUERY_ME, QUERY_DOG, ADD_DOG } from '../utils/queries';
+import { useQuery, useMutation } from '@apollo/client';
+import { SAVE_DOG } from "../utils/mutations";
 
 function SearchDogs() {
+  const [filteredData, setFilter] = useState({});
 
-   <Navbar/>
-        const [filteredData, setFilter] = useState(data);
-       
-    const handleCheckboxChange = (e) => {
-       const checkBoxesOpt = document.querySelectorAll(".");
-       let checkbox ={};
-       for (let i = 0; i < checkBoxesOpt; i++){
-        checkbox[checkBoxesOpt[i].nextSibling.innerHTML.toLowerCase()] = checkBoxesOpt
-       }
+  const handleCheckboxChange = (e) => {
+    const filterDataInputs = document.querySelectorAll("input.search-criteria");
+    const dataToFilter = {};
+
+    for (const input of filterDataInputs) {
+      // If the value is nothing, this field will not be filtered.
+      dataToFilter[input.id] = input.value;
     }
-    // TO DO: create another query to filter through the database
-    const myFilter = data.filter(function(dogs){
-        for (let key in checkbox){
-            if(dogs[key] != checkBoxesOpt[key] && checkBoxesOpt[key] != false){
-                return false;
-            }
-        }
-        return dogs
-    });
-    setFilter(myFilter)
-    return (
-        <div>
-            <Searchbar handleCheckboxChange={handleCheckboxChange}/>
-            {(filteredData.map(dog => {
-                return (
-                    <div>
-                        <Card>
-                        <Card.Img variant="top" src={userData.dog_picture} style={{width: "100%", height: "35vw", objectFit: "cover"}} alt={userData.dog_name}/> 
-      {/* TODO: connect cloudinary to picture */}
-<Card.Body>
 
-<Card.Title>{dog.name}</Card.Title>
-<Accordion.Item eventKey="0">
-<Accordion.Header>Profile</Accordion.Header>
-<Accordion.Body> 
-     breed = {`Breed: ${dog.breed}`}
-     gender = {`Gender: ${dog.gender}`}
-     size = {` Size: ${dog.size}`}
-     age = {` Age: ${dog.age}`}
-     vaccinations = {` Vaccinated: ${dog.vaccinations}`}
-     neuter_spayed = {` Neutered/Spayed: ${dog.neuter_spayed}`}
-     temperment ={` Temperment: ${dog.temperment}`}
-     notes = {` Additional Notes: ${dog.notes}`}
-     </Accordion.Body>
-      </Accordion.Item>
+    setFilter(dataToFilter);
+  };
 
-      <Accordion.Item eventKey="1">
-<Accordion.Header>Avaibility</Accordion.Header>
-<Accordion.Body> 
-     preferred_days = {` Preferred Days: ${dog.preferred_days}`}
-     preferred_timeofday = {` Preferred Times: ${dog.preferred_timeofday}`}
-     preferred_location = {` Preferred Location: ${dog.preferred_location}`}
-   
-     </Accordion.Body>
-      </Accordion.Item>
-    
+  // TO DO: create another query to filter through the database
+  const myFilter = (dog) => {
+    for (const key in filteredData) {
+      if (filteredData[key] && dog[key] !== filteredData[key]) {
+        return false;
+      }
+    }
+    return dog;
+  };
 
-  </Card.Body>
-                        </Card>
-                    </div>
-                )
-            }))}
-            <Footer/>
-        </div>
-    );
+  const [saveDog] = useMutation(SAVE_DOG, {
+    onCompleted: (data) => {
+      console.log(data);
+    }
+  });
+
+  const { loading, data } = useQuery(QUERY_ME);
+
+  const { loading: loadingDogs, data: dogData } = useQuery(QUERY_DOG);
+  const userData = data?.me || {};
+
+  console.log(dogData);
+  if (loading || loadingDogs) {
+    return <h2>loading</h2>
+  }
+
+  return (
+    <div>
+      <Searchbar handleCheckboxChange={handleCheckboxChange} />
+      {dogData.dog.filter(myFilter).map((dog) => {
+        return (
+          <div key={dog._id}>
+            <Card>
+              <Card.Img
+                variant="top"
+                src={dog.dog_picture}
+                style={{ width: "100%", height: "35vw", objectFit: "cover" }}
+                alt={dog.dog_name}
+              />
+              {/* TODO: connect cloudinary to picture */}
+              <Card.Body>
+                <Card.Title>{dog.dog_name}</Card.Title>
+                {/* <Accordion.Item eventKey="0">
+                  <Accordion.Header>Profile</Accordion.Header>
+                  <Accordion.Body> */}
+                <p>breed = {dog.dog_breed}</p>
+                <p>gender = {dog.dog_gender}</p>
+                <p>size = {dog.dog_size}</p>
+                <p>age = {dog.dog_age}</p>
+                <p>vaccinations = {dog.dog_vaccinations}</p>
+                <p>neuter_spayed = {dog.dog_neuter_spayed}</p>
+                <p>temperment = {dog.dog_temperment}</p>
+                <p>notes = {dog.dog_notes}</p>
+                {/* </Accordion.Body>
+                </Accordion.Item> */}
+
+                {/* <Accordion.Item eventKey="1">
+                  <Accordion.Header>Avaibility</Accordion.Header>
+                  <Accordion.Body> */}
+                <p>preferred_days = {dog.preferred_days.join(', ')}</p>
+                <p>preferred_timeofday = {dog.preferred_timeofday.join(', ')}</p>
+                <p>preferred_location = {dog.preferred_location.join(', ')}</p>
+                  {/* </Accordion.Body>
+                </Accordion.Item> */}
+
+                <Button onClick={() => {
+                  saveDog({
+                    variables: {
+                      dog_id: dog._id
+                    }
+                  });
+                }}>Save Dog</Button>
+              </Card.Body>
+            </Card>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
-
 
 export default SearchDogs;
