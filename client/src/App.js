@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import UserProfile from "./pages/User-Profile";
-// import SearchDogs from './pages/Search-Dogs'
+import SearchDogs from './pages/Search-Dogs'
 import Donation from "./pages/Donation";
 import AddDog from "./pages/Add-dog";
 import Home from "./pages/Home";
@@ -60,9 +60,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<UserProfile />}></Route>
-          {/* <Route path = "/search-dogs" element = {<SearchDogs/>}/> */}
+          <Route path = "/search-dogs" element = {<SearchDogs/>}/>
           <Route path="/donate" element={<Donation />} />
-          {/* <Route path = "/chat" element = {<Chat/>}/> */}
           <Route path="/add-dog" element={<AddDog />} />
         </Routes>
         <Footer />

@@ -60,16 +60,18 @@ function Chat() {
   }
 
   if (shown) {
-    return <div className="chatbox" style={{position: 'fixed', zIndex: 999, backgroundColor: '#d1d1d4', right: 0, bottom: 50}}>
+    return <div className="chatbox" style={{position: 'fixed', zIndex: 999, backgroundColor: '#d1d1d4', right: 10, bottom: 40}}>
        
         <Button className="btn" onClick={changeShown} variant="secondary">Close Chat</Button>
-        <ul style={{maxHeight: 300, overflow: 'scroll'}}>
+        <ul style={{maxHeight: 500, overflow: 'scroll'}}>
             { messages.msgs.map((v, i) => <li key={i}>{v}</li>) }
         </ul>
-
-        <div><input id="to" placeholder="Recipient Username" /></div>
-        <div><input id="chat-message" placeholder="Chat Message" /></div>
-        
+      <div>
+        <input id="to" placeholder="Recipient Username" />
+        </div>
+        <div>
+        <input id="chat-message" placeholder="Chat Message" />
+        </div>
         <Button className="btn" onClick={ sendMessage } variant="secondary">Send Message</Button>
     </div>;
   }

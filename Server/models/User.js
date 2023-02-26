@@ -32,6 +32,13 @@ const userSchema = new Schema({
       ref: 'Dog',
     },
   ],
+
+  saved_dogs: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Dog',
+    }
+  ]
 });
 
 userSchema.pre('save', async function (next) {
