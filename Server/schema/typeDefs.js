@@ -18,7 +18,7 @@ type Dog {
   dog_breed: String
   dog_gender: String
   dog_size: String
-  dog_age: Int
+  dog_age: String
   dog_vaccinations: Boolean
   dog_neuter_spayed: Boolean
   dog_temperment: String
@@ -61,16 +61,16 @@ type Auth {
 }
 
 input AddDogInput {
-  dog_name: String
-  dog_breed: String
-  dog_gender: String
-  dog_size: String
-  dog_age: Int
-  dog_vaccinations: Boolean
-  dog_neuter_spayed: Boolean
-  dog_temperment: String
+  dog_name: String!
+  dog_breed: String!
+  dog_gender: String!
+  dog_size: String!
+  dog_age: String!
+  dog_vaccinations: Boolean!
+  dog_neuter_spayed: Boolean!
+  dog_temperment: String!
   dog_notes: String
-  dog_picture: String
+  dog_picture: String!
   preferred_days: [String]
   preferred_timeofday: [String]
   preferred_location: [String]

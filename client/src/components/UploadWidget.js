@@ -16,7 +16,7 @@ const UploadWidget = () => {
         });  
     },[])
     return (
-        <Button onClick={() => widgetRef.current.open()}>Upload Photo</Button>
+        <Button variant="secondary" onClick={() => widgetRef.current.open()}>Upload Photo</Button>
     )
 };
 
