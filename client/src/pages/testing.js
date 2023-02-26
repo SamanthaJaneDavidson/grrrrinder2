@@ -22,11 +22,11 @@ export default function Profile() {
   const addDogPress = () => {
     addDog({variables: {
       "input": {
-        "preferred_timeofday": ["sun"],
-        "preferred_location": ["sun"],
-        "preferred_days": ["sun"],
+        "preferred_timeofday": ["Morning"],
+        "preferred_location": ["12345"],
+        "preferred_days": ["mondayn"],
         "dog_vaccinations": true,
-        "dog_temperment": "loud",
+        "dog_temperment": "shy",
         "dog_size": "large",
         "dog_picture": "na",
         "dog_notes": null,
@@ -34,7 +34,7 @@ export default function Profile() {
         "dog_name": "dan",
         "dog_gender": "male",
         "dog_breed": "lab",
-        "dog_age": 4
+        "dog_age": "Puppy"
     
       }
     }});
