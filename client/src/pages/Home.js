@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
-import backgoundImg from '../Images/bg-img.jpg';
+import backgoundImg from '../Images/bg-img3.png';
 import { Container} from 'react-bootstrap';
 // import Header from '../components/Header';
 // import Footer from '../components/Footer';
