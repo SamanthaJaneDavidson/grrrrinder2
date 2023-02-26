@@ -1,30 +1,42 @@
 // import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
-import backgoundImg from '../Images/bg-img3.png';
-import { Container} from 'react-bootstrap';
+import backgroundImg1 from '../Images/homecarousel2.jpg';
+import backgroundImg2 from '../Images/homecarousel3.jpg';
+import backgroundImg3 from '../Images/homecarousel4.jpg';
+import {Carousel} from 'react-bootstrap';
 // import Header from '../components/Header';
 // import Footer from '../components/Footer';
 // import Navbar from '../components/Navigation';
 
 const home = () => {
   return (
-    <Container id="home" className="home p-5"
-    style={{ backgroundImage: `url(${backgoundImg})`, backgroundSize: 'cover', opacity: .8 }}>
-      <div>
-        <div>
-          <div className="intro container text-center text-light text-bold">
-            <h1 className="title">WELCOME</h1> 
-            <h2 className="sub-title mb-4">
-              Welcome to Grrrr'inder, your modern alternative to traditional dog
-              parks! Here you can connect with fellow dog owners to set up doggy
-              play dates. Grrrr'inder provides a catered experience by allowing
-              owners the ability to be more selective about the dogs their pet
-              meets. Create an account and profile to get started today!
-            </h2>
-          </div>
-        </div>
-      </div>
-    </Container>
+    <Carousel fade prevLabel={null} nextLabel={null} pause="hover" indicators={false}>
+      <Carousel.Item>
+        <img className="d-block w-100" src={backgroundImg1} alt="dogs with teddy bear" style={{ opacity: "0.8" }}/>
+        <Carousel.Caption>
+          <h1 className='carousel1'>Find the Paw-fect Match</h1>
+          <p className='carousel1'> Welcome to Grrrr'inder, your modern alternative to traditional dog parks!</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src={backgroundImg2} style={{ opacity: "0.8" }} alt="dogs meeting" />
+
+        <Carousel.Caption>
+          <h1 className='carousel2'>Love at First Sniff</h1>
+          <p className="carousel2">Here you can connect with fellow dog owners to set up doggy play dates. Grrrr'inder provides a catered experience by allowing owners the ability to be more selective about the dogs their pet meets.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src={backgroundImg3} style={{ opacity: "0.8" }} alt="dogs playing" />
+
+        <Carousel.Caption>
+          <h1>Start the Pawty!</h1>
+          <p>
+          Create an account and profile to get started today!
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
   );
 };
 
