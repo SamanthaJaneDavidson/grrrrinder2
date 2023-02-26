@@ -43,7 +43,7 @@ const dogSchema = new Schema({
         required: true,
     },
     dog_owner: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: 'User',
         required: true,
     },

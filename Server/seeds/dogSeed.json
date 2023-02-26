@@ -10,6 +10,7 @@
         "dog_temperment": "Shy",
         "dog_notes": "She would prefer another female, smaller dog to play with",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1671070887/kiaatkrq1tfsgojzmfsb",
+        "dog_owner": 1,
         "preferred_days": "Monday",
         "preferred_timeofday": "Evening",
         "preferred_location": 19147
@@ -25,6 +26,7 @@
         "dog_temperment": "Calm",
         "dog_notes": "She would prefer another female dog",
         "dog_picture": "http://res.cloudinary.com/dh82x6mau/image/upload/v1671138429/dn1rsebxgo1hlhifvkxs", 
+        "dog_owner": 2,
         "preferred_days": "Tuesday",
         "preferred_timeofday": "Afternoon",
         "preferred_location": 19130
@@ -40,6 +42,7 @@
         "dog_temperment": "Energetic",
         "dog_notes": "Gets along with all dogs and people",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1676694409/pittie_ixbk9p.jpg",
+        "dog_owner": 3,
         "preferred_days": "Wednesday",
         "preferred_timeofday": "Morning",
         "preferred_location": 19145
@@ -55,6 +58,7 @@
         "dog_temperment": "Outgoing",
         "dog_notes": "He would perfer a smaller, calmer dog to meet with",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1671139410/yv5ndyqoihfub2stesjy",
+        "dog_owner": 4,
         "preferred_days": "Thursday",
         "preferred_timeofday": "Evening",
         "preferred_location": 19145
@@ -70,6 +74,7 @@
         "dog_temperment": "Leader",
         "dog_notes": "Gender doesn't really matter, but it should be a slow introduction",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1671139503/y123v1mg2juna7r8cqkj", 
+        "dog_owner": 5,
         "preferred_days": "Friday",
         "preferred_timeofday": "Afternoon",
         "preferred_location": 19147
@@ -85,6 +90,7 @@
         "dog_temperment": "Leader",
         "dog_notes": "Gender doesn't really matter, but it should be a slow introduction",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1671139503/y123v1mg2juna7r8cqkj", 
+        "dog_owner": 1,
         "preferred_days": "Friday",
         "preferred_timeofday": "Afternoon",
         "preferred_location": 19147
@@ -100,6 +106,7 @@
         "dog_temperment": "Calm",
         "dog_notes": "Sweetest little bug ever",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1676694610/pumpkin_zfp98l.jpg", 
+        "dog_owner": 2,
         "preferred_days": "Sunday",
         "preferred_timeofday": "Afternoon",
         "preferred_location": 19147
@@ -115,6 +122,7 @@
         "dog_temperment": "Shy",
         "dog_notes": "Look at that face!",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1676694409/shiba_ohkyeb.jpg", 
+        "dog_owner": 3,
         "preferred_days": "Monday",
         "preferred_timeofday": "Morning",
         "preferred_location": 19125
@@ -130,6 +138,7 @@
         "dog_temperment": "Leader",
         "dog_notes": "Run run run run run",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1676694409/collie_tx7qu7.jpg", 
+        "dog_owner": 4,
         "preferred_days": "Friday",
         "preferred_timeofday": "Morning",
         "preferred_location": 19130
@@ -145,6 +154,7 @@
         "dog_temperment": "Shy",
         "dog_notes": "Hi!",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1676694409/beagle_e7rg7l.jpg", 
+        "dog_owner": 5,
         "preferred_days": "Wednesday",
         "preferred_timeofday": "Morning",
         "preferred_location": 19125
@@ -160,6 +170,7 @@
         "dog_temperment": "Energetic",
         "dog_notes": "Woof",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1676694409/husky_rv7d59.jpg", 
+        "dog_owner": 1,
         "preferred_days": "Thursday",
         "preferred_timeofday": "Evening",
         "preferred_location": 19125
@@ -175,6 +186,7 @@
         "dog_temperment": "Energetic",
         "dog_notes": "So stinkin cute",
         "dog_picture": "https://res.cloudinary.com/dh82x6mau/image/upload/v1671674303/rvwpltjtlqaiwd1mpjca.jpg", 
+        "dog_owner": 2,
         "preferred_days": "Tuesday",
         "preferred_timeofday": "Afternoon",
         "preferred_location": 19130
