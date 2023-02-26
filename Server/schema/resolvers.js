@@ -3,8 +3,9 @@ const { signToken } = require("../utils/auth");
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-require('dotenv').config();
+// require('dotenv').config(); -Moved to server.js
 
 const secret = process.env.secret;
 const expiration = '2h';
@@ -73,32 +74,49 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+
+    //Specifically for stripe
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ products: args.products });
       const line_items = [];
 
       const { products } = await order.populate('products');
+      const mug = await stripe.products.create({
+        name: "grrrrinder mug",
+        description: "mug",
+        images: [`${url}/images/GrinderMug.png`]
+      });
 
-      for (let i = 0; i < products.length; i++) {
-        const product = await stripe.products.create({
-          name: products[i].name,
-          description: products[i].description,
-          images: [`${url}/images/${products[i].image}`]
-        });
+      const mugPrice = await stripe.prices.create({
+        product: mug.id,
+        unit_amount: 10 * 100,
+        currency: 'usd',
+      });
 
-        const price = await stripe.prices.create({
-          product: product.id,
-          unit_amount: products[i].price * 100,
-          currency: 'usd',
-        });
+      //Need this line to talk to the front-end
+      line_items.push({
+        price: price.id,
+        quantity: 1
+      });
 
-        line_items.push({
-          price: price.id,
-          quantity: 1
-        });
-      }
+      const shirt = await stripe.products.create({
+        name: "grrrrinder t-shirt",
+        description: "t-shirt",
+        images: [`${url}/images/GrinderTshirt.png`]
+      });
+      const shirtPrice = await stripe.prices.create({
+        product: shirt.id,
+        unit_amount: 10 * 100,
+        currency: 'usd',
+      });
 
+      //Need this line to talk to the front-end
+      line_items.push({
+        price: price.id,
+        quantity: 1
+      });
+  
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         line_items,
