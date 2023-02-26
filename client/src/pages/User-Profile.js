@@ -18,19 +18,19 @@ export default function Profile() {
     addDog({
       variables: {
         input: {
-          preferred_timeofday: ["sun"],
-          preferred_location: ["sun"],
-          preferred_days: ["sun"],
-          dog_vaccinations: true,
-          dog_temperment: "loud",
-          dog_size: "large",
-          dog_picture: "na",
+          preferred_timeofday: ["Morning"],
+          preferred_location: ["12345"],
+          preferred_days: ["Monday"],
+          dog_vaccinations: false,
+          dog_temperment: "shy",
+          dog_size: "small",
+          dog_picture: "https://res.cloudinary.com/dh82x6mau/image/upload/v1671139410/yv5ndyqoihfub2stesjy",
           dog_notes: null,
           dog_neuter_spayed: false,
           dog_name: "dan",
           dog_gender: "male",
           dog_breed: "lab",
-          dog_age: 4,
+          dog_age: "puppy",
         },
       },
     });
