@@ -44,9 +44,9 @@ export const ADD_ORDER = gql`
 `;
 
 //Looks fine per Robert
-export const SAVE_DOG = gql`
-  mutation saveDog($input: SavedDogInput) {
-    saveDog(input: $input) {
+export const ADD_DOG = gql`
+  mutation addDog($input: SavedDogInput) {
+    addDog(input: $input) {
       dog_name
       dog_breed
       dog_gender
@@ -63,6 +63,15 @@ export const SAVE_DOG = gql`
       preferred_location
     }
   }
+`;
+
+export const SAVE_DOG = gql`
+mutation Mutation($dog_id: ID!) {
+  saveDog(dog_id: $dog_id) {
+    _id
+    username
+  }
+}
 `;
 
     //not sure about this- ask tutor - per Robert probably needs to be an ID data type instead of a string. ID data type in typedef as well that is teh value parameter of the dog ID. Line 57 needs to be $dog_id instead of dogText

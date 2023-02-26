@@ -12,8 +12,135 @@ code {
     monospace;
 }
 
+#home{
+  padding: 80px;
+}
+
 #map {
   height: 180px;
+}
+
+#navbar{
+  background-color: #f8d17c;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  }
+
+#navcontent{
+  justify-content: space-evenly;
+  font-family: monospace;
+  font-weight: bold;
+}
+.navtext{
+  color: rgb(133, 83, 26);
+  font-size: large;
+}
+
+.navtext:hover{
+  color: rgb(108, 173, 185);
+  text-decoration: none;
+}
+
+#add-dog-link{
+  color: rgb(133, 83, 26);
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 60px;
+  border-radius: 20%;
+  background-color: rgb(139, 204, 216);
+}
+
+#add-dog-link:hover{
+  color: #ffffff;
+  background-color: #f05800;
+}
+
+h1{
+  text-align: center;
+  font-family: monospace;
+}
+
+h4{
+  font-family: monospace;
+}
+
+.dog-card{
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.mb-3{
+  font-family: monospace;
+}
+
+.form-check{
+  font-family: monospace;
+}
+
+p{
+  font-family: monospace;
+}
+
+button{
+  background-color: #f8d17c;
+  border: none;
+  color: rgb(133, 83, 26);
+  padding: 5px;
+}
+
+button:hover{
+  background-color:rgb(139, 204, 216);
+  color: white;
+}
+
+#footer{
+  background-color: #f8d17c ;
+}
+
+#footer p a {
+  /* justify-content: center; */
+  /* text-align: center; */
+  padding-left: 650px;
+  text-decoration: none;
+  color: rgb(133, 83, 26);
+  font-family: monospace;
+}
+
+#footer p a:hover{
+  color: rgb(108, 173, 185);
+}
+
+.chatbox {
+  background: #d1d1d4;
+  border-color: 2px solid #8ca6db;
+  color: #333333;
+  padding: 10px;
+  margin-right: 10px;
+  width: 270px;
+  text-align: center;
+}
+
+.btn-primary {
+  /* display: flex; */
+  background-color: #8ca6db !important;
+  /* justify-content: flex-end; */
+  align-items: center;
+  text-align: center;
+  margin-top: 5px;
+  width: 200px;
+}
+
+.btn-secondary {
+  /* display: flex; */
+  background-color: #8ca6db !important;
+  /* justify-content: flex-end; */
+  align-items: center;
+  text-align: center;
+  margin-top: 5px;
+  width: 200px;
 }
 
 /* #home {
