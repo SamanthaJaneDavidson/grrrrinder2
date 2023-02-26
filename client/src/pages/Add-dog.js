@@ -51,7 +51,13 @@ function AddDog() {
     // ADD SAVE_DOG data USING FORM INPUT VALUES
 
     Auth.login(data.addUser.token);
-  }
+
+
+
+};
+
+
+  
 
   return (
     <Form onSubmit={handleFormSubmit}>
