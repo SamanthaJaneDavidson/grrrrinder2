@@ -64,7 +64,7 @@ console.log(data);
         <Form onSubmit={handleFormSubmit}>
           
         <h1 className="text-box"> Create Your Dog's Profile !</h1>
-       <hr></hr>
+     
        
           <div className="dog-card">
 
