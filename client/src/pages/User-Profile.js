@@ -1,10 +1,6 @@
 // import React, { useState } from 'react';
-
-
 import { useQuery } from '@apollo/client';
-
 import AddDog from './Add-dog';
-
 
 import { QUERY_ME } from '../utils/queries';
 
