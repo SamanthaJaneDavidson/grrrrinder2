@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f8d17c;
 }
 
 code {
@@ -21,7 +22,7 @@ code {
 }
 
 #navbar{
-  background-color:white;
+  background-color:burlywood;
   padding-top: 15px;
   padding-bottom: 20px;
   }
@@ -68,14 +69,25 @@ h4{
 }
 
 .dog-card{
-  padding-left: 60px;
-  padding-right: 60px;
+  background-color: rgba(229, 206, 152, 0.7);
+  border-radius: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 80%;
+  padding: 1em;
+  color: white;
 }
 
 .dog-cardbody {
-  margin-top: 24px;
-  
+  margin: 0 auto;
+  width: 80%;
+  padding: 10px;
 }
+
+
+
+
+
 
 .dog-cardbody > div {
   margin-bottom: 24px;
@@ -106,7 +118,7 @@ button:hover{
 }
 
 #footer{
-  background-color: white ;
+  background-color: burlywood ;
 }
 
 #footer p a {
@@ -154,8 +166,8 @@ button:hover{
 }
 
 .carousel-caption {
-  color: rgb(94 71 41) !important;
-  top: 60%;
+  color: #241d0d !important;
+  top: 33%;
   /* add font family, make it bold */
   }
 
@@ -176,3 +188,49 @@ button:hover{
   font-family:Arial, Helvetica, sans-serif;
   font-weight: 500;
 }
+.carousel-caption span {
+  color: #f05800;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+/* Auth Form Styling */
+
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  /* background: linear-gradient(90deg, rgb(204, 118, 68) 0%, hsla(41, 90%, 73%, 1) 100%); */
+}
+
+.Auth-form {
+  /* width: 50%; */
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-left: 44px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.Auth-form h2 {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 24px;
+  color: #8ca6db;
+  font-weight: 400;
+}
+
+/* Add a dog styling */
+.text-box {
+  background-color: rgba(230, 126, 34,0.8);
+  border-radius: 20px;
+  margin: 2em auto;
+  padding: 20px;
+  width: 90%;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
