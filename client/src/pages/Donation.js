@@ -34,9 +34,7 @@ const Donate = () => {
 
 
                 <a href="https://buy.stripe.com/test_3cs3eDbif598fZK144" className="theme-btn submit__btn"><button>Donate Now</button></a>
-
-
-                {/* <button onClick="window.location.href='https://buy.stripe.com/test_3cs3eDbif598fZK144';">Donate Now</button> */}
+                
             </div>
             <div className='merchFlex'>
                 {merchandise.map(item => (
