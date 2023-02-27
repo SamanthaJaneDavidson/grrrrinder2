@@ -13,7 +13,9 @@ export default function Profile() {
   const [savedDogs, setSavedDogs] = useState([]);
   const [dogsSet, setDogsSet] = useState(false);
 
-  const { loading, data } = useQuery(QUERY_ME);
+  const { loading, data } = useQuery(QUERY_ME, {
+    fetchPolicy: "no-cache"
+  });
 
   const userData = data?.me || {};
 
