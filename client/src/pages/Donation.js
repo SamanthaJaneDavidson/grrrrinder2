@@ -1,6 +1,25 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 // import Navbar from "../components/Navigation";
+import CartItem from '../components/CartItem';
+import Mug from '../Images/GrinderMug.png';
+import Shirt from '../Images/GrinderTshirt.png';
+
+let merchandise = [
+    {
+        title: "Mug",
+        description: "It's a really cool mug!",
+        image: "../Images/GrinderMug.png",
+        URL: "https://buy.stripe.com/test_7sI2azbif9po6pa5kl"
+    },
+    {
+        title: "T-Shirt",
+        description: "It's a really cool shirt!",
+        image: "../Images/GrinderTshirt.png",
+        URL: "https://buy.stripe.com/test_7sI2azbif9po6pa5kl"
+    },
+]
+
 
 // import Footer from "../components/Footer";
 
@@ -18,10 +37,19 @@ const Donate = () => {
                     Feel compelled to help a furry friend in need? If your answer is "YES!" that is pawsitevly amazing and you deserve a round of a-paws! All you have do is click the button below to submit a donation. Once the donation has been recieved, we'll send it to our local SPCA.
                 </p>
 
-              
-                <a href="https://buy.stripe.com/test_3cs3eDbif598fZK144" className="theme-btn submit__btn">Donate Now</a>
+
+                <a href="https://buy.stripe.com/test_3cs3eDbif598fZK144" className="theme-btn submit__btn"><button>Donate Now</button></a>
+
+
                 {/* <button onClick="window.location.href='https://buy.stripe.com/test_3cs3eDbif598fZK144';">Donate Now</button> */}
             </div>
+            <div className='merchFlex'>
+                {merchandise.map(item => (
+                    <CartItem image={item.image} title={item.title} description={item.description} URL={item.URL} />
+                ))}
+            </div>
+
+
         </Container>
     );
 };
