@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Auth from "../utils/auth";
+// import Auth from "../utils/auth";
 import { useMutation } from "@apollo/client";
 import { ADD_DOG } from "../utils/mutations";
 
@@ -103,8 +103,8 @@ function AddDog() {
               onChange={(event) => setDogGender(event.target.value)}
             >
               <option>Select Gender</option>
-              <option value="1">Male</option>
-              <option value="2">Female</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </Form.Select>
           </Form.Group>
 
@@ -118,9 +118,9 @@ function AddDog() {
               onChange={(event) => setDogSize(event.target.value)}
             >
               <option>Select Dog's Size</option>
-              <option value="1">Small</option>
-              <option value="2">Medium</option>
-              <option value="3">Large</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
             </Form.Select>
           </Form.Group>
 
@@ -134,10 +134,10 @@ function AddDog() {
               onChange={(event) => setDogAge(event.target.value)}
             >
               <option>Select Dog's Age</option>
-              <option value="1">Puppy</option>
-              <option value="2">Youth</option>
-              <option value="3">Adult</option>
-              <option value="4">Senior</option>
+              <option value="Puppy">Puppy</option>
+              <option value="Youth">Youth</option>
+              <option value="Adult">Adult</option>
+              <option value="Senior">Senior</option>
             </Form.Select>
           </Form.Group>
 
@@ -151,8 +151,8 @@ function AddDog() {
               onChange={(event) => setDogVaccinations(event.target.value)}
             >
               <option>Vaccination Status</option>
-              <option value="1">Yes</option>
-              <option value="2">No</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
             </Form.Select>
           </Form.Group>
 
@@ -166,8 +166,8 @@ function AddDog() {
               onChange={(event) => setDogNeuter(event.target.value)}
             >
               <option>Neutered/Spayed</option>
-              <option value="1">Yes</option>
-              <option value="2">No</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
             </Form.Select>
           </Form.Group>
 
@@ -181,10 +181,10 @@ function AddDog() {
               onChange={(event) => setDogTemperment(event.target.value)}
             >
               <option>Temperment</option>
-              <option value="1">Shy</option>
-              <option value="2">Calm</option>
-              <option value="3">Energetic</option>
-              <option value="4">Leader</option>
+              <option value="Shy">Shy</option>
+              <option value="Calm">Calm</option>
+              <option value="Energetic">Energetic</option>
+              <option value="Leader">Leader</option>
             </Form.Select>
           </Form.Group>
 
@@ -225,14 +225,14 @@ function AddDog() {
               onChange={(event) => setPreferredDays(event.target.value)}
             >
               <option>Select Days</option>
-              <option value="1">Monday</option>
-              <option value="2">Tuesday</option>
-              <option value="3">Wednesday</option>
-              <option value="4">Thursday</option>
-              <option value="5">Friday</option>
-              <option value="6">Saturday</option>
-              <option value="7">Sunday</option>
-              <option value="8">No preference</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday4">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+              <option value="No preference">No preference</option>
             </Form.Select>
           </Form.Group>
 
@@ -246,10 +246,10 @@ function AddDog() {
               onChange={(event) => setPreferredTimes(event.target.value)}
             >
               <option>Select Preferred Times</option>
-              <option value="1">Morning</option>
-              <option value="2">Afternoon</option>
-              <option value="3">Evening</option>
-              <option value="4">No preference</option>
+              <option value="Morning">Morning</option>
+              <option value="Afternoon">Afternoon</option>
+              <option value="Evening">Evening</option>
+              <option value="No preference">No preference</option>
             </Form.Select>
           </Form.Group>
 
