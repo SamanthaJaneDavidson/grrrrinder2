@@ -1,8 +1,8 @@
 // import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
-import backgroundImg1 from '../Images/homecarousel2.jpg';
-import backgroundImg2 from '../Images/homecarousel3.jpg';
-import backgroundImg3 from '../Images/homecarousel4.jpg';
+import backgroundImg1 from '../Images/homecarousel2.png';
+import backgroundImg2 from '../Images/homecarousel3.png';
+import backgroundImg3 from '../Images/homecarousel4.png';
 import {Carousel} from 'react-bootstrap';
 // import Header from '../components/Header';
 // import Footer from '../components/Footer';
