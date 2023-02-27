@@ -49,6 +49,10 @@ code {
   font-size: large;
 }
 
+.a.navtext:active {
+  color: rgb(108, 173, 185);
+}
+
 .navtext:hover {
   color: rgb(108, 173, 185);
   text-decoration: none;
