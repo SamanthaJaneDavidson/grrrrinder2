@@ -56,7 +56,7 @@ code {
 
 #add-dog-link:hover{
   color: #ffffff;
-  background-color: #f05800;
+  /* background-color: #f05800; */
 }
 
 h1{
@@ -189,7 +189,7 @@ button:hover{
   font-weight: 500;
 }
 .carousel-caption span {
-  color: #f05800;
+  /* color: #5533FF ; */
   font-weight: 900;
   font-size: 30px;
 }
