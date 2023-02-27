@@ -93,6 +93,7 @@ type Mutation {
   addDog(input: AddDogInput): User
   saveDog(dog_id: ID!): User
   removeDog (dog_id: String!): User
+  deleteDog (dog_id: String!): User
   updateProduct(_id: ID!, quantity: Int!): Product
 }`;
 
