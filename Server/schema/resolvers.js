@@ -21,6 +21,7 @@ const resolvers = {
               populate: "category",
             })
             .populate("dog")
+            .populate("saved_dogs")
         )[0];
 
         if (user.orders) {
@@ -136,9 +137,9 @@ const resolvers = {
       if (users.length) {
         const user = users[0];
 
-        for (let i = 0; i < user.dog.length; i++) {
-          if (user.dog[i]._id == dog_id) {
-            user.dog.splice(i, 1);
+        for (let i = 0; i < user.saved_dogs.length; i++) {
+          if (user.saved_dogs[i]._id == dog_id) {
+            user.saved_dogs.splice(i, 1);
 
             await user.save();
           }
@@ -148,6 +149,53 @@ const resolvers = {
       }
 
       return null;
+    },
+
+    deleteDog: async (_, {dog_id}, context) => {
+      const users = await User.find({ username: context.username }).populate('dog');
+      console.log('starting');
+      if (users.length) {
+        const user = users[0];
+        const dog = await Dog.findById(dog_id);
+
+        console.log('Got user');
+        if (!dog) {
+          return null;
+        }
+
+        console.log('got dog');
+        console.log(dog.dog_owner);
+        console.log(user._id);
+
+        if (!user._id.equals(dog.dog_owner)) {
+          return null;
+        }
+
+        console.log('is owned by user');
+
+        await Dog.findByIdAndRemove(dog_id);
+
+        for (let i = 0; i < user.dog.length; i++) {
+          if (user.dog[i]._id.equals(dog._id)) {
+            user.dog.splice(i, 1);
+
+            await user.save();
+          }
+        }
+
+        const allUsers = await User.find().populate('saved_dogs');
+        for (const otherUser of allUsers) {
+          for (let i = 0; i < otherUser.saved_dogs.length; i++) {
+            if (otherUser.saved_dogs[i]._id.equals(dog._id)) {
+              otherUser.saved_dogs.splice(i, 1);
+  
+              await otherUser.save();
+            }
+          }
+        }
+
+        return user;
+      }
     },
 
     addDog: async (_, { input }, context) => {

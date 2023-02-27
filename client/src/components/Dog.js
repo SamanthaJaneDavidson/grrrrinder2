@@ -2,7 +2,7 @@ import React from "react";
 // import React from 'react';
 import { Button, Card, Accordion } from "react-bootstrap";
 
-export default function Dog({ dog, saveDog }) {
+export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState }) {
   return (
     <Card>
       <Card.Img
@@ -49,6 +49,40 @@ export default function Dog({ dog, saveDog }) {
             }}
           >
             Save Dog
+          </Button>
+        ) : undefined}
+
+        {unsaveDog ? (
+          <Button
+            onClick={async () => {
+              await unsaveDog({
+                variables: {
+                  dog_id: dog._id,
+                },
+              });
+
+              await updateState();
+            }}
+          >
+            Remove Dog
+          </Button>
+        ) : undefined}
+
+        {deleteDog ? (
+          <Button
+            onClick={async () => {
+              await deleteDog({
+                variables: {
+                  dog_id: dog._id,
+                },
+              });
+
+              if(updateState) {
+                updateState();
+              }
+            }}
+          >
+            Delete Dog
           </Button>
         ) : undefined}
       </Card.Body>

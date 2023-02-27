@@ -22,7 +22,6 @@ function AddDog() {
   const [preferredDays, setPreferredDays] = useState("");
   const [preferredTimes, setPreferredTimes] = useState("");
   const [preferredLocation, setPreferredLocation] = useState("");
-  //const [dogNotes, setDogNotes] = useState('');
 
   const [addDog] = useMutation(ADD_DOG);
 
@@ -36,8 +35,8 @@ function AddDog() {
           dog_gender: dogGender,
           dog_size: dogSize,
           dog_age: dogAge,
-          dog_vaccinations: dogVaccinations,
-          dog_neuter_spayed: dogNeuter,
+          dog_vaccinations: dogVaccinations == '1',
+          dog_neuter_spayed: dogNeuter == '1',
           dog_temperment: dogTemperment,
           dog_notes: dogNotes,
           dog_picture: dogPicture,
@@ -47,13 +46,11 @@ function AddDog() {
         },
       },
     });
-    console.log(data);
+    
+    if (data.addDog && data.addDog.username) {
+      window.location.href = '/';
+    }
     // ADD SAVE_DOG data USING FORM INPUT VALUES
-
-    Auth.login(data.addUser.token);
-
-
-
 };
 
 
@@ -62,7 +59,7 @@ function AddDog() {
   return (
     <Form onSubmit={handleFormSubmit}>
       <h1 className="text-box"> Create Your Dog's Profile !</h1>
-      <hr></hr>
+      <hr />
 
       <div className="dog-card">
         <div className="dog-cardbody">
@@ -76,6 +73,7 @@ function AddDog() {
             <Form.Control
               type="text"
               placeholder="Enter your dog name"
+              required
               value={dogName}
               onChange={(event) => setDogName(event.target.value)}
             />
@@ -90,6 +88,7 @@ function AddDog() {
               type="text"
               placeholder="Enter your dog breed"
               value={dogBreed}
+              required
               onChange={(event) => setDogBreed(event.target.value)}
             />
           </Form.Group>
@@ -100,6 +99,7 @@ function AddDog() {
               className="form-control"
               aria-label="Dog gender"
               value={dogGender}
+              required
               onChange={(event) => setDogGender(event.target.value)}
             >
               <option>Select Gender</option>
@@ -114,6 +114,7 @@ function AddDog() {
               className="form-control"
               aria-label="Dog size"
               value={dogSize}
+              required
               onChange={(event) => setDogSize(event.target.value)}
             >
               <option>Select Dog's Size</option>
@@ -129,6 +130,7 @@ function AddDog() {
               aria-label="Dog age"
               className="form-control"
               value={dogAge}
+              required
               onChange={(event) => setDogAge(event.target.value)}
             >
               <option>Select Dog's Age</option>
@@ -145,6 +147,7 @@ function AddDog() {
               aria-label="label"
               className="form-control"
               value={dogVaccinations}
+              required
               onChange={(event) => setDogVaccinations(event.target.value)}
             >
               <option>Vaccination Status</option>
@@ -159,6 +162,7 @@ function AddDog() {
               aria-label="label"
               className="form-control"
               value={dogNeuter}
+              required
               onChange={(event) => setDogNeuter(event.target.value)}
             >
               <option>Neutered/Spayed</option>
@@ -173,6 +177,7 @@ function AddDog() {
               aria-label="label"
               className="form-control"
               value={dogTemperment}
+              required
               onChange={(event) => setDogTemperment(event.target.value)}
             >
               <option>Temperment</option>
@@ -187,6 +192,7 @@ function AddDog() {
             className="font-weight-bold text-small col-md-12"
             controlId="exampleForm.ControlTextarea1"
             value={dogNotes}
+            required
             onChange={(event) => setDogNotes(event.target.value)}
           >
             <Form.Label>Share some notes about your dog!</Form.Label>
@@ -197,11 +203,16 @@ function AddDog() {
           <Form.Group
             className="font-weight-bold text-small col-md-12"
             controlId="formFile"
-            value={dogPicture}
-            onChange={(event) => setDogPicture(event.target.value)}
-          >
+            required
+            value={dogPicture}>
             <Form.Label>Upload a photo of your dog here: </Form.Label>
-            <UploadWidget id="upload-widget" />
+            <UploadWidget id="upload-widget"             
+              onChange={(event) => {
+                console.log(event);
+                console.log('Set to ' + event.info.secure_url);
+                setDogPicture(event.info.secure_url)}
+              }
+            />
           </Form.Group>
 
           <Form.Group className="font-weight-bold text-small col-md-12">
@@ -210,6 +221,7 @@ function AddDog() {
               aria-label="label"
               className="form-control"
               value={preferredDays}
+              required
               onChange={(event) => setPreferredDays(event.target.value)}
             >
               <option>Select Days</option>
@@ -230,6 +242,7 @@ function AddDog() {
               aria-label="label"
               className="form-control"
               value={preferredTimes}
+              required
               onChange={(event) => setPreferredTimes(event.target.value)}
             >
               <option>Select Preferred Times</option>
@@ -244,6 +257,7 @@ function AddDog() {
             className="font-weight-bold text-small col-md-12"
             controlId="formBasicText"
             value={preferredLocation}
+            required
             onChange={(event) => setPreferredLocation(event.target.value)}
           >
             <Form.Label>Zip Code</Form.Label>
