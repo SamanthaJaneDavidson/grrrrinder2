@@ -5,7 +5,7 @@ import Auth from '../utils/auth';
 
 function Navbar() {
     const highlightLink = {
-        color: "#f05800",
+        color: "#f5f5f5",
         // "#e9801d",
     };
     
