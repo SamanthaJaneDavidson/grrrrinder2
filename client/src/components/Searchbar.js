@@ -9,7 +9,7 @@ function SearchBar(props) {
           className="form-control"
           aria-label="Default"
           aria-describedby="inputGroup-sizing-default"
-          onChange={props.handleChange}
+          onChange={props.handleSearchboxChange}
           type="zip"
           name="zip"
           placeholder="search by zip code"
