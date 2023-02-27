@@ -1,96 +1,84 @@
-// import React, { useState } from 'react';
 import { useMutation, useQuery } from "@apollo/client";
-import { QUERY_ME, ADD_DOG } from "../utils/queries";
+import { QUERY_ME } from "../utils/queries";
+import React, { useState } from "react";
 
 // import CardColumns from 'react-bootstrap/CardColumns'
-import { Accordion, Card, Container } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { REMOVE_DOG, DELETE_DOG } from "../utils/mutations";
+import Dog from "../components/Dog";
 
 export default function Profile() {
-  const { loading, data } = useQuery(QUERY_ME);
-  const [addDog] = useMutation(ADD_DOG, {
-    onCompleted: (data) => {
-      console.log(data);
-    },
-  });
+  const [dogs, setDogs] = useState([]);
+  const [savedDogs, setSavedDogs] = useState([]);
+  const [dogsSet, setDogsSet] = useState(false);
 
-  const addDogPress = () => {
-    addDog({
-      variables: {
-        input: {
-          preferred_timeofday: ["Morning"],
-          preferred_location: ["12345"],
-          preferred_days: ["Monday"],
-          dog_vaccinations: false,
-          dog_temperment: "shy",
-          dog_size: "small",
-          dog_picture: "https://res.cloudinary.com/dh82x6mau/image/upload/v1671139410/yv5ndyqoihfub2stesjy",
-          dog_notes: null,
-          dog_neuter_spayed: false,
-          dog_name: "dan",
-          dog_gender: "male",
-          dog_breed: "lab",
-          dog_age: "puppy",
-        },
-      },
-    });
-  };
+  const { loading, data } = useQuery(QUERY_ME);
 
   const userData = data?.me || {};
+
+  const [removeDog] = useMutation(REMOVE_DOG);
+  const [deleteDog] = useMutation(DELETE_DOG);
+
   if (loading) {
     return <h2>loading</h2>;
   }
-  // Auth.login(data.addUser.token);
+
+  if (!dogsSet) {
+    setDogs(userData.dog);
+    setSavedDogs(userData.saved_dogs);
+    setDogsSet(true);
+  }
+
   return (
-    <>
-      <Link id="add-dog-link" to="/add-dog">
-        Add a Dog to Your Profile
-      </Link>
+    <Container style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <Row style={{flex: 1}}>
+        <Col xs={12} sm={4} style={{ borderRight: "thick solid burlywood" }}>
+          <h2>My Profile</h2>
 
-      <Container>
-        <Accordion>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img
-              variant="top"
-              src={userData.dog_picture}
-              style={{ width: "100%", height: "35vw", objectFit: "cover" }}
-              alt={userData.dog_name}
-            />
+          <h3>{userData.username}</h3>
 
-            <Card.Body>
-              <Card.Title>{userData.dog_name}</Card.Title>
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>Profile</Accordion.Header>
-                <Accordion.Body>
-                  breed = {`Breed: ${userData.dog_breed}`}
-                  gender = {`Gender: ${userData.dog_gender}`}
-                  size = {` Size: ${userData.dog_size}`}
-                  age = {` Age: ${userData.dog_age}`}
-                  vaccinations = {` Vaccinated: ${userData.dog_vaccinations}`}
-                  neuter_spayed ={" "}
-                  {` Neutered/Spayed: ${userData.dog_neuter_spayed}`}
-                  temperment ={` Temperment: ${userData.dog_temperment}`}
-                  notes = {` Additional Notes: ${userData.dog_notes}`}
-                </Accordion.Body>
-              </Accordion.Item>
+          {dogs.map((dog) => {
+            return (
+              <Dog
+                key={dog._id}
+                dog={dog}
+                deleteDog={deleteDog}
+                updateState={() => {
+                  setDogs([...dogs.filter((d) => d._id !== dog._id)]);
+                }}
+              />
+            );
+          })}
 
-              <Accordion.Item eventKey="1">
-                <Accordion.Header>Avaibility</Accordion.Header>
-                <Accordion.Body>
-                  preferred_days ={" "}
-                  {` Preferred Days: ${userData.preferred_days}`}
-                  preferred_timeofday ={" "}
-                  {` Preferred Times: ${userData.preferred_timeofday}`}
-                  preferred_location ={" "}
-                  {` Preferred Location: ${userData.preferred_location}`}
-                </Accordion.Body>
-              </Accordion.Item>
-            </Card.Body>
-          </Card>
-        </Accordion>
-        <button onClick={addDogPress}>Add dog!</button>
-      </Container>
-    </>
+          <div style={{ marginTop: 30, marginBottom: 30 }}>
+            <Link id="add-dog-link" to="/add-dog">
+              Add a Dog to Your Profile
+            </Link>
+          </div>
+        </Col>
+        <Col xs={12} sm={8}>
+          <h2>Saved Dogs</h2>
+          <Row>
+            {savedDogs.map((dog) => {
+              return (
+                <Col key={dog._id} xs={12} sm={6}>
+                  <Dog
+                    dog={dog}
+                    unsaveDog={removeDog}
+                    updateState={() => {
+                      setSavedDogs([
+                        ...savedDogs.filter((d) => d._id !== dog._id),
+                      ]);
+                    }}
+                  />
+                </Col>
+              );
+            })}
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

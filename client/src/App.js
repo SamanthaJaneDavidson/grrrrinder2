@@ -55,15 +55,17 @@ function App() {
       <BrowserRouter>
         <Chat />
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/profile" element={<UserProfile />}></Route>
-          <Route path = "/search-dogs" element = {<SearchDogs/>}/>
-          <Route path="/donate" element={<Donation />} />
-          <Route path="/add-dog" element={<AddDog />} />
-        </Routes>
+        <main style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/profile" element={<UserProfile />}></Route>
+            <Route path = "/search-dogs" element = {<SearchDogs/>}/>
+            <Route path="/donate" element={<Donation />} />
+            <Route path="/add-dog" element={<AddDog />} />
+          </Routes>
+        </main>
         <Footer />
       </BrowserRouter>
     </ApolloProvider>

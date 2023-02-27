@@ -3,7 +3,7 @@ import {useEffect, useRef} from 'react';
 import { Button } from 'react-bootstrap'
 
 //should this be in the component folder to be added to the 
-const UploadWidget = () => {
+const UploadWidget = ({onChange}) => {
     const cloudinaryRef = useRef();
     const widgetRef = useRef();
     useEffect(() => {
@@ -12,7 +12,12 @@ const UploadWidget = () => {
             cloudName:'dxrolxcas',
             uploadPreset:'xmqlmbhw'
         }, function(error, result){
-            console.log(result);
+            if(onChange) {
+                if(result.event === 'success') {
+                    onChange(result);
+                }
+                console.log(result);
+            }
         });  
     },[])
     return (
