@@ -71,7 +71,7 @@ code {
 
 #add-dog-link:hover {
   color: #ffffff;
-  background-color: #f05800;
+  /* background-color: #f05800; */
 }
 
 h1 {
@@ -174,12 +174,12 @@ button:hover {
 }
 
 .carousel .carousel-item {
-  max-height: 500px;
+  max-height: 650px;
 }
 
 .carousel-item img {
   object-fit: cover;
-  max-height: 500px;
+  max-height: 650px;
 }
 .carousel-caption {
   color: #241d0d !important;
@@ -205,7 +205,7 @@ button:hover {
   font-weight: 500;
 }
 .carousel-caption span {
-  color: #f05800;
+  /* color: #5533FF ; */
   font-weight: 900;
   font-size: 30px;
 }
