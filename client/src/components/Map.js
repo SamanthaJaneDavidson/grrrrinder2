@@ -1,5 +1,6 @@
 // import React from 'react';
 // import searchDogs from '../pages/Search-Dogs';
+// var dogLocation = '';
 
 // //Base map
 // const map = L.map('map').setView([39.9509, 75.1575], 13);
@@ -14,6 +15,11 @@
 //     iconUrl: "Images/dog-icon",
 //     iconSize: [, 30]
 // });
+
+// //Get dog location 
+// function getDogLocation () {
+
+// }
 
 
 // //Zip to long/lat geocoding converstion 
