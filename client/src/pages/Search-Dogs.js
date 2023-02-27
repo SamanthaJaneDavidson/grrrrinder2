@@ -180,7 +180,9 @@ function SearchDogs() {
     },
   });
 
-  const { loading, data } = useQuery(QUERY_ME);
+  const { loading, data } = useQuery(QUERY_ME, {
+    fetchPolicy: "no-cache"
+  });
 
   const { loading: loadingDogs, data: dogData } = useQuery(QUERY_DOG);
   const userData = data?.me || {};

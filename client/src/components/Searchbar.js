@@ -12,11 +12,11 @@ function SearchBar(props) {
           onChange={props.handleChange}
           type="zip"
           name="zip"
-          placeholder="search by zip code"
+          placeholder="Search by zip code"
         />
       </div>
       <div>
-        <p>Dog Gender</p>
+        <h3>Dog Gender</h3>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -42,7 +42,7 @@ function SearchBar(props) {
           </label>
         </div>
         
-        <p>Health Status</p>
+        <h3>Health Status</h3>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -57,15 +57,15 @@ function SearchBar(props) {
           <input
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox3"
+            id="hasvax"
             name="vaccinated"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox3">
+          <label className="form-check-label" htmlFor="hasvax">
             Vaccinated
           </label>
         </div>
-        <p>Neutered/Spayed</p>
+        <h3>Neutered/Spayed</h3>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -80,25 +80,25 @@ function SearchBar(props) {
           <input
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox4"
+            id="isneut"
             name="dog_neuter_spayed"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox4">
+          <label className="form-check-label" htmlFor="isneut">
             Neutered or Spayed
           </label>
         </div>
         
-        <p>Dog Size</p>
+        <h3>Dog Size</h3>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox5"
+            id="sizesmall"
             name="size"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox5">
+          <label className="form-check-label" htmlFor="sizesmall">
             Small
           </label>
         </div>
@@ -106,11 +106,11 @@ function SearchBar(props) {
           <input
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox6"
+            id="sizemedium"
             name="size"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox6">
+          <label className="form-check-label" htmlFor="sizemedium">
             Medium
           </label>
         </div>
@@ -119,24 +119,24 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             name="size"
-            id="inlineCheckbox7"
+            id="sizelarge"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox7">
+          <label className="form-check-label" htmlFor="sizelarge">
             Large
           </label>
         </div>
         
-        <p>Dog Age</p>
+        <h3>Dog Age</h3>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
             type="checkbox"
             name="age"
-            id="inlineCheckbox8"
+            id="agepup"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox8">
+          <label className="form-check-label" htmlFor="agepup">
             Puppy
           </label>
         </div>
@@ -144,11 +144,11 @@ function SearchBar(props) {
           <input
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox9"
+            id="ageyouth"
             name="age"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox9">
+          <label className="form-check-label" htmlFor="ageyouth">
             Youth
           </label>
         </div>
@@ -156,11 +156,11 @@ function SearchBar(props) {
           <input
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox10"
+            id="ageadult"
             onChange={props.handleChange}
             name="age"
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox10">
+          <label className="form-check-label" htmlFor="ageadult">
             Adult
           </label>
         </div>
@@ -168,24 +168,24 @@ function SearchBar(props) {
           <input
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox11"
+            id="agesenior"
             name="age"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox11">
+          <label className="form-check-label" htmlFor="agesenior">
             Senior
           </label>
         </div>
-        <p>Dog Temperment</p>
+        <h3>Dog Temperment</h3>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox12"
+            id="shy"
             name="temperment"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox12">
+          <label className="form-check-label" htmlFor="shy">
             Shy
           </label>
         </div>
@@ -193,11 +193,11 @@ function SearchBar(props) {
           <input
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox13"
+            id="calm"
             name="temperment"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox13">
+          <label className="form-check-label" htmlFor="calm">
             Calm
           </label>
         </div>
@@ -206,10 +206,10 @@ function SearchBar(props) {
             name="temperment"
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox14"
+            id="energetic"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox14">
+          <label className="form-check-label" htmlFor="energetic">
             Energetic
           </label>
         </div>
@@ -218,10 +218,10 @@ function SearchBar(props) {
             name="temperment"
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox15"
+            id="outgoing"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox15">
+          <label className="form-check-label" htmlFor="outgoing">
             Outgoing
           </label>
         </div>
@@ -230,23 +230,23 @@ function SearchBar(props) {
             name="temperment"
             className="form-check-input"
             type="checkbox"
-            id="inlineCheckbox16"
+            id="leader"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox16">
+          <label className="form-check-label" htmlFor="leader">
             Leader
           </label>
         </div>
-        <p>Preferred Day</p>
+        <h3>Preferred Day</h3>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
             type="checkbox"
             name="days"
-            id="inlineCheckbox17"
+            id="mon"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox17">
+          <label className="form-check-label" htmlFor="mon">
             Monday
           </label>
         </div>
@@ -255,10 +255,10 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             name="days"
-            id="inlineCheckbox18"
+            id="tue"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox18">
+          <label className="form-check-label" htmlFor="tue">
             Tuesday
           </label>
         </div>
@@ -267,10 +267,10 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             name="days"
-            id="inlineCheckbox19"
+            id="wed"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox19">
+          <label className="form-check-label" htmlFor="wed">
             Wednesday
           </label>
         </div>
@@ -279,10 +279,10 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             name="days"
-            id="inlineCheckbox20"
+            id="thu"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox20">
+          <label className="form-check-label" htmlFor="thu">
             Thursday
           </label>
         </div>
@@ -291,10 +291,10 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             name="days"
-            id="inlineCheckbox21"
+            id="fri"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox21">
+          <label className="form-check-label" htmlFor="fri">
             Friday
           </label>
         </div>
@@ -303,10 +303,10 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             name="days"
-            id="inlineCheckbox22"
+            id="sat"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox22">
+          <label className="form-check-label" htmlFor="sat">
             Saturday
           </label>
         </div>
@@ -315,23 +315,23 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             name="days"
-            id="inlineCheckbox23"
+            id="sun"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="inlineCheckbox23">
+          <label className="form-check-label" htmlFor="sun">
             Sunday
           </label>
         </div>
-        <p>Preferred Time of Day</p>
+        <h3>Preferred Time of Day</h3>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
             type="checkbox"
-            id="tod1"
+            id="morning"
             name="time"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="tod1">
+          <label className="form-check-label" htmlFor="morning">
             Morning
           </label>
         </div>
@@ -340,10 +340,10 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             name="time"
-            id="tod2"
+            id="afternoon"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="tod2">
+          <label className="form-check-label" htmlFor="afternoon">
             Afternoon
           </label>
         </div>
@@ -352,10 +352,10 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             name="time"
-            id="tod3"
+            id="evening"
             onChange={props.handleChange}
           />
-          <label className="form-check-label" htmlFor="tod3">
+          <label className="form-check-label" htmlFor="evening">
             Evening
           </label>
         </div>
