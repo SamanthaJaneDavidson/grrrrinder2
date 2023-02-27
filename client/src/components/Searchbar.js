@@ -23,6 +23,7 @@ function SearchBar(props) {
             type="checkbox"
             id="dog_gender"
             name="gender"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="dog_gender">
@@ -35,6 +36,7 @@ function SearchBar(props) {
             type="checkbox"
             name="gender"
             id="female"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="female">
@@ -49,6 +51,7 @@ function SearchBar(props) {
             type="checkbox"
             id="novax"
             name="vaccinated"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="novax">
@@ -59,6 +62,7 @@ function SearchBar(props) {
             type="checkbox"
             id="hasvax"
             name="vaccinated"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="hasvax">
@@ -72,6 +76,7 @@ function SearchBar(props) {
             type="checkbox"
             id="noneut"
             name="dog_neuter_spayed"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="noneut">
@@ -82,6 +87,7 @@ function SearchBar(props) {
             type="checkbox"
             id="isneut"
             name="dog_neuter_spayed"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="isneut">
@@ -96,6 +102,7 @@ function SearchBar(props) {
             type="checkbox"
             id="sizesmall"
             name="size"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="sizesmall">
@@ -108,6 +115,7 @@ function SearchBar(props) {
             type="checkbox"
             id="sizemedium"
             name="size"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="sizemedium">
@@ -120,6 +128,7 @@ function SearchBar(props) {
             type="checkbox"
             name="size"
             id="sizelarge"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="sizelarge">
@@ -134,6 +143,7 @@ function SearchBar(props) {
             type="checkbox"
             name="age"
             id="agepup"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="agepup">
@@ -146,6 +156,7 @@ function SearchBar(props) {
             type="checkbox"
             id="ageyouth"
             name="age"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="ageyouth">
@@ -157,6 +168,7 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             id="ageadult"
+            checked
             onChange={props.handleChange}
             name="age"
           />
@@ -170,6 +182,7 @@ function SearchBar(props) {
             type="checkbox"
             id="agesenior"
             name="age"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="agesenior">
@@ -183,6 +196,7 @@ function SearchBar(props) {
             type="checkbox"
             id="shy"
             name="temperment"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="shy">
@@ -195,6 +209,7 @@ function SearchBar(props) {
             type="checkbox"
             id="calm"
             name="temperment"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="calm">
@@ -207,6 +222,7 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             id="energetic"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="energetic">
@@ -219,6 +235,7 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             id="outgoing"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="outgoing">
@@ -231,6 +248,7 @@ function SearchBar(props) {
             className="form-check-input"
             type="checkbox"
             id="leader"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="leader">
@@ -244,6 +262,7 @@ function SearchBar(props) {
             type="checkbox"
             name="days"
             id="mon"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="mon">
@@ -256,6 +275,7 @@ function SearchBar(props) {
             type="checkbox"
             name="days"
             id="tue"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="tue">
@@ -268,6 +288,7 @@ function SearchBar(props) {
             type="checkbox"
             name="days"
             id="wed"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="wed">
@@ -280,6 +301,7 @@ function SearchBar(props) {
             type="checkbox"
             name="days"
             id="thu"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="thu">
@@ -292,6 +314,7 @@ function SearchBar(props) {
             type="checkbox"
             name="days"
             id="fri"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="fri">
@@ -304,6 +327,7 @@ function SearchBar(props) {
             type="checkbox"
             name="days"
             id="sat"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="sat">
@@ -316,6 +340,7 @@ function SearchBar(props) {
             type="checkbox"
             name="days"
             id="sun"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="sun">
@@ -329,6 +354,7 @@ function SearchBar(props) {
             type="checkbox"
             id="morning"
             name="time"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="morning">
@@ -341,6 +367,7 @@ function SearchBar(props) {
             type="checkbox"
             name="time"
             id="afternoon"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="afternoon">
@@ -353,6 +380,7 @@ function SearchBar(props) {
             type="checkbox"
             name="time"
             id="evening"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="evening">
