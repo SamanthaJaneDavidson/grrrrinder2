@@ -51,7 +51,7 @@ function Login() {
             password: '',
         });
         // momentarily commment out
-        //window.location.replace("/profile")
+        window.location.replace("/profile")
     };
 
     return (
