@@ -237,7 +237,7 @@ button:hover {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  /* background: linear-gradient(90deg, rgb(204, 118, 68) 0%, hsla(41, 90%, 73%, 1) 100%); */
+  background: linear-gradient(90deg, rgb(204, 118, 68) 0%, hsla(41, 90%, 73%, 1) 100%);
 }
 
 .Auth-form {
@@ -270,6 +270,14 @@ button:hover {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.savedDog{
+  margin-top: 33px;
+}
+
+.savedDog h2{
+ color:#f8d17c;
+}
+
 #saved-dog-card {
   background-color: rgba(229, 206, 152, 0.7);
   border-radius: 20px;
@@ -288,3 +296,14 @@ button:hover {
 #saved-dog-cardbody > div {
   margin-bottom: 24px;
 }
+
+.card {
+  margin: 12px !important;
+  border:none !important;
+  border-radius: 20px !important;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2) !important;
+}
+.card:hover {
+  transform: scale(0.9) !important;
+}
+
