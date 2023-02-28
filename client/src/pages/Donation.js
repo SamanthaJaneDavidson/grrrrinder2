@@ -4,8 +4,8 @@ import { Container } from 'react-bootstrap';
 // import Footer from "../components/Footer";
 // import { Link } from 'react-router-dom';
 import CartItem from '../components/CartItem';
-import Mug from './images/GrinderMug.png';
-import Shirt from './images/GrinderTshirt.png';
+import Mug from '../Images/GrinderMug.png';
+import Shirt from '../Images/GrinderTshirt.png';
 
 let merchandise = [
     {
