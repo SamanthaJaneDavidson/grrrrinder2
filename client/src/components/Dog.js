@@ -14,10 +14,12 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
 
       <Card.Body>
         <Card.Title>{dog.dog_name}</Card.Title>
+
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Information</Accordion.Header>
             <Accordion.Body>
+              <p>username = {dog.dog_owner.username}</p>
               <p>breed = {dog.dog_breed}</p>
               <p>gender = {dog.dog_gender}</p>
               <p>size = {dog.dog_size}</p>
