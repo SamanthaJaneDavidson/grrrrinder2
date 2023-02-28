@@ -75,7 +75,7 @@ function SearchBar(props) {
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="noneut">
-            Not Neutered or Spayed
+            No
           </label>
           <input
             className="form-check-input"
@@ -85,7 +85,7 @@ function SearchBar(props) {
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="isneut">
-            Neutered or Spayed
+            Yes
           </label>
         </div>
         
