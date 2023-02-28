@@ -40,6 +40,7 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
         </Accordion>
         {saveDog ? (
           <Button
+          className="add-dog-btn"
             onClick={() => {
               saveDog({
                 variables: {
@@ -53,7 +54,7 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
         ) : undefined}
 
         {unsaveDog ? (
-          <Button
+          <Button className="delete-dog-btn"
             onClick={async () => {
               await unsaveDog({
                 variables: {
@@ -69,7 +70,7 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
         ) : undefined}
 
         {deleteDog ? (
-          <Button
+          <Button className="delete-dog-btn"
             onClick={async () => {
               await deleteDog({
                 variables: {
