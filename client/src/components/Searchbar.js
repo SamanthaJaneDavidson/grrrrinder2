@@ -42,7 +42,7 @@ function SearchBar(props) {
           </label>
         </div>
         
-        <h5>Health Status</h5>
+        <h5>Vaccinated</h5>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -52,7 +52,7 @@ function SearchBar(props) {
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="novax">
-            Not Vaccinated
+            No
           </label>
           <input
             className="form-check-input"
@@ -62,7 +62,7 @@ function SearchBar(props) {
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="hasvax">
-            Vaccinated
+            Yes
           </label>
         </div>
         <h5>Neutered/Spayed</h5>
