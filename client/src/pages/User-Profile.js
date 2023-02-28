@@ -36,9 +36,9 @@ export default function Profile() {
     <Container style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
       <Row style={{flex: 1}}>
         <Col xs={12} sm={4} style={{ borderRight: "thick solid burlywood" }}>
-          <h2 className="text-center">My Profile</h2>
+          <h2 className="myProfile text-center">My Profile</h2>
 
-          <h3>{userData.username}</h3>
+          <h4 id="username" >{userData.username}</h4>
 
           {dogs.map((dog) => {
             return (

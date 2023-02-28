@@ -110,6 +110,12 @@ h4 {
   font-family: monospace;
 }
 
+#checkbox-container{
+  background-color: rgb(252, 233, 208);
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
 .form-check {
   font-family: monospace;
 }
@@ -128,9 +134,9 @@ h4 {
   transform: translateY(-0.075em);
   display: grid;
   place-content: center;
-}
+} */
 
-input[type="checkbox"]::before {
+/* input[type="checkbox"]::before {
   content: "";
   width: 0.65em;
   height: 0.65em;
@@ -138,8 +144,8 @@ input[type="checkbox"]::before {
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
 } */
-/* 
-.checkmark {
+
+/* .checkmark {
   position: absolute;
   top: 0;
   left: 0;
@@ -157,6 +163,14 @@ input[type="checkbox"]::before {
 /* .form-check:checked .checkmark {
   background-color: #f3c221;
 } */
+
+#zip-code-search {
+  margin-top: 20px;
+}
+
+#zip-code-search::placeholder {
+  color: red;
+}
 
 p {
   font-family: monospace;
@@ -200,6 +214,18 @@ button:hover {
   margin-right: 10px;
   width: 270px;
   text-align: center;
+}
+
+#show-chat-btn:hover {
+  background-color: #86c579 !important;
+}
+
+#sendmsg:hover{
+  background-color: #86c579 !important;
+}
+
+#closechat:hover{
+  background-color: #e08080 !important;
 }
 
 .btn-primary {
@@ -252,7 +278,7 @@ button:hover {
 
 .carousel-caption h1 {
   font-weight: bold;
-  font-family: URW Chancery L, cursive;
+  /* font-family: URW Chancery L, cursive; */
   font-size: 65px;
 }
 .carousel1 {
@@ -314,6 +340,16 @@ button:hover {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.myProfile{
+  margin-top: 33px;
+  color:  rgb(133, 83, 26);
+}
+
+#username{
+  text-align: center;
+  color: rgb(108, 173, 185);
+}
+
 .savedDog{
   margin-top: 33px;
 }
@@ -337,6 +373,7 @@ button:hover {
   width: 80%;
   padding: 10px;
 }
+
 #saved-dog-cardbody > div {
   margin-bottom: 24px;
 }
