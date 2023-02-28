@@ -19,11 +19,11 @@ function SearchBar(props) {
         <h3>Dog Gender</h3>
         <div className="form-check form-check-inline">
           <input
-            className="form-check-input"
+            className="checkmark form-check-input"
             type="checkbox"
+            checked="checked"
             id="dog_gender"
             name="gender"
-            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="dog_gender">
@@ -32,11 +32,11 @@ function SearchBar(props) {
         </div>
         <div className="form-check form-check-inline">
           <input
-            className="form-check-input"
+            className="checkmark form-check-input"
             type="checkbox"
             name="gender"
             id="female"
-            checked
+            checked="checked"
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="female">
