@@ -6,6 +6,7 @@ import { useMutation } from '@apollo/client';
 import { Form, Button, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 // import styling 
+import { redirect } from "react-router-dom";
 
 
 function Login() {
@@ -51,7 +52,8 @@ function Login() {
             password: '',
         });
         // momentarily commment out
-        //window.location.replace("/profile")
+        // window.location.replace("/profile")
+        redirect("/profile");
     };
 
     return (

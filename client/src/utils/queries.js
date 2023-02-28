@@ -6,6 +6,9 @@ export const QUERY_DOG = gql`
 query Dog {
   dog {
     _id
+    dog_owner {
+      username
+    }
     dog_name
     dog_breed
     dog_gender

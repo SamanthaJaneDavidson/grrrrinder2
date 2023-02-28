@@ -4,21 +4,21 @@ import { Container } from 'react-bootstrap';
 // import Footer from "../components/Footer";
 // import { Link } from 'react-router-dom';
 import CartItem from '../components/CartItem';
-import Mug from '../Images/GrinderMug.png';
-import Shirt from '../Images/GrinderTshirt.png';
+// import Mug from '../Images/GrinderMug.png';
+// import Shirt from '../Images/GrinderTshirt.png';
 
 let merchandise = [
     {
         title: "Grrrr'inder Mug",
         description: "Lap up your coffee or tea in your very own Grrrr'inder mug!",
-        image: "../Images/GrinderMug.png",
-        URL: "https://buy.stripe.com/test_9AQ5mLeurbxw3cYdQS"
+        image: "https://res.cloudinary.com/dh82x6mau/image/upload/v1677547857/GrinderMug_hdz2gq.png",
+        URL: "https://buy.stripe.com/test_7sI2azbif9po6pa5kl"
     },
     {
         title: "Grrrr'inder T-Shirt",
         description: "Let's face it, your clothes are already covered in your favorite pup's fur, so why not wear your furry friend's fur and donate as well?",
-        image: "../Images/GrinderTshirt.png",
-        URL: "https://buy.stripe.com/test_7sI2azbif9po6pa5kl"
+        image: "https://res.cloudinary.com/dh82x6mau/image/upload/v1677547863/GrinderTshirt_nqrnx8.png",
+        URL: "https://buy.stripe.com/test_9AQ5mLeurbxw3cYdQS"
     },
 ]
 

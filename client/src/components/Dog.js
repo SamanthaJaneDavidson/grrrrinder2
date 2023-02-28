@@ -15,10 +15,12 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
 
       <Card.Body>
         <Card.Title>{dog.dog_name}</Card.Title>
+
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>About Me</Accordion.Header>
             <Accordion.Body>
+
               <p>Breed: {dog.dog_breed}</p>
               <p>Gender: {dog.dog_gender}</p>
               <p>Size: {dog.dog_size}</p>
@@ -27,6 +29,7 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
               <p>Neutered or Spayed: {dog.dog_neuter_spayed ? "Yes" : "No"}</p>
               <p>Temperment: {dog.dog_temperment}</p>
               <p>Additional Info: {dog.dog_notes}</p>
+
             </Accordion.Body>
           </Accordion.Item>
 
@@ -41,6 +44,7 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
         </Accordion>
         {saveDog ? (
           <Button
+          className="add-dog-btn"
             onClick={() => {
               saveDog({
                 variables: {
@@ -54,7 +58,7 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
         ) : undefined}
 
         {unsaveDog ? (
-          <Button
+          <Button className="delete-dog-btn"
             onClick={async () => {
               await unsaveDog({
                 variables: {
@@ -70,7 +74,7 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
         ) : undefined}
 
         {deleteDog ? (
-          <Button
+          <Button className="delete-dog-btn"
             onClick={async () => {
               await deleteDog({
                 variables: {
