@@ -12,7 +12,7 @@ function SearchBar(props) {
           onChange={props.handleChange}
           type="zip"
           name="zip"
-          placeholder="Search by zip code"
+          placeholder="* zip code required *"
         />
       </div>
       <div>

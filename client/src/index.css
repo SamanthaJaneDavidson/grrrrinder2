@@ -158,6 +158,14 @@ input[type="checkbox"]::before {
   background-color: #f3c221;
 } */
 
+#zip-code-search {
+  margin-top: 20px;
+}
+
+#zip-code-search::placeholder {
+  color: red;
+}
+
 p {
   font-family: monospace;
 }
@@ -314,6 +322,16 @@ button:hover {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.myProfile{
+  margin-top: 33px;
+  color:  rgb(133, 83, 26);
+}
+
+#username{
+  text-align: center;
+  color: rgb(108, 173, 185);
+}
+
 .savedDog{
   margin-top: 33px;
 }
@@ -337,6 +355,7 @@ button:hover {
   width: 80%;
   padding: 10px;
 }
+
 #saved-dog-cardbody > div {
   margin-bottom: 24px;
 }
