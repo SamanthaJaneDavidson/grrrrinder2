@@ -24,3 +24,9 @@ body, #root {
   padding: 25px;
 	padding-left: 24px;
 }
+
+.merchFlex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
