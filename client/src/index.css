@@ -177,6 +177,21 @@ button:hover {
   color: rgb(133, 83, 26);
 }
 
+.add-dog-btn {
+  background-color: rgb(139, 204, 216) !important;
+  color: rgb(255, 255, 254)!important;
+}
+
+.add-dog-btn:hover {
+  background-color: #86c579 !important;
+  color: rgb(255, 255, 254);
+}
+
+.delete-dog-btn:hover{
+  background-color: #e08080 !important;
+  color: rgb(255, 255, 254);
+}
+
 .carousel .carousel-item {
   max-height: 650px;
 }

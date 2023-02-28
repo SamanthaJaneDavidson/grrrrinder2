@@ -54,8 +54,7 @@ export default function Profile() {
           })}
 
           <div style={{ marginTop: 30, marginBottom: 30 }}>
-            <Link id="add-dog-link" to="/add-dog">
-              Add a Dog to Your Profile
+            <Link to="/add-dog"><button type="button" className="btn btn-outline-primary add-dog-btn">Add a Dog to Your Profile</button>
             </Link>
           </div>
         </Col>
