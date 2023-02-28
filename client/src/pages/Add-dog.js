@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 import UploadWidget from "../components/UploadWidget";
+// import { redirect } from "react-router-dom";
 
 function AddDog() {
   const [dogName, setDogName] = useState("");
@@ -48,7 +49,7 @@ function AddDog() {
     });
     
     if (data.addDog && data.addDog.username) {
-      window.location.href = '/';
+      window.location.href = '/profile';
     }
     // ADD SAVE_DOG data USING FORM INPUT VALUES
 };
