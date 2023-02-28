@@ -57,11 +57,11 @@ function Login() {
     };
 
     return (
-        <div className='Auth-form-container'>
-            <div className="Auth-form">
+        <div className='Auth-form-container '>
+            <div className="Auth-form ">
             <h2>Login</h2>
             <Form noValidate validated={validated} onSubmit={handleFormSubmit} >
-                <Row className="mb-3">
+                <Row className="mb-3 justify-content-center">
                     <Form.Group className="font-weight-bold text-small col-md-7" >
                         <Form.Label htmlFor='username'>Username</Form.Label>
                         <Form.Control
@@ -87,12 +87,15 @@ function Login() {
                         <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
                     </Form.Group>
                 </Row>
+                
                 <Button
+
                     disabled={!(loginData.username && loginData.password)}
                     type='submit'
                     variant='success'>
                     Submit
                 </Button>
+                
             </Form>
 
             {
@@ -100,9 +103,10 @@ function Login() {
                     <p>{errorMessage}</p>
                 )
             }
+            
             <p>Don't have an account?</p>
             <Link to="/signup"> <button id="signup-button" type="button" className="btn btn-outline-success">Signup</button></Link>
-
+           
         </div >
         </div>
     )

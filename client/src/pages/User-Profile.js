@@ -36,7 +36,7 @@ export default function Profile() {
     <Container style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
       <Row style={{flex: 1}}>
         <Col xs={12} sm={4} style={{ borderRight: "thick solid burlywood" }}>
-          <h2>My Profile</h2>
+          <h2 className="text-center">My Profile</h2>
 
           <h3>{userData.username}</h3>
 
@@ -58,7 +58,7 @@ export default function Profile() {
             </Link>
           </div>
         </Col>
-        <Col xs={12} sm={8}>
+        <Col xs={12} sm={8} className="savedDog text-center">
           <h2>Saved Dogs</h2>
           <Row>
             {savedDogs.map((dog) => {
