@@ -4,7 +4,8 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import UserProfile from "./pages/User-Profile";
-import SearchDogs from './pages/Search-Dogs'
+import SearchDogs from './pages/Search-Dogs';
+// import SearchDogs2 from './pages/Search-Dogs-2';
 import Donation from "./pages/Donation";
 import AddDog from "./pages/Add-dog";
 import Home from "./pages/Home";
