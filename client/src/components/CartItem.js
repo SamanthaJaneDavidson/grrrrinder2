@@ -9,7 +9,7 @@ const CartItem = (props) => {
         <div className="card-body">
           <h5 className="card-title">{props.title}</h5>
           <p className="card-text">{props.description}</p>
-          <a href={props.URL} className="btn btn-primary">Buy Now!</a>
+          <a href={props.URL} className="btn btn-primary donate-btn">Buy Now!</a>
         </div>
       </div>
     );

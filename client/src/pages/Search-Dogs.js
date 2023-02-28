@@ -15,50 +15,50 @@ function SearchDogs() {
   // }
   );
   
-  useEffect(()=>{
-    const dataToFilter = {};
-    dataToFilter.preferred_location = "12345";
-    dataToFilter.dog_gender = [];
-    dataToFilter.dog_gender.push("male");
-    dataToFilter.dog_gender.push("female");
-    dataToFilter.dog_neuter_spayed = [];
-    dataToFilter.dog_neuter_spayed.push(true);
-    dataToFilter.dog_neuter_spayed.push(false);
-    dataToFilter.dog_vaccinations = [];
-    dataToFilter.dog_vaccinations.push(true);
-    dataToFilter.dog_vaccinations.push(false);
-    dataToFilter.dog_size = [];  
-    dataToFilter.dog_size.push("small");
-    dataToFilter.dog_size.push("medium");
-    dataToFilter.dog_size.push("large");
-    dataToFilter.dog_age = [];
-    dataToFilter.dog_age.push("puppy");
-    dataToFilter.dog_age.push("youth");
-    dataToFilter.dog_age.push("adult");
-    dataToFilter.dog_age.push("senior");
-    dataToFilter.dog_temperment = [];
-    dataToFilter.dog_temperment.push("shy");
-    dataToFilter.dog_temperment.push("calm");
-    dataToFilter.dog_temperment.push("energetic");
-    dataToFilter.dog_temperment.push("outgoing");
-    dataToFilter.dog_temperment.push("leader");
-    dataToFilter.preferred_days = [];
-    dataToFilter.preferred_days.push("monday");
-    dataToFilter.preferred_days.push("tuesday");
-    dataToFilter.preferred_days.push("wednesday"); 
-    dataToFilter.preferred_days.push("thursday");
-    dataToFilter.preferred_days.push("friday");
-    dataToFilter.preferred_days.push("saturday");
-    dataToFilter.preferred_days.push("sunday");
-    dataToFilter.preferred_timeofday = [];
-    dataToFilter.preferred_timeofday.push("morning");
-    dataToFilter.preferred_timeofday.push("afternoon");
-    dataToFilter.preferred_timeofday.push("evening");
+  // useEffect(()=>{
+  //   const dataToFilter = {};
+  //   dataToFilter.preferred_location = "12345";
+  //   dataToFilter.dog_gender = [];
+  //   dataToFilter.dog_gender.push("male");
+  //   dataToFilter.dog_gender.push("female");
+  //   dataToFilter.dog_neuter_spayed = [];
+  //   dataToFilter.dog_neuter_spayed.push(true);
+  //   dataToFilter.dog_neuter_spayed.push(false);
+  //   dataToFilter.dog_vaccinations = [];
+  //   dataToFilter.dog_vaccinations.push(true);
+  //   dataToFilter.dog_vaccinations.push(false);
+  //   dataToFilter.dog_size = [];  
+  //   dataToFilter.dog_size.push("small");
+  //   dataToFilter.dog_size.push("medium");
+  //   dataToFilter.dog_size.push("large");
+  //   dataToFilter.dog_age = [];
+  //   dataToFilter.dog_age.push("puppy");
+  //   dataToFilter.dog_age.push("youth");
+  //   dataToFilter.dog_age.push("adult");
+  //   dataToFilter.dog_age.push("senior");
+  //   dataToFilter.dog_temperment = [];
+  //   dataToFilter.dog_temperment.push("shy");
+  //   dataToFilter.dog_temperment.push("calm");
+  //   dataToFilter.dog_temperment.push("energetic");
+  //   dataToFilter.dog_temperment.push("outgoing");
+  //   dataToFilter.dog_temperment.push("leader");
+  //   dataToFilter.preferred_days = [];
+  //   dataToFilter.preferred_days.push("monday");
+  //   dataToFilter.preferred_days.push("tuesday");
+  //   dataToFilter.preferred_days.push("wednesday"); 
+  //   dataToFilter.preferred_days.push("thursday");
+  //   dataToFilter.preferred_days.push("friday");
+  //   dataToFilter.preferred_days.push("saturday");
+  //   dataToFilter.preferred_days.push("sunday");
+  //   dataToFilter.preferred_timeofday = [];
+  //   dataToFilter.preferred_timeofday.push("morning");
+  //   dataToFilter.preferred_timeofday.push("afternoon");
+  //   dataToFilter.preferred_timeofday.push("evening");
         
-    console.log(dataToFilter);
-    setFilter(dataToFilter);
+  //   console.log(dataToFilter);
+  //   setFilter(dataToFilter);
 
-  }, [filteredData] );
+  // }, [filteredData] );
 
   const handleInputChange = () => {
     const dataToFilter = {};
