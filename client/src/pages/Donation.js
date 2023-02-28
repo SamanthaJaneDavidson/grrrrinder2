@@ -12,13 +12,13 @@ let merchandise = [
         title: "Grrrr'inder Mug",
         description: "Lap up your coffee or tea in your very own Grrrr'inder mug!",
         image: "../Images/GrinderMug.png",
-        URL: "https://buy.stripe.com/test_9AQ5mLeurbxw3cYdQS"
+        URL: "https://buy.stripe.com/test_7sI2azbif9po6pa5kl"
     },
     {
         title: "Grrrr'inder T-Shirt",
         description: "Let's face it, your clothes are already covered in your favorite pup's fur, so why not wear your furry friend's fur and donate as well?",
         image: "../Images/GrinderTshirt.png",
-        URL: "https://buy.stripe.com/test_7sI2azbif9po6pa5kl"
+        URL: "https://buy.stripe.com/test_9AQ5mLeurbxw3cYdQS"
     },
 ]
 
