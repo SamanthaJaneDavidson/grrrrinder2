@@ -50,7 +50,7 @@ const Signup = () => {
 
   return (
     <div className='Auth-form-container'>
-               <div className="Auth-form">
+               <div className="Auth-form ">
         <h1>Create an Account</h1>
       {/* This is needed for the validation functionality above */}
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
@@ -58,7 +58,7 @@ const Signup = () => {
         <Alert dismissible onClose={() => setErrorMessage(false)} show={errorMessage} variant='danger'>
           Something went wrong with your signup!
         </Alert>
-        <Row className="mb-3">
+        <Row className="mb-3 justify-content-center">
         <Form.Group className="font-weight-bold text-small col-md-7">
           <Form.Label htmlFor='username'>Username</Form.Label>
           <Form.Control

@@ -58,26 +58,6 @@ code {
   text-decoration: none;
 }
 
-#add-dog-link {
-  color: rgb(133, 83, 26);
-  text-decoration: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: 60px;
-  border-radius: 20%;
-  background-color: rgb(139, 204, 216);
-  width: 300px;
-  text-align: center;
-  font-weight: 600;
-}
-
-#add-dog-link:hover {
-  color: #ffffff;
-  /* background-color: #f05800; */
-}
-
 h1 {
   text-align: center;
   font-family: monospace;
@@ -110,8 +90,66 @@ h4 {
   font-family: monospace;
 }
 
+#checkbox-container{
+  background-color: rgb(252, 233, 208);
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
 .form-check {
   font-family: monospace;
+}
+
+/* .form-check:checked{
+  background-color: #f8d17c
+} */
+
+/* input[type="checkbox"]{
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+} */
+
+/* input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+} */
+
+/* .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+} */
+
+/* On mouse-over, add a grey background color */
+/* .container:hover input ~ .checkmark {
+  background-color: #ccc;
+} */
+
+/* When the checkbox is checked, add a blue background */
+/* .form-check:checked .checkmark {
+  background-color: #f3c221;
+} */
+
+#zip-code-search {
+  margin-top: 20px;
+}
+
+#zip-code-search::placeholder {
+  color: red;
 }
 
 p {
@@ -158,6 +196,18 @@ button:hover {
   text-align: center;
 }
 
+#show-chat-btn:hover {
+  background-color: #86c579 !important;
+}
+
+#sendmsg:hover{
+  background-color: #86c579 !important;
+}
+
+#closechat:hover{
+  background-color: #e08080 !important;
+}
+
 .btn-primary {
   background-color: rgb(139, 204, 216) !important;
   align-items: center;
@@ -192,8 +242,8 @@ button:hover {
   color: rgb(255, 255, 254);
 }
 
-.carousel .carousel-item {
-  max-height: 100%x;
+.carousel.carousel-item {
+  max-height: 100%;
 }
 
 .carousel-item img {
@@ -208,7 +258,7 @@ button:hover {
 
 .carousel-caption h1 {
   font-weight: bold;
-  font-family: URW Chancery L, cursive;
+  /* font-family: URW Chancery L, cursive; */
   font-size: 65px;
 }
 .carousel1 {
@@ -270,6 +320,24 @@ button:hover {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.myProfile{
+  margin-top: 33px;
+  color:  rgb(133, 83, 26);
+}
+
+#username{
+  text-align: center;
+  color: rgb(108, 173, 185);
+}
+
+.savedDog{
+  margin-top: 33px;
+}
+
+.savedDog h2{
+ color:#f8d17c;
+}
+
 #saved-dog-card {
   background-color: rgba(229, 206, 152, 0.7);
   border-radius: 20px;
@@ -285,6 +353,46 @@ button:hover {
   width: 80%;
   padding: 10px;
 }
+
 #saved-dog-cardbody > div {
   margin-bottom: 24px;
+}
+
+.card {
+  margin: 12px !important;
+  border:none !important;
+  border-radius: 20px !important;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2) !important;
+}
+.card:hover {
+  transform: scale(0.9) !important;
+}
+
+.donate-title{
+  margin-top: 30px;
+  text-align: center;
+}
+
+#donate {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.donate-btn{
+  background-color: rgb(139, 204, 216) !important;
+  text-align: center;
+  margin-top: 5px;
+  width:200px;
+  margin: 10px;
+  color: rgb(255, 255, 255)!important;
+}
+
+.donate-btn:hover{
+  background-color: #86c579 !important;
+}
+
+.merchFlex {
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
