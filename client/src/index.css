@@ -210,6 +210,18 @@ button:hover {
   text-align: center;
 }
 
+#show-chat-btn:hover {
+  background-color: #86c579 !important;
+}
+
+#sendmsg:hover{
+  background-color: #86c579 !important;
+}
+
+#closechat:hover{
+  background-color: #e08080 !important;
+}
+
 .btn-primary {
   background-color: rgb(139, 204, 216) !important;
   align-items: center;
