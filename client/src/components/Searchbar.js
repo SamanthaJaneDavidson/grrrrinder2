@@ -15,13 +15,13 @@ function SearchBar(props) {
           placeholder="* zip code required *"
         />
       </div>
-      <div>
-        <h3>Dog Gender</h3>
+      <div id="checkbox-container">
+        <h5>Dog Gender</h5>
         <div className="form-check form-check-inline">
           <input
             className="checkmark form-check-input"
             type="checkbox"
-            checked="checked"
+            checked
             id="dog_gender"
             name="gender"
             onChange={props.handleChange}
@@ -36,7 +36,7 @@ function SearchBar(props) {
             type="checkbox"
             name="gender"
             id="female"
-            checked="checked"
+            checked
             onChange={props.handleChange}
           />
           <label className="form-check-label" htmlFor="female">
@@ -44,7 +44,7 @@ function SearchBar(props) {
           </label>
         </div>
         
-        <h3>Health Status</h3>
+        <h5>Health Status</h5>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -69,7 +69,7 @@ function SearchBar(props) {
             Vaccinated
           </label>
         </div>
-        <h3>Neutered/Spayed</h3>
+        <h5>Neutered/Spayed</h5>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -95,7 +95,7 @@ function SearchBar(props) {
           </label>
         </div>
         
-        <h3>Dog Size</h3>
+        <h5>Dog Size</h5>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -136,7 +136,7 @@ function SearchBar(props) {
           </label>
         </div>
         
-        <h3>Dog Age</h3>
+        <h5>Dog Age</h5>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -189,7 +189,7 @@ function SearchBar(props) {
             Senior
           </label>
         </div>
-        <h3>Dog Temperment</h3>
+        <h5>Dog Temperment</h5>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -255,7 +255,7 @@ function SearchBar(props) {
             Leader
           </label>
         </div>
-        <h3>Preferred Day</h3>
+        <h5>Preferred Day</h5>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -347,7 +347,7 @@ function SearchBar(props) {
             Sunday
           </label>
         </div>
-        <h3>Preferred Time of Day</h3>
+        <h5>Preferred Time of Day</h5>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"

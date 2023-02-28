@@ -110,6 +110,12 @@ h4 {
   font-family: monospace;
 }
 
+#checkbox-container{
+  background-color: rgb(252, 233, 208);
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
 .form-check {
   font-family: monospace;
 }
@@ -128,9 +134,9 @@ h4 {
   transform: translateY(-0.075em);
   display: grid;
   place-content: center;
-}
+} */
 
-input[type="checkbox"]::before {
+/* input[type="checkbox"]::before {
   content: "";
   width: 0.65em;
   height: 0.65em;
@@ -138,8 +144,8 @@ input[type="checkbox"]::before {
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
 } */
-/* 
-.checkmark {
+
+/* .checkmark {
   position: absolute;
   top: 0;
   left: 0;
@@ -272,7 +278,7 @@ button:hover {
 
 .carousel-caption h1 {
   font-weight: bold;
-  font-family: URW Chancery L, cursive;
+  /* font-family: URW Chancery L, cursive; */
   font-size: 65px;
 }
 .carousel1 {
