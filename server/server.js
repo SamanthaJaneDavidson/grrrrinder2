@@ -7,7 +7,7 @@ const db = require("./config/connection");
 const { ApolloServer } = require("apollo-server-express");
 const { authMiddleware } = require("./utils/auth");
 const { typeDefs } = require("./schema");
-const resolvers = require("./Schema/resolvers");
+const resolvers = require("./schema/resolvers");
 const { Server } = require("socket.io");
 const { User } = require("./models");
 
