@@ -12,7 +12,7 @@ const home = () => {
   return (
     <Carousel fade prevLabel={null} nextLabel={null} pause="hover" indicators={false}>
       <Carousel.Item>
-        <img className="d-block w-100" src={backgroundImg1} alt="dogs with teddy bear" style={{ opacity: "0.6" }}/>
+        <img className="d-block w-100" src={backgroundImg1} alt="dogs with teddy bear" style={{ opacity: "0.8" }}/>
         <Carousel.Caption>
           <h1 className='carousel1'>Find the Paw-fect Match</h1>
           <p className='carousel1'> Welcome to <span>Grrrr'inder</span>, your modern alternative to traditional dog parks!</p>
@@ -27,7 +27,7 @@ const home = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src={backgroundImg3} style={{ opacity: "0.6" }} alt="dogs playing" />
+        <img className="d-block w-100" src={backgroundImg3} style={{ opacity: "0.8" }} alt="dogs playing" />
 
         <Carousel.Caption>
           <h1>Start the Pawty!</h1>
