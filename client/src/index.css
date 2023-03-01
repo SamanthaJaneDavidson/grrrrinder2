@@ -244,11 +244,14 @@ button:hover {
 
 .carousel.carousel-item {
   max-height: 100%;
+  min-height: 0;
+  
 }
 
 .carousel-item img {
   object-fit: cover;
   max-height: 100%;
+  min-height: 0;
 }
 .carousel-caption {
   color: #241d0d !important;
@@ -260,6 +263,7 @@ button:hover {
   font-weight: bold;
   /* font-family: URW Chancery L, cursive; */
   font-size: 65px;
+  text-shadow: 3px 1px white;
 }
 .carousel1 {
   color: rgb(52, 35, 13);
@@ -300,10 +304,10 @@ button:hover {
   background-color: white;
 }
 
-.Auth-form h2 {
+.Auth-form h1 {
   text-align: center;
   margin-top: 1em;
-  font-size: 24px;
+  font-size: 44px;
   color: #8ca6db;
   font-weight: 400;
 }
@@ -331,7 +335,7 @@ button:hover {
 }
 
 .savedDog{
-  margin-top: 33px;
+  margin-top: 59px;
 }
 
 .savedDog h2{

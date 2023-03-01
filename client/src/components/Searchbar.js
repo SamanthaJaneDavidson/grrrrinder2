@@ -42,7 +42,7 @@ function SearchBar(props) {
           </label>
         </div>
         
-        <h5>Vaccinated</h5>
+        <h5>Health Status</h5>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -88,7 +88,7 @@ function SearchBar(props) {
             Yes
           </label>
         </div>
-        
+
         <h5>Dog Size</h5>
         <div className="form-check form-check-inline">
           <input
@@ -126,7 +126,7 @@ function SearchBar(props) {
             Large
           </label>
         </div>
-        
+
         <h5>Dog Age</h5>
         <div className="form-check form-check-inline">
           <input

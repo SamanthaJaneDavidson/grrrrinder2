@@ -14,7 +14,7 @@ export default function Profile() {
   const [dogsSet, setDogsSet] = useState(false);
 
   const { loading, data } = useQuery(QUERY_ME, {
-    fetchPolicy: "no-cache"
+    fetchPolicy: "no-cache",
   });
 
   const userData = data?.me || {};
@@ -33,12 +33,12 @@ export default function Profile() {
   }
 
   return (
-    <Container style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-      <Row style={{flex: 1}}>
+    <Container style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+      <Row style={{ flex: 1 }}>
         <Col xs={12} sm={4} style={{ borderRight: "thick solid burlywood" }}>
           <h2 className="myProfile text-center">My Profile</h2>
 
-          <h4 id="username" >{userData.username}</h4>
+          <h4 id="username">{userData.username}</h4>
 
           {dogs.map((dog) => {
             return (
@@ -54,7 +54,13 @@ export default function Profile() {
           })}
 
           <div style={{ marginTop: 30, marginBottom: 30 }}>
-            <Link to="/add-dog"><button type="button" className="btn btn-outline-primary add-dog-btn">Add a Dog to Your Profile</button>
+            <Link to="/add-dog">
+              <button
+                type="button"
+                className="btn btn-outline-primary add-dog-btn"
+              >
+                Add a Dog to Your Profile
+              </button>
             </Link>
           </div>
         </Col>

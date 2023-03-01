@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import React from 'react';
 import Searchbar from "../components/Searchbar";
 import { Button, Col, Container, Row } from "react-bootstrap";
@@ -9,56 +9,7 @@ import { SAVE_DOG } from "../utils/mutations";
 import Dog from "../components/Dog";
 
 function SearchDogs() {
-  const [filteredData, setFilter] = useState(''
-  //   {
-  //   dog_age: ["puppy","youth","adult","senior"]
-  // }
-  );
-  
-  useEffect(()=>{
-    const dataToFilter = {};
-    dataToFilter.preferred_location = "12345";
-    dataToFilter.dog_gender = [];
-    dataToFilter.dog_gender.push("male");
-    dataToFilter.dog_gender.push("female");
-    dataToFilter.dog_neuter_spayed = [];
-    dataToFilter.dog_neuter_spayed.push(true);
-    dataToFilter.dog_neuter_spayed.push(false);
-    dataToFilter.dog_vaccinations = [];
-    dataToFilter.dog_vaccinations.push(true);
-    dataToFilter.dog_vaccinations.push(false);
-    dataToFilter.dog_size = [];  
-    dataToFilter.dog_size.push("small");
-    dataToFilter.dog_size.push("medium");
-    dataToFilter.dog_size.push("large");
-    dataToFilter.dog_age = [];
-    dataToFilter.dog_age.push("puppy");
-    dataToFilter.dog_age.push("youth");
-    dataToFilter.dog_age.push("adult");
-    dataToFilter.dog_age.push("senior");
-    dataToFilter.dog_temperment = [];
-    dataToFilter.dog_temperment.push("shy");
-    dataToFilter.dog_temperment.push("calm");
-    dataToFilter.dog_temperment.push("energetic");
-    dataToFilter.dog_temperment.push("outgoing");
-    dataToFilter.dog_temperment.push("leader");
-    dataToFilter.preferred_days = [];
-    dataToFilter.preferred_days.push("monday");
-    dataToFilter.preferred_days.push("tuesday");
-    dataToFilter.preferred_days.push("wednesday"); 
-    dataToFilter.preferred_days.push("thursday");
-    dataToFilter.preferred_days.push("friday");
-    dataToFilter.preferred_days.push("saturday");
-    dataToFilter.preferred_days.push("sunday");
-    dataToFilter.preferred_timeofday = [];
-    dataToFilter.preferred_timeofday.push("morning");
-    dataToFilter.preferred_timeofday.push("afternoon");
-    dataToFilter.preferred_timeofday.push("evening");
-        
-    console.log(dataToFilter);
-    setFilter(dataToFilter,[filteredData]);
-
-  }, [] );
+  const [filteredData, setFilter] = useState({});
 
   const handleInputChange = () => {
     const dataToFilter = {};
@@ -82,20 +33,20 @@ function SearchDogs() {
     dataToFilter.dog_neuter_spayed = [];
 
     if (neuteredOrSpayed[0].checked) {
-      dataToFilter.dog_neuter_spayed.push(true);
+      dataToFilter.dog_neuter_spayed.push(false);
     }
     if (neuteredOrSpayed[1].checked) {
-      dataToFilter.dog_neuter_spayed.push(false);
+      dataToFilter.dog_neuter_spayed.push(true);
     }
 
     const vaccinated = document.querySelectorAll('input[name="vaccinated"]');
     dataToFilter.dog_vaccinations = [];
 
     if (vaccinated[0].checked) {
-      dataToFilter.dog_vaccinations.push(true);
+      dataToFilter.dog_vaccinations.push(false);
     }
     if (vaccinated[1].checked) {
-      dataToFilter.dog_vaccinations.push(false);
+      dataToFilter.dog_vaccinations.push(true);
     }
 
     const sizes = document.querySelectorAll('input[name="size"]');
@@ -185,46 +136,44 @@ function SearchDogs() {
     }
 
     setFilter(dataToFilter);
-    console.log(filteredData);
   };
 
   // TO DO: create another query to filter through the database
   const myFilter = (dog) => {
-    if (filteredData.preferred_location === undefined) {
-      // The filters have not been set.
-      return false;
-    }
 
     for (const key of Object.keys(filteredData)) {
-      if (key === "dog_vaccinations" || key === "dog_neuter_spayed") {
-        if (!filteredData[key].includes(dog[key])) {
-          return false;
-        }
-      } else if (
-        key === "preferred_days" ||
-        key === "preferred_timeofday" ||
-        key === "preferred_location"
-      ) {
-        let found = false;
-        for (const value of dog[key]) {
-          if (filteredData[key].includes(value.toLowerCase())) {
-            found = true;
+      if (filteredData[key].length !== 0){
+        console.log(filteredData);
+        if (key === "dog_vaccinations" || key === "dog_neuter_spayed") {
+          if (!filteredData[key].includes(dog[key])) {
+            return false;
+          }
+        } else if (
+          key === "preferred_days" ||
+          key === "preferred_timeofday" ||
+          key === "preferred_location"
+        ) {
+          let found = false;
+          for (const value of dog[key]) {
+            if (value.toLowerCase() !== 'no preference' && 
+                filteredData[key].includes(value.toLowerCase())) {
+              found = true;
+            }
+          }
+          if (!found) {
+            return false;
+          }
+        } else {
+          if (!filteredData[key].includes(dog[key].toLowerCase())) {
+            return false;
           }
         }
-        if (!found) {
-          return false;
-        }
-      } else {
-        if (!filteredData[key].includes(dog[key].toLowerCase())) {
-          return false;
-        }
       }
+
     }
 
     return true;
   };
-
-//set so that each category has to be truthy --how to change this
 
   const [saveDog] = useMutation(SAVE_DOG, {
     onCompleted: (data) => {

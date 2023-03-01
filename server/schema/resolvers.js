@@ -1,9 +1,9 @@
 const { Dog, User, Order, Product, Category } = require("../models");
 const { signToken } = require("../utils/auth");
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 // require('dotenv').config(); -Moved to server.js
 
@@ -83,42 +83,42 @@ const resolvers = {
       const order = new Order({ products: args.products });
       const line_items = [];
 
-      const { products } = await order.populate('products');
+      const { products } = await order.populate("products");
       const mug = await stripe.products.create({
         name: "grrrrinder mug",
         description: "mug",
-        images: [`${url}/images/GrinderMug.png`]
+        images: [`${url}/images/GrinderMug.png`],
       });
 
       const mugPrice = await stripe.prices.create({
         product: mug.id,
         unit_amount: 10 * 100,
-        currency: 'usd',
+        currency: "usd",
       });
 
       //Need this line to talk to the front-end
       line_items.push({
         price: price.id,
-        quantity: 1
+        quantity: 1,
       });
 
       const shirt = await stripe.products.create({
         name: "grrrrinder t-shirt",
         description: "t-shirt",
-        images: [`${url}/images/GrinderTshirt.png`]
+        images: [`${url}/images/GrinderTshirt.png`],
       });
       const shirtPrice = await stripe.prices.create({
         product: shirt.id,
         unit_amount: 10 * 100,
-        currency: 'usd',
+        currency: "usd",
       });
 
       //Need this line to talk to the front-end
       line_items.push({
         price: price.id,
-        quantity: 1
+        quantity: 1,
       });
-  
+
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         line_items,
@@ -151,19 +151,21 @@ const resolvers = {
       return null;
     },
 
-    deleteDog: async (_, {dog_id}, context) => {
-      const users = await User.find({ username: context.username }).populate('dog');
-      console.log('starting');
+    deleteDog: async (_, { dog_id }, context) => {
+      const users = await User.find({ username: context.username }).populate(
+        "dog"
+      );
+      console.log("starting");
       if (users.length) {
         const user = users[0];
         const dog = await Dog.findById(dog_id);
 
-        console.log('Got user');
+        console.log("Got user");
         if (!dog) {
           return null;
         }
 
-        console.log('got dog');
+        console.log("got dog");
         console.log(dog.dog_owner);
         console.log(user._id);
 
@@ -171,7 +173,7 @@ const resolvers = {
           return null;
         }
 
-        console.log('is owned by user');
+        console.log("is owned by user");
 
         await Dog.findByIdAndRemove(dog_id);
 
@@ -183,12 +185,12 @@ const resolvers = {
           }
         }
 
-        const allUsers = await User.find().populate('saved_dogs');
+        const allUsers = await User.find().populate("saved_dogs");
         for (const otherUser of allUsers) {
           for (let i = 0; i < otherUser.saved_dogs.length; i++) {
             if (otherUser.saved_dogs[i]._id.equals(dog._id)) {
               otherUser.saved_dogs.splice(i, 1);
-  
+
               await otherUser.save();
             }
           }
@@ -250,11 +252,9 @@ const resolvers = {
 
       return null;
     },
-    saveDog: async (_, {dog_id}, context) => {
+    saveDog: async (_, { dog_id }, context) => {
       if (context.username) {
-        const user = (
-          await User.find({ username: context.username })
-        )[0];
+        const user = (await User.find({ username: context.username }))[0];
 
         if (user) {
           let alreadyHas = false;
@@ -269,7 +269,9 @@ const resolvers = {
             await user.save();
           }
 
-          return (await User.find({ username: context.username }).populate('dog'))[0]
+          return (
+            await User.find({ username: context.username }).populate("dog")
+          )[0];
         }
       }
     },

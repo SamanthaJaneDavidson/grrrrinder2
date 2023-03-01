@@ -10,21 +10,20 @@
 //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 // }).addTo(map);
 
-// //Icon for the dogs if we can't actually load a link/pic to the popup 
+// //Icon for the dogs if we can't actually load a link/pic to the popup
 // const dogIcon = L.icon({
 //     iconUrl: "Images/dog-icon",
 //     iconSize: [, 30]
 // });
 
-// //Get dog location 
+// //Get dog location
 // function getDogLocation () {
 
 // }
 
-
-// //Zip to long/lat geocoding converstion 
+// //Zip to long/lat geocoding converstion
 // function getLonLat(dogLocation){
-//     const geoCodingUrl = "http://api.openweathermap.org/geo/1.0/zip?zip=" + dogLocation + "US&appid=d97fe2285b7bc123de0716fce9e4ac7a"; 
+//     const geoCodingUrl = "http://api.openweathermap.org/geo/1.0/zip?zip=" + dogLocation + "US&appid=d97fe2285b7bc123de0716fce9e4ac7a";
 
 //     fetch(geoCodingUrl)
 //         .then(function (response) {
@@ -44,7 +43,7 @@
 
 //     return
 //     <div className='map'>
-//         {(props.perferred_location.map(potato => { 
+//         {(props.perferred_location.map(potato => {
 //             console.log(props.perferred_location)
 //             return (
 
@@ -52,7 +51,6 @@
 //         }))}
 //     </div>
 // }
-
 
 // export default Map;
 

@@ -196,4 +196,4 @@ None.
 
 ## Deployed Link
 
-Our website was deployed via Heroku- [Grrrr'inder](https://floating-reef-00120.herokuapp.com/login). Thanks for taking the time to view our site! 
+Our website was deployed via Heroku- [Grrrr'inder](https://grrrrinder2.herokuapp.com/). Thanks for taking the time to view our site! 
