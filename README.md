@@ -3,7 +3,7 @@
 <img src="https://img.shields.io/badge/License-MIT-ff69b4.svg">
 
 ---
-Grrrrr'inder is a pawsitively new way of connecting your furry friends with friends of their own. Here, you can set up doggy play dates with the click of a few buttons! As an owner, you must first create an account. Once that's done, you can create your pet's profile, add more dogs if they want to get in on the action as well, and ultimately reach out to another owner to set up your dog's pup play date. 
+Grrrrr'inder is a pawsitively new way of connecting your furry friends with friends of their own. Here, you can set up doggy play dates with the click of a few buttons! As an owner, you must first create an account. Once that's done, you can create your pet's profile, add more dogs if they want to get in on the action as well, and ultimately reach out to another owner to set up your dog's pup play date &#128054; . 
 
 <!-- ![loginpage](./public/assets/images/logingiphy.gif) -->
 
@@ -146,7 +146,7 @@ Overall, we wanted our website to be engaging! Previously, we had installed a wa
 
 <h2 align="left">Donation</h2>
 
-Another way we were able to keep our website engaging, and help out our furry friends was by creating a way for our users to donate, utilizing Stripe, an online payment processing tool. We were able to set up a "pay what you want" type of donation, where once the user clicks the "donate now" button, it will automatically take them to Stripe's checkout. As well as sell Grrrr'inder merchandise, such as a mug or t-shirt. When a user clicks on either merchandise, it will direct the user to Stripe's checkout. The quantity of the items can be changed 
+Another way we were able to keep our website engaging, and help out our furry friends was by creating a way for our users to donate, utilizing Stripe, an online payment processing tool. We were able to set up a "pay what you want" type of donation, where once the user clicks the "donate now" button, it will automatically take them to Stripe's checkout. As well as sell Grrrr'inder merchandise, such as a mug or t-shirt. When a user clicks on either merchandise, it will direct the user to Stripe's checkout. The quantity of the items can be changed, so our users will be able to buy as many mugs or shirts as they'd like! All proceeds from the "pay what you want" option or from merchandise will be donated to our local SPCA!
 
 ---
 ## Creators
@@ -173,22 +173,22 @@ None.
 * HTML
 * CSS
 * JavaScript
-* MySQL
+* React
 * Cloudinary
+* Leaflet 
+* Stripe
+* GRAPHQL
+* MongoDB
+* JWT
 * Node.js
     * npm packages:
        * [dotenv](https://www.npmjs.com/package/dotenv)
        * [express](https://www.npmjs.com/package/express)
-	  * [express-handlebars](https://www.npmjs.com/package/express-handlebars)
 	  * [express-session](https://www.npmjs.com/package/express-session)
-	  * [inquirer](https://www.npmjs.com/package/inquirer)
-       * [mysql2](https://www.npmjs.com/package/mysql2)
-       * [sequelize](https://www.npmjs.com/package/sequelize)
 	  * [bcrypt](https://www.npmjs.com/package/bcrypt)
-	  * [nodemailer](https://www.npmjs.com/package/nodemailer)
-
-        
-* Insomnia
+      * [socket.io](https://www.npmjs.com/package/socket.io)
+      * [stripe](https://www.npmjs.com/package/stripe)
+	  <!-- * [nodemailer](https://www.npmjs.com/package/nodemailer) -->
 * Heroku 
 * Screencatisfy
 * VS Code
