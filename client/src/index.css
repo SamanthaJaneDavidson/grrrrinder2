@@ -400,3 +400,7 @@ button:hover {
   margin-top: 10px;
   margin-bottom: 40px;
 }
+
+#bullets {
+  list-style-type: none;
+}

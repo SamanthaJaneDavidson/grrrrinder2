@@ -74,7 +74,7 @@ function Chat() {
         >
           Close Chat
         </Button>
-        <ul style={{ maxHeight: 500, overflow: "scroll" }}>
+        <ul className= "bullets" style={{ maxHeight: 500, overflow: "scroll" }}>
           {messages.msgs.map((v, i) => (
             <li key={i}>{v}</li>
           ))}
