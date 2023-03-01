@@ -26,6 +26,7 @@ export default function Dog({
           <Accordion.Item eventKey="0">
             <Accordion.Header>About Me</Accordion.Header>
             <Accordion.Body>
+              <p>Username: {dog.dog_owner.username}</p>
               <p>Breed: {dog.dog_breed}</p>
               <p>Gender: {dog.dog_gender}</p>
               <p>Size: {dog.dog_size}</p>
