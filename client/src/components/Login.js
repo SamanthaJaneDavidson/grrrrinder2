@@ -50,8 +50,8 @@ function Login() {
       password: "",
     });
     // momentarily commment out
-    // window.location.replace("/profile")
-    redirect("/profile");
+    window.location.assign("/")
+ 
   };
 
   return (
