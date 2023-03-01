@@ -52,16 +52,17 @@ const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware }
         });
         socket.on('message', async (msg, to, token) => {
           const socketUsers = [];
+          const user = (await User.find({ token }))[0];
           for (let [id, socket] of io.of("/").sockets) {
             socketUsers.push({
               userID: id,
-              username: socket.auth.username,
+              username: user.username,
             });
           }
 
           const toUser = socketUsers.find(x => x.username == to);
 
-          const user = (await User.find({ token }))[0];
+          // const user = (await User.find({ token }))[0];
 
           if (user && toUser) {
             const usUser = socketUsers.find(x => x.username == user.username);
