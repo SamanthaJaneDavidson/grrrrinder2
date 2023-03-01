@@ -36,8 +36,8 @@ function AddDog() {
           dog_gender: dogGender,
           dog_size: dogSize,
           dog_age: dogAge,
-          dog_vaccinations: dogVaccinations == '1',
-          dog_neuter_spayed: dogNeuter == '1',
+          dog_vaccinations: dogVaccinations == "1",
+          dog_neuter_spayed: dogNeuter == "1",
           dog_temperment: dogTemperment,
           dog_notes: dogNotes,
           dog_picture: dogPicture,
@@ -47,15 +47,12 @@ function AddDog() {
         },
       },
     });
-    
+
     if (data.addDog && data.addDog.username) {
-      window.location.href = '/profile';
+      window.location.href = "/profile";
     }
     // ADD SAVE_DOG data USING FORM INPUT VALUES
-};
-
-
-  
+  }
 
   return (
     <Form onSubmit={handleFormSubmit}>
@@ -205,14 +202,16 @@ function AddDog() {
             className="font-weight-bold text-small col-md-12"
             controlId="formFile"
             required
-            value={dogPicture}>
+            value={dogPicture}
+          >
             <Form.Label>Upload a photo of your dog here: </Form.Label>
-            <UploadWidget id="upload-widget"             
+            <UploadWidget
+              id="upload-widget"
               onChange={(event) => {
                 console.log(event);
-                console.log('Set to ' + event.info.secure_url);
-                setDogPicture(event.info.secure_url)}
-              }
+                console.log("Set to " + event.info.secure_url);
+                setDogPicture(event.info.secure_url);
+              }}
             />
           </Form.Group>
 
