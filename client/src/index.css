@@ -215,6 +215,7 @@ button:hover {
   margin-top: 5px;
   width: 200px;
   color: rgb(133, 83, 26);
+  border-color:rgb(139, 204, 216) !important;
 }
 
 .btn-secondary {
