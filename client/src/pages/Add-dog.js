@@ -49,7 +49,7 @@ function AddDog() {
     });
 
     if (data.addDog && data.addDog.username) {
-      window.location.href = "/profile";
+      window.location.assign("/");
     }
     // ADD SAVE_DOG data USING FORM INPUT VALUES
   }
