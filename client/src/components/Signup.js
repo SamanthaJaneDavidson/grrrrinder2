@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Alert, Col, Row } from 'react-bootstrap';
+import { Form, Button, Alert, Col, Row, FormGroup } from 'react-bootstrap';
 import Auth from '../utils/auth';
 
 // import { createUser } from '../utils/API';
@@ -72,7 +72,7 @@ const Signup = () => {
           <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className="font-weight-bold text-small col-md-7">
+        <Form.Group className="font-weight-bold text-small mt-3 col-md-7">
           <Form.Label htmlFor='email'>Email</Form.Label>
           <Form.Control
             type='email'
@@ -85,7 +85,7 @@ const Signup = () => {
           <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className="font-weight-bold text-small col-md-7">
+        <Form.Group className="font-weight-bold text-small mt-3 col-md-7">
           <Form.Label htmlFor='password'>Password</Form.Label>
           <Form.Control
             type='password'
@@ -96,14 +96,17 @@ const Signup = () => {
             required
           />
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
-        </Form.Group>
-        </Row>
         <Button
           disabled={!(signupData.username && signupData.email && signupData.password)}
           type='submit'
-          variant='success'>
+          variant='success'
+          className='mt-3'
+          >
           Submit
         </Button>
+        </Form.Group>
+      
+        </Row>
       </Form>
     </div>
     </div>
