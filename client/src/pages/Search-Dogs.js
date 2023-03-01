@@ -155,7 +155,8 @@ function SearchDogs() {
         ) {
           let found = false;
           for (const value of dog[key]) {
-            if (filteredData[key].includes(value.toLowerCase())) {
+            if (value.toLowerCase() !== 'no preference' && 
+                filteredData[key].includes(value.toLowerCase())) {
               found = true;
             }
           }
