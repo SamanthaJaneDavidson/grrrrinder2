@@ -140,13 +140,10 @@ function SearchDogs() {
 
   // TO DO: create another query to filter through the database
   const myFilter = (dog) => {
-    if (filteredData.preferred_location === undefined) {
-      // The filters have not been set.
-      return false;
-    }
 
     for (const key of Object.keys(filteredData)) {
       if (filteredData[key].length !== 0){
+        console.log(filteredData);
         if (key === "dog_vaccinations" || key === "dog_neuter_spayed") {
           if (!filteredData[key].includes(dog[key])) {
             return false;
