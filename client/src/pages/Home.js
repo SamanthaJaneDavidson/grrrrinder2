@@ -17,12 +17,11 @@ const home = () => {
           className="d-block w-100"
           src={backgroundImg1}
           alt="dogs with teddy bear"
-          style={{ opacity: "0.8" }}
+          style={{ opacity: "0.8", height: "1000px" }}
         />
         <Carousel.Caption>
           <h1 className="carousel1">Find the Paw-fect Match</h1>
           <p className="carousel1">
-            {" "}
             Welcome to <span>Grrrr'inder</span>, your modern alternative to
             traditional dog parks!
           </p>
@@ -32,7 +31,7 @@ const home = () => {
         <img
           className="d-block w-100"
           src={backgroundImg2}
-          style={{ opacity: "0.8" }}
+          style={{ opacity: "0.8", height: "1000px" }}
           alt="dogs meeting"
         />
 
@@ -50,7 +49,7 @@ const home = () => {
         <img
           className="d-block w-100"
           src={backgroundImg3}
-          style={{ opacity: "0.8" }}
+          style={{ opacity: "0.8", height: "1000px" }}
           alt="dogs playing"
         />
 

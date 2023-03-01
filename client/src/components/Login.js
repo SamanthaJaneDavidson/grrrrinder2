@@ -57,7 +57,7 @@ function Login() {
   return (
     <div className="Auth-form-container ">
       <div className="Auth-form ">
-        <h2>Login</h2>
+        <h1>Login</h1>
         <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
           <Row className="mb-3 justify-content-center">
             <Form.Group className="font-weight-bold text-small col-md-7">
