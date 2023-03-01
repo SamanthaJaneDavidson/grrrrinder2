@@ -140,35 +140,35 @@ function SearchDogs() {
 
   // TO DO: create another query to filter through the database
   const myFilter = (dog) => {
-    if (filteredData.preferred_location === undefined) {
-      // The filters have not been set.
-      return false;
-    }
 
     for (const key of Object.keys(filteredData)) {
-      if (key === "dog_vaccinations" || key === "dog_neuter_spayed") {
-        if (!filteredData[key].includes(dog[key])) {
-          return false;
-        }
-      } else if (
-        key === "preferred_days" ||
-        key === "preferred_timeofday" ||
-        key === "preferred_location"
-      ) {
-        let found = false;
-        for (const value of dog[key]) {
-          if (filteredData[key].includes(value.toLowerCase())) {
-            found = true;
+      if (filteredData[key].length !== 0){
+        console.log(filteredData);
+        if (key === "dog_vaccinations" || key === "dog_neuter_spayed") {
+          if (!filteredData[key].includes(dog[key])) {
+            return false;
+          }
+        } else if (
+          key === "preferred_days" ||
+          key === "preferred_timeofday" ||
+          key === "preferred_location"
+        ) {
+          let found = false;
+          for (const value of dog[key]) {
+            if (filteredData[key].includes(value.toLowerCase())) {
+              found = true;
+            }
+          }
+          if (!found) {
+            return false;
+          }
+        } else {
+          if (!filteredData[key].includes(dog[key].toLowerCase())) {
+            return false;
           }
         }
-        if (!found) {
-          return false;
-        }
-      } else {
-        if (!filteredData[key].includes(dog[key].toLowerCase())) {
-          return false;
-        }
       }
+
     }
 
     return true;
