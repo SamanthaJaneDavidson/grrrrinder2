@@ -146,29 +146,32 @@ function SearchDogs() {
     }
 
     for (const key of Object.keys(filteredData)) {
-      if (key === "dog_vaccinations" || key === "dog_neuter_spayed") {
-        if (!filteredData[key].includes(dog[key])) {
-          return false;
-        }
-      } else if (
-        key === "preferred_days" ||
-        key === "preferred_timeofday" ||
-        key === "preferred_location"
-      ) {
-        let found = false;
-        for (const value of dog[key]) {
-          if (filteredData[key].includes(value.toLowerCase())) {
-            found = true;
+      if (filteredData[key].length !== 0){
+        if (key === "dog_vaccinations" || key === "dog_neuter_spayed") {
+          if (!filteredData[key].includes(dog[key])) {
+            return false;
+          }
+        } else if (
+          key === "preferred_days" ||
+          key === "preferred_timeofday" ||
+          key === "preferred_location"
+        ) {
+          let found = false;
+          for (const value of dog[key]) {
+            if (filteredData[key].includes(value.toLowerCase())) {
+              found = true;
+            }
+          }
+          if (!found) {
+            return false;
+          }
+        } else {
+          if (!filteredData[key].includes(dog[key].toLowerCase())) {
+            return false;
           }
         }
-        if (!found) {
-          return false;
-        }
-      } else {
-        if (!filteredData[key].includes(dog[key].toLowerCase())) {
-          return false;
-        }
       }
+
     }
 
     return true;
