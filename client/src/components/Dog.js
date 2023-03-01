@@ -2,11 +2,17 @@ import React from "react";
 // import React from 'react';
 import { Button, Card, Accordion } from "react-bootstrap";
 
-export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState }) {
+export default function Dog({
+  dog,
+  saveDog,
+  unsaveDog,
+  deleteDog,
+  updateState,
+}) {
   return (
     <Card className="card">
-      <Card.Img 
-      className = "card-img"
+      <Card.Img
+        className="card-img"
         variant="top"
         src={dog.dog_picture}
         style={{ width: "100%", height: "18rem", objectFit: "cover" }}
@@ -20,7 +26,6 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
           <Accordion.Item eventKey="0">
             <Accordion.Header>About Me</Accordion.Header>
             <Accordion.Body>
-
               <p>Breed: {dog.dog_breed}</p>
               <p>Gender: {dog.dog_gender}</p>
               <p>Size: {dog.dog_size}</p>
@@ -29,7 +34,6 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
               <p>Neutered or Spayed: {dog.dog_neuter_spayed ? "Yes" : "No"}</p>
               <p>Temperment: {dog.dog_temperment}</p>
               <p>Additional Info: {dog.dog_notes}</p>
-
             </Accordion.Body>
           </Accordion.Item>
 
@@ -44,7 +48,7 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
         </Accordion>
         {saveDog ? (
           <Button
-          className="add-dog-btn"
+            className="add-dog-btn"
             onClick={() => {
               saveDog({
                 variables: {
@@ -58,7 +62,8 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
         ) : undefined}
 
         {unsaveDog ? (
-          <Button className="delete-dog-btn"
+          <Button
+            className="delete-dog-btn"
             onClick={async () => {
               await unsaveDog({
                 variables: {
@@ -74,7 +79,8 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
         ) : undefined}
 
         {deleteDog ? (
-          <Button className="delete-dog-btn"
+          <Button
+            className="delete-dog-btn"
             onClick={async () => {
               await deleteDog({
                 variables: {
@@ -82,7 +88,7 @@ export default function Dog({ dog, saveDog, unsaveDog, deleteDog, updateState })
                 },
               });
 
-              if(updateState) {
+              if (updateState) {
                 updateState();
               }
             }}

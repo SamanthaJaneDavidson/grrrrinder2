@@ -244,11 +244,14 @@ button:hover {
 
 .carousel.carousel-item {
   max-height: 100%;
+  min-height: 0;
+  
 }
 
 .carousel-item img {
   object-fit: cover;
   max-height: 100%;
+  min-height: 0;
 }
 .carousel-caption {
   color: #241d0d !important;

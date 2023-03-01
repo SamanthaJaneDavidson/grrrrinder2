@@ -9,12 +9,13 @@ import { SAVE_DOG } from "../utils/mutations";
 import Dog from "../components/Dog";
 
 function SearchDogs() {
-  const [filteredData, setFilter] = useState(''
-  //   {
-  //   dog_age: ["puppy","youth","adult","senior"]
-  // }
+  const [filteredData, setFilter] = useState(
+    ""
+    //   {
+    //   dog_age: ["puppy","youth","adult","senior"]
+    // }
   );
-  
+
   // useEffect(()=>{
   //   const dataToFilter = {};
   //   dataToFilter.preferred_location = "12345";
@@ -27,7 +28,7 @@ function SearchDogs() {
   //   dataToFilter.dog_vaccinations = [];
   //   dataToFilter.dog_vaccinations.push(true);
   //   dataToFilter.dog_vaccinations.push(false);
-  //   dataToFilter.dog_size = [];  
+  //   dataToFilter.dog_size = [];
   //   dataToFilter.dog_size.push("small");
   //   dataToFilter.dog_size.push("medium");
   //   dataToFilter.dog_size.push("large");
@@ -45,7 +46,7 @@ function SearchDogs() {
   //   dataToFilter.preferred_days = [];
   //   dataToFilter.preferred_days.push("monday");
   //   dataToFilter.preferred_days.push("tuesday");
-  //   dataToFilter.preferred_days.push("wednesday"); 
+  //   dataToFilter.preferred_days.push("wednesday");
   //   dataToFilter.preferred_days.push("thursday");
   //   dataToFilter.preferred_days.push("friday");
   //   dataToFilter.preferred_days.push("saturday");
@@ -54,7 +55,7 @@ function SearchDogs() {
   //   dataToFilter.preferred_timeofday.push("morning");
   //   dataToFilter.preferred_timeofday.push("afternoon");
   //   dataToFilter.preferred_timeofday.push("evening");
-        
+
   //   console.log(dataToFilter);
   //   setFilter(dataToFilter);
 
@@ -231,7 +232,7 @@ function SearchDogs() {
   });
 
   const { loading, data } = useQuery(QUERY_ME, {
-    fetchPolicy: "no-cache"
+    fetchPolicy: "no-cache",
   });
 
   const { loading: loadingDogs, data: dogData } = useQuery(QUERY_DOG);
