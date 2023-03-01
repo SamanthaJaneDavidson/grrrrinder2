@@ -19,9 +19,9 @@ const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware }
   await server.start();
 
   const app = express();
-  const PORT = process.env.PORT || 3001;
-  
- 
+  const PORT = process.env.PORT || 4001;
+
+
 
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
@@ -33,53 +33,55 @@ const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware }
   app.use(express.static(path.join(__dirname, "../client/build")));
   // }
 
+
   // app.use(routes);
 
   db.once("open", async () => {
-    const httpServer = app.listen(PORT, () =>
-      console.log(`🌍 Now listening on http://localhost:${PORT}`),
-      // Added to connect to GraphQL's Apollo Sandbox
-      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`)
-    );
+    const httpServer = app.listen(PORT, () => {
 
-    // Socket.io
-    const io = new Server(httpServer);
+      console.log(`🌍 Now listening on http://localhost:${PORT}`);
+        // Added to connect to GraphQL's Apollo Sandbox
+        console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+      // Socket.io
+      const io = new Server(httpServer);
 
-    io.on('connection', function(socket){
-      console.log('a user connected');
-      socket.on('disconnect', function(){
-        console.log('User Disconnected');
-      });
-      socket.on('message', async (msg, to, token) => {
-        const socketUsers = [];
-        for (let [id, socket] of io.of("/").sockets) {
-          socketUsers.push({
-            userID: id,
-            username: socket.auth.username,
-          });
-        }
-
-        const toUser = socketUsers.find(x => x.username == to);
-
-        const user = (await User.find({token}))[0];
-        
-        if (user && toUser) {
-          const usUser = socketUsers.find(x => x.username == user.username);
-
-          io.to([usUser.userID, toUser.userID])
-            .emit('message', user.username + "> " + msg, {
-              from: user.username
+      io.on('connection', function (socket) {
+        console.log('a user connected');
+        socket.on('disconnect', function () {
+          console.log('User Disconnected');
+        });
+        socket.on('message', async (msg, to, token) => {
+          const socketUsers = [];
+          for (let [id, socket] of io.of("/").sockets) {
+            socketUsers.push({
+              userID: id,
+              username: socket.auth.username,
             });
-        }
-      });
+          }
 
-      socket.on('init', async (token) => {
-        const user = await User.find({token});
+          const toUser = socketUsers.find(x => x.username == to);
 
-        if (user[0]) {
-          socket.auth = { username: user[0].username };
-        }
+          const user = (await User.find({ token }))[0];
+
+          if (user && toUser) {
+            const usUser = socketUsers.find(x => x.username == user.username);
+
+            io.to([usUser.userID, toUser.userID])
+              .emit('message', user.username + "> " + msg, {
+                from: user.username
+              });
+          }
+        });
+
+        socket.on('init', async (token) => {
+          const user = await User.find({ token });
+
+          if (user[0]) {
+            socket.auth = { username: user[0].username };
+          }
+        });
       });
-    });
+    }
+    );
   });
 })();
