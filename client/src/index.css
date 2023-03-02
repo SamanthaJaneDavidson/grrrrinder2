@@ -148,10 +148,6 @@ h4 {
   margin-top: 20px;
 }
 
-#zip-code-search::placeholder {
-  color: red;
-}
-
 p {
   font-family: monospace;
 }

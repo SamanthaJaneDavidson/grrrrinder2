@@ -13,7 +13,7 @@ function SearchBar(props) {
           onChange={props.handleChange}
           type="zip"
           name="zip"
-          placeholder="* zip code required *"
+          placeholder="Enter zip code "
         />
       </div>
       <div id="checkbox-container">
@@ -50,7 +50,7 @@ function SearchBar(props) {
         
       
           <Accordion.Item eventKey="1">
-            <Accordion.Header>Health Status</Accordion.Header>
+            <Accordion.Header>Vaccinated</Accordion.Header>
             <Accordion.Body>
         <div className="form-check form-check-inline">
           <input
