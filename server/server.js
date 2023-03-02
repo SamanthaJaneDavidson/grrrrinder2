@@ -43,12 +43,7 @@ const server = new ApolloServer({ typeDefs, resolvers, context: authMiddleware }
         // Added to connect to GraphQL's Apollo Sandbox
         console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
       // Socket.io
-
-      const io = new Server(httpServer, {
-        cors: {
-          origin: ["http://localhost:3001/", "http://localhost:3000/", "https://grrrrinder2.herokuapp.com/"],
-        }
-      });
+      const io = new Server(httpServer);
 
       io.on('connection', function (socket) {
         console.log('a user connected');
