@@ -50,7 +50,7 @@ Once our user stories were defined, we were then able to move on to the next ste
 ## Installation and Usage
 
 
-We used MERN (MongoDB-ExpressJS-ReactJS-NodeJS) stack to build out our application. In the back-end, we had to create models, a typeDef, and a revolver.  
+We used MERN (MongoDB-ExpressJS-ReactJS-NodeJS) stack to build out our application. In the back-end, we had to create models, a typeDef, and a resolver.  
 
 
 <h2 align="left">Models</h2>
