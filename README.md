@@ -3,9 +3,9 @@
 <img src="https://img.shields.io/badge/License-MIT-ff69b4.svg">
 
 ---
-Grrrrr'inder is a pawsitively new way of connecting your furry friends with friends of their own. Here, you can set up doggy play dates with the click of a few buttons! As an owner, you must first create an account. Once that's done, you can create your pet's profile, add more dogs if they want to get in on the action as well, and ultimately reach out to another owner to set up your dog's pup play date. 
+Grrrrr'inder is a pawsitively new way of connecting your furry friends with friends of their own. Here, you can set up doggy play dates with the click of a few buttons! As an owner, you must first create an account. Once that's done, you can create your pet's profile, add more dogs if they want to get in on the action as well, and ultimately reach out to another owner to set up your dog's pup play date &#128054; . 
 
-<!-- ![loginpage](./public/assets/images/logingiphy.gif) -->
+![homePage](/client/public/images/grrrrrHomepage.png)
 
 ----
 ## Table of Contents 
@@ -50,9 +50,7 @@ Once our user stories were defined, we were then able to move on to the next ste
 ## Installation and Usage
 
 
-We used MERN (MongoDB-ExpressJS-ReactJS-NodeJS) stack to build out our application. 
-
-<!-- In the back-end, we had to create a database, models and routes.  -->
+We used MERN (MongoDB-ExpressJS-ReactJS-NodeJS) stack to build out our application. In the back-end, we had to create models, a typeDef, and a resolver.  
 
 
 <h2 align="left">Models</h2>
@@ -79,52 +77,6 @@ The owner model was used to store the user information once they signed up. This
 The index model served as one to bridge the relationships between the dog and owner models. An owner can have more than one dog, however a dog can only have one owner. 
 
 
-Talk about the "Typedef and Resolvers" here
-<!-- <h2 align="left">Routes and Controllers</h2> 
-
-
-Once our server and models were created, we were able to move on and set up the routes. Within our 'Controller' folder, we created a 'Dog' route, 'Owner' route, 'Homepage' route and 'Index' route.  -->
-
-<!-- <strong>Dog Route</strong>
-
-The dog route utilizes four types of HTTP requests:
-
-+ Get - Allows the user to either search all dogs, or search dogs based on specific search criteria. Figuring out this specific code was a bit tricky, but ultimately we were able to accomplish our goal by adding a 'where: query'. 
-
-- Post - Allows the user to create a new profile and send a request for email contact. 
-
-+ Put - Allows the user to update an existing dog profile. 
-
-- Delete - Allows the user to delete the profile. 
-
-
-
-<strong>Owner Route</strong>
-
-The owner route utilizes three types of HTTP requests:
-
-+ Get - Allows the user to search for all owners. 
-
-- Post - Allows the user to create a new user account. When creating an account, a user will have to make a username and password, that is at least eight characters long. This HTPT request also allows a user to log in. 
-
-+ Delete - Allows the user to delete the user account.  -->
-
-
-<!-- <strong>Homepage Route</strong>
-
-The homepage route utilizes the GET HTTP request, that allows the users to sign up, log in, create a profile, add a dog, match and meet and log out.  -->
-
-
-
-<!-- <strong>Index Route</strong>
-
-
-The index route served as one to bridge the 'dog' and 'owner' route together. 
-
-After the routes were created, we tested them using Insomnia to confirm that our request was good. -->
-
-
-
 <h2 align="left">Authentication</h2>
 
 Since our application involves creating an account and inputting personal information, it was important and necessary to protect our users' data. In order to do this, we used the npm packages, express-session and bcrypt. Express-session installed middleware, and creates and manages our users session; while bcrypt hashes passwords securely. 
@@ -132,9 +84,9 @@ Since our application involves creating an account and inputting personal inform
 
 <h2 align="left">Views</h2>
 
-For the front-end we utilized React - this was the 'R' in the 'MERN' stack. Our React files were separated in a folder of their own. CSS was linked to each sheet, and within these files, we were able to display the information we set up on the back-end, to display on the web-page. 
+For the front-end we utilized React - this was the 'R' in the 'MERN' stack. Our React files were separated in folders of their own, and had several components. CSS was linked and within these files, we were able to display the information we set up on the back-end, to display on the web-page. 
 
-Since it was a profile, we also thought it was necessary for the owner to include a picture of their furry friend. On the back-end, in the 'dog' model, we actually created the code to not allow a null. This means that a user would not be able to create a profile if a photo was not submitted. In order to bring our vision to life, we utilized the api Cloudinary. This api allows it's users to submit a picture from their computer. See the picture below to see all of the options! 
+Since our users were creating a pup profile, we also thought it was necessary for the owner to include a picture of their furry friend. On the back-end, in the 'dog' model, we actually created the code to not allow a null. This means that a user would not be able to create a profile if a photo was not submitted. In order to bring our vision to life, we utilized the api Cloudinary. This api allows it's users to submit a picture from their computer. See the picture below to see all of the options! 
 
 CSS, mentioned above was also used to pull our entire look together. We used a hover effect over the menu buttons, and utilized colors that would be easy to read on screen, and look inviting! 
 
@@ -146,13 +98,37 @@ Overall, we wanted our website to be engaging! Previously, we had installed a wa
 
 <h2 align="left">Donation</h2>
 
-Another way we were able to keep our website engaging, and help out our furry friends was by creating a way for our users to donate, utilizing Stripe, an online payment processing tool. We were able to set up a "pay what you want" type of donation, where once the user clicks the "donate now" button, it will automatically take them to Stripe's checkout. As well as sell Grrrr'inder merchandise, such as a mug or t-shirt. When a user clicks on either merchandise, it will direct the user to Stripe's checkout. The quantity of the items can be changed 
+Another way we were able to keep our website engaging, and help out our furry friends was by creating a way for our users to donate, utilizing Stripe, an online payment processing tool. We were able to set up a "pay what you want" type of donation, where once the user clicks the "donate now" button, it will automatically take them to Stripe's checkout. As well as sell Grrrr'inder merchandise, such as a mug or t-shirt. When a user clicks on either merchandise, it will direct the user to Stripe's checkout. The quantity of the items can be changed, so our users will be able to buy as many mugs or shirts as they'd like! All proceeds from the "pay what you want" option or from merchandise will be donated to our local SPCA!
+
+---
+
+<h2 align="left">See our website in action!</h2>
+ 
+
+
+---
+
+<strong>Login</strong>
+
+![login](/client/public/images/login.gif)
+
+<strong>Search Dogs</strong>
+
+![searchDog](/client/public/images/searchDog.gif)
+
+<strong>Chat</strong>
+
+![chatDog](/client/public/images/chatDog.gif)
+
+<strong>Donate</strong>
+
+![donate](/client/public/images/stripe_donate.gif)
 
 ---
 ## Creators
   
 +  Cassandre Beauzil : [Github](https://github.com/CassNoisette)
-+  Olivia Daouphars : [Github](https://github.com/estilbee),
++  Olivia Daouphars : [Github](https://github.com/estilbee)
 +  Samantha Davidson :[Github](https://github.com/SamanthaJaneDavidson)
 +  Amy Lipscomb : [Github](https://github.com/AmyLipscomb)
 +  Michele Tornetta : [Github](https://github.com/MicheleTornetta)
@@ -173,22 +149,22 @@ None.
 * HTML
 * CSS
 * JavaScript
-* MySQL
+* React
 * Cloudinary
+* Leaflet 
+* Stripe
+* GRAPHQL
+* MongoDB
+* JWT
 * Node.js
     * npm packages:
        * [dotenv](https://www.npmjs.com/package/dotenv)
        * [express](https://www.npmjs.com/package/express)
-	  * [express-handlebars](https://www.npmjs.com/package/express-handlebars)
 	  * [express-session](https://www.npmjs.com/package/express-session)
-	  * [inquirer](https://www.npmjs.com/package/inquirer)
-       * [mysql2](https://www.npmjs.com/package/mysql2)
-       * [sequelize](https://www.npmjs.com/package/sequelize)
 	  * [bcrypt](https://www.npmjs.com/package/bcrypt)
-	  * [nodemailer](https://www.npmjs.com/package/nodemailer)
-
-        
-* Insomnia
+      * [socket.io](https://www.npmjs.com/package/socket.io)
+      * [stripe](https://www.npmjs.com/package/stripe)
+	  <!-- * [nodemailer](https://www.npmjs.com/package/nodemailer) -->
 * Heroku 
 * Screencatisfy
 * VS Code
