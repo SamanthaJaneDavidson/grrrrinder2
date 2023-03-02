@@ -112,9 +112,13 @@ Another way we were able to keep our website engaging, and help out our furry fr
 
 ![login](/client/public/images/login.gif)
 
-<strong>Search a dog</strong>
+<strong>Search Dogs</strong>
 
 ![searchDog](/client/public/images/searchDog.gif)
+
+<strong>Chat</strong>
+
+![chatDog](/client/public/images/chatDog.gif)
 
 <strong>Donate</strong>
 
@@ -124,7 +128,7 @@ Another way we were able to keep our website engaging, and help out our furry fr
 ## Creators
   
 +  Cassandre Beauzil : [Github](https://github.com/CassNoisette)
-+  Olivia Daouphars : [Github](https://github.com/estilbee),
++  Olivia Daouphars : [Github](https://github.com/estilbee)
 +  Samantha Davidson :[Github](https://github.com/SamanthaJaneDavidson)
 +  Amy Lipscomb : [Github](https://github.com/AmyLipscomb)
 +  Michele Tornetta : [Github](https://github.com/MicheleTornetta)
