@@ -33,20 +33,20 @@ function SearchDogs() {
     dataToFilter.dog_neuter_spayed = [];
 
     if (neuteredOrSpayed[0].checked) {
-      dataToFilter.dog_neuter_spayed.push(false);
+      dataToFilter.dog_neuter_spayed.push(true);
     }
     if (neuteredOrSpayed[1].checked) {
-      dataToFilter.dog_neuter_spayed.push(true);
+      dataToFilter.dog_neuter_spayed.push(false);
     }
 
     const vaccinated = document.querySelectorAll('input[name="vaccinated"]');
     dataToFilter.dog_vaccinations = [];
 
     if (vaccinated[0].checked) {
-      dataToFilter.dog_vaccinations.push(false);
+      dataToFilter.dog_vaccinations.push(true);
     }
     if (vaccinated[1].checked) {
-      dataToFilter.dog_vaccinations.push(true);
+      dataToFilter.dog_vaccinations.push(false);
     }
 
     const sizes = document.querySelectorAll('input[name="size"]');
