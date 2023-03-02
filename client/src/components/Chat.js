@@ -4,7 +4,10 @@ import io from "socket.io-client";
 import auth from "../utils/auth";
 import { Button } from "react-bootstrap";
 
-const socket = io();
+const IS_PROD = process.env.NODE_ENV === "production";
+const URL = IS_PROD ? "https://grrrrinder2.herokuapp.com/" : "http://localhost:3001";
+
+const socket = io(URL);
 
 function Chat() {
   const [messages, setMessages] = useState({
