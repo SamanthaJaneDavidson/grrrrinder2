@@ -125,6 +125,8 @@ h4 {
   box-shadow: inset 1em 1em var(--form-control-color);
 } */
 
+/* nevermind */
+
 /* .checkmark {
   position: absolute;
   top: 0;
@@ -146,10 +148,6 @@ h4 {
 
 #zip-code-search {
   margin-top: 20px;
-}
-
-#zip-code-search::placeholder {
-  color: red;
 }
 
 p {
@@ -215,6 +213,7 @@ button:hover {
   margin-top: 5px;
   width: 200px;
   color: rgb(133, 83, 26);
+  border-color:rgb(139, 204, 216) !important;
 }
 
 .btn-secondary {

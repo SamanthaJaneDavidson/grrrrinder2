@@ -1,4 +1,5 @@
 import React from "react";
+import {Accordion} from "react-bootstrap";
 
 function SearchBar(props) {
   return (
@@ -12,11 +13,14 @@ function SearchBar(props) {
           onChange={props.handleChange}
           type="zip"
           name="zip"
-          placeholder="* zip code required *"
+          placeholder="Enter zip code "
         />
       </div>
       <div id="checkbox-container">
-        <h5>Dog Gender</h5>
+      <Accordion>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>Dog Gender</Accordion.Header>
+        <Accordion.Body>
         <div className="form-check form-check-inline">
           <input
             className="checkmark form-check-input"
@@ -41,8 +45,13 @@ function SearchBar(props) {
             Female
           </label>
         </div>
+        </Accordion.Body>
+          </Accordion.Item>
         
-        <h5>Health Status</h5>
+      
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Vaccinated</Accordion.Header>
+            <Accordion.Body>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -65,7 +74,12 @@ function SearchBar(props) {
             Yes
           </label>
         </div>
-        <h5>Neutered/Spayed</h5>
+        </Accordion.Body>
+          </Accordion.Item>
+
+          <Accordion.Item eventKey="2">
+            <Accordion.Header>Neutered/Spayed</Accordion.Header>
+            <Accordion.Body>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -88,8 +102,14 @@ function SearchBar(props) {
             Yes
           </label>
         </div>
+        </Accordion.Body>
+          </Accordion.Item>
 
-        <h5>Dog Size</h5>
+
+          <Accordion.Item eventKey="3">
+            <Accordion.Header>Dog Size</Accordion.Header>
+            <Accordion.Body>
+       
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -126,8 +146,14 @@ function SearchBar(props) {
             Large
           </label>
         </div>
+        </Accordion.Body>
+          </Accordion.Item>
 
-        <h5>Dog Age</h5>
+
+          <Accordion.Item eventKey="4">
+            <Accordion.Header>Dog Age</Accordion.Header>
+            <Accordion.Body>
+        
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -176,7 +202,14 @@ function SearchBar(props) {
             Senior
           </label>
         </div>
-        <h5>Dog Temperment</h5>
+           </Accordion.Body>
+           </Accordion.Item>
+
+
+           <Accordion.Item eventKey="5">
+            <Accordion.Header>Dog Temperment</Accordion.Header>
+            <Accordion.Body>
+        
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -237,7 +270,14 @@ function SearchBar(props) {
             Leader
           </label>
         </div>
-        <h5>Preferred Day</h5>
+   </Accordion.Body>
+   </Accordion.Item>
+
+
+   <Accordion.Item eventKey="6">
+            <Accordion.Header>Preferred Day</Accordion.Header>
+            <Accordion.Body>
+       
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -322,7 +362,13 @@ function SearchBar(props) {
             Sunday
           </label>
         </div>
-        <h5>Preferred Time of Day</h5>
+           </Accordion.Body>
+           </Accordion.Item>
+
+
+ <Accordion.Item eventKey="7">
+            <Accordion.Header>Preferred Time of Day</Accordion.Header>
+            <Accordion.Body>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
@@ -359,6 +405,9 @@ function SearchBar(props) {
             Evening
           </label>
         </div>
+           </Accordion.Body>
+           </Accordion.Item>
+        </Accordion>
       </div>
     </div>
   );

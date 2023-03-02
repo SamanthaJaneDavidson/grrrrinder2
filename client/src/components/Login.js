@@ -74,7 +74,7 @@ function Login() {
                 Username is required!
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group className="font-weight-bold text-small col-md-7">
+            <Form.Group className="font-weight-bold text-small mt-3 col-md-7">
               <Form.Label htmlFor="password">Password</Form.Label>
               <Form.Control
                 type="password"
@@ -87,21 +87,17 @@ function Login() {
               <Form.Control.Feedback type="invalid">
                 Password is required!
               </Form.Control.Feedback>
-            </Form.Group>
-          </Row>
-
           <Button
+          className="mt-3"
             disabled={!(loginData.username && loginData.password)}
             type="submit"
             variant="success"
           >
             Submit
           </Button>
-        </Form>
-
         {errorMessage && <p>{errorMessage}</p>}
 
-        <p>Don't have an account?</p>
+        <p className="mt-3">Don't have an account?</p>
         <Link to="/signup">
           {" "}
           <button
@@ -112,6 +108,11 @@ function Login() {
             Signup
           </button>
         </Link>
+            </Form.Group>
+          </Row>
+
+        </Form>
+
       </div>
     </div>
   );
